@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.tabLopSinhVien = new DevExpress.XtraTab.XtraTabPage();
+            this.userControlLop_SinhVien = new QLDSV.UserControlSinhVien();
             this.tabGiangVien = new DevExpress.XtraTab.XtraTabPage();
             this.tabMonHoc = new DevExpress.XtraTab.XtraTabPage();
             this.tabLopTinChi = new DevExpress.XtraTab.XtraTabPage();
@@ -50,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
+            this.tabLopSinhVien.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,32 +115,41 @@
             // 
             // tabLopSinhVien
             // 
+            this.tabLopSinhVien.Controls.Add(this.userControlLop_SinhVien);
             this.tabLopSinhVien.Name = "tabLopSinhVien";
             this.tabLopSinhVien.Size = new System.Drawing.Size(757, 294);
             this.tabLopSinhVien.Text = "Lớp - Sinh viên";
             // 
+            // userControlLop_SinhVien
+            // 
+            this.userControlLop_SinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlLop_SinhVien.Location = new System.Drawing.Point(0, 0);
+            this.userControlLop_SinhVien.Name = "userControlLop_SinhVien";
+            this.userControlLop_SinhVien.Size = new System.Drawing.Size(757, 294);
+            this.userControlLop_SinhVien.TabIndex = 0;
+            // 
             // tabGiangVien
             // 
             this.tabGiangVien.Name = "tabGiangVien";
-            this.tabGiangVien.Size = new System.Drawing.Size(757, 265);
+            this.tabGiangVien.Size = new System.Drawing.Size(757, 294);
             this.tabGiangVien.Text = "Giảng viên";
             // 
             // tabMonHoc
             // 
             this.tabMonHoc.Name = "tabMonHoc";
-            this.tabMonHoc.Size = new System.Drawing.Size(757, 265);
+            this.tabMonHoc.Size = new System.Drawing.Size(757, 294);
             this.tabMonHoc.Text = "Môn học";
             // 
             // tabLopTinChi
             // 
             this.tabLopTinChi.Name = "tabLopTinChi";
-            this.tabLopTinChi.Size = new System.Drawing.Size(757, 265);
+            this.tabLopTinChi.Size = new System.Drawing.Size(757, 294);
             this.tabLopTinChi.Text = "Lớp tín chỉ";
             // 
             // tabDiem
             // 
             this.tabDiem.Name = "tabDiem";
-            this.tabDiem.Size = new System.Drawing.Size(757, 265);
+            this.tabDiem.Size = new System.Drawing.Size(757, 294);
             this.tabDiem.Text = "Nhập Điểm";
             // 
             // statusStrip1
@@ -199,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
+            this.tabLopSinhVien.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -225,5 +237,6 @@
         private DevExpress.XtraTab.XtraTabPage tabMonHoc;
         private DevExpress.XtraTab.XtraTabPage tabLopTinChi;
         private DevExpress.XtraTab.XtraTabPage tabDiem;
+        private UserControlSinhVien userControlLop_SinhVien;
     }
 }

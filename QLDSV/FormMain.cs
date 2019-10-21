@@ -36,6 +36,7 @@ namespace QLDSV
                     v_DSPMBindingSource.MoveNext();
             }
             v_DSPMComboBox.Enabled = KetNoiDB.GroupId == "PGV";
+            userControlLop_SinhVien.UserControlSinhVien_Load();
         }
     }
 }

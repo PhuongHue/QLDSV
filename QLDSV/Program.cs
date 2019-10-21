@@ -17,7 +17,21 @@ namespace QLDSV
         public static bool running = true;
         public static KetNoiDB KetNoiDB = new KetNoiDB();
         public static QLDSVDataSetKhoa QLDSVDataSetKhoa = new QLDSVDataSetKhoa();
-        public static TableAdapterManager TableAdapterManager = new TableAdapterManager();
+        public static TableAdapterManager TableAdapterManager = new TableAdapterManager()
+        {
+            KhoaTableAdapter = new KhoaTableAdapter(),
+            GiangVienTableAdapter = new GiangVienTableAdapter(),
+            CTTruongKhoaTableAdapter = new CTTruongKhoaTableAdapter(),
+            MonHocTableAdapter = new MonHocTableAdapter(),
+            KhaNangDayTableAdapter = new KhaNangDayTableAdapter(),
+            LopTableAdapter = new LopTableAdapter(),
+            ChuyenNganhTableAdapter = new ChuyenNganhTableAdapter(),
+            SinhVienTableAdapter = new SinhVienTableAdapter(),
+            LopTinChiTableAdapter = new LopTinChiTableAdapter(),
+            CTLopTCTableAdapter = new CTLopTCTableAdapter(),
+            KeHoachGiangTableAdapter = new KeHoachGiangTableAdapter(),
+            DangKyTableAdapter = new DangKyTableAdapter()
+        };
 
         public static void FillAllTable()
         {
@@ -70,6 +84,7 @@ namespace QLDSV
         private static void InitServices()
         {
             TableAdapterManager.Connection = KetNoiDB.SqlConnection;
+            FillAllTable();
         }
         /// <summary>
         /// The main entry point for the application.
