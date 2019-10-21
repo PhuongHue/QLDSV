@@ -1,0 +1,3 @@
+- PGV: security(server), owner, deny update delete insert (Diem, Dki).
+- Khoa: security(server), owner, deny update delete (GV, table LớpTC).
+- SVien: read, write Dki.
