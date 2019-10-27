@@ -57,6 +57,12 @@
   <ItemGroup>
     <Compile Include="BatLoi\SqlMessageResolver.cs" />
     <Compile Include="BatLoi\Validation.cs" />
+    <Compile Include="Component\UserControlLop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\UserControlLop.Designer.cs">
+      <DependentUpon>UserControlLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Component\UserControlSinhVien.Designer.cs">
       <DependentUpon>UserControlSinhVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component\UserControlLop.resx">
+      <DependentUpon>UserControlLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>

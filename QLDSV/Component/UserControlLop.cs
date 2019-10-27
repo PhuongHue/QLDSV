@@ -3,33 +3,34 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BatLoi;
 
-namespace QLDSV
+namespace QLDSV.Component
 {
-    public partial class UserControlSinhVien : DevExpress.XtraEditors.XtraUserControl
+    public partial class UserControlLop : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlSinhVien()
+        public UserControlLop()
         {
             InitializeComponent();
-            comboBoxPhai.SelectedItem = comboBoxPhai.Items[0];
         }
-        public void UserControlSinhVien_Load()
+
+        public void UserControlLop_Load()
         {
-            lopBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+            khoaBindingSource.DataSource = Program.QLDSVDataSetKhoa;
         }
+
         private void Layout_Setting(string status)
         {
             if (status == "edit")
             {
                 groupBoxLop.Enabled = false;
-                sinhVienGridControl.Enabled = false;
-                groupBoxSinhVien.Enabled = true;
+                lopGridControl.Enabled = false;
+                groupBoxLop.Enabled = true;
                 barbtnThem.Enabled = false;
                 barbtnXoa.Enabled = false;
                 barbtnSua.Enabled = false;
@@ -39,8 +40,8 @@ namespace QLDSV
             else if (status == "normal")
             {
                 groupBoxLop.Enabled = true;
-                sinhVienGridControl.Enabled = true;
-                groupBoxSinhVien.Enabled = false;
+                lopGridControl.Enabled = true;
+                groupBoxLop.Enabled = false;
                 barbtnThem.Enabled = true;
                 barbtnXoa.Enabled = true;
                 barbtnSua.Enabled = true;
@@ -48,77 +49,42 @@ namespace QLDSV
                 barBtnRefresh.Enabled = true;
             }
         }
-        private void ClearErrorSinhVien()
+
+        private void ClearErrorLop()
         {
-            maSVTextEdit.ErrorText = "";
-            hoTextEdit.ErrorText = "";
-            tenTextEdit.ErrorText = "";
-            maCNTextEdit.ErrorText = "";
-            diaChiTextEdit.ErrorText = "";
+            maLopTextEdit.ErrorText = "";
+            tenLopTextEdit.ErrorText = "";
         }
-        private bool HasErrorSinhVien()
+
+        private bool HasErrorLop()
         {
-            if (maSVTextEdit.ErrorText != "") return true;
-            if (hoTextEdit.ErrorText != "") return true;
-            if (tenTextEdit.ErrorText != "") return true;
-            if (maCNTextEdit.ErrorText != "") return true;
-            if (diaChiTextEdit.ErrorText != "") return true;
+            if (maLopTextEdit.ErrorText != "") return true;
+            if (tenLopTextEdit.ErrorText != "") return true;
             return false;
         }
+
         private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("edit");
-            maSVTextEdit.Focus();
-            sinhVienBindingSource.AddNew();
+            maLopTextEdit.Focus();
+            lopBindingSource.AddNew();
         }
 
-        private void barBtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (dangKyBindingSource.Count > 0)
+            if (sinhVienBindingSource.Count > 0)
             {
-                MessageBox.Show("Không thể xóa sinh viên này vì đã có đăng ký môn học.", "Thông báo",
+                MessageBox.Show("Không thể xóa lớp này vì đã có sinh viên.", "Thông báo",
                        MessageBoxButtons.OK);
                 return;
             }
             if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                sinhVienBindingSource.RemoveCurrent();
+                lopBindingSource.RemoveCurrent();
         }
 
         private void barbtnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("edit");
-        }
-
-        private void btnOkSinhVien_Click(object sender, EventArgs e)
-        {
-            hoTextEdit.Focus();
-            tenTextEdit.Focus();
-            maCNTextEdit.Focus();
-            maSVTextEdit.Focus();
-            diaChiTextEdit.Focus();
-            if (HasErrorSinhVien())
-            {
-                MessageBox.Show("Lỗi nhập liệu, vui lòng sửa lại");
-                return;
-            }
-            ((DataRowView)sinhVienBindingSource.Current)["Phai"] = comboBoxPhai.SelectedItem.ToString();
-            try
-            {
-                sinhVienBindingSource.EndEdit();
-            }
-            catch (ConstraintException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void btnSinhVienHuy_Click(object sender, EventArgs e)
-        {
-            sinhVienBindingSource.CancelEdit();
-            ClearErrorSinhVien();
-            Layout_Setting("normal");
-
         }
 
         private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -151,6 +117,23 @@ namespace QLDSV
             }
         }
 
+        private void btnOkLop_Click(object sender, EventArgs e)
+        {
+            if (HasErrorLop())
+            {
+                MessageBox.Show("Lỗi nhập liệu, vui lòng sửa lại");
+                return;
+            }
+            lopBindingSource.EndEdit();
+            Layout_Setting("normal");
+        }
 
+        private void btnSinhVienHuy_Click(object sender, EventArgs e)
+        {
+            lopBindingSource.CancelEdit();
+            ClearErrorLop();
+            Layout_Setting("normal");
+
+        }
     }
 }

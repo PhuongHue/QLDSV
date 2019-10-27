@@ -63,8 +63,7 @@ namespace KetNoi
             }
             catch (SqlException e)
             {
-                //return SqlMessageResolver.SqlMessageResolve(e.Message);
-                return e.Message;
+                throw e;
             }
         }
     }

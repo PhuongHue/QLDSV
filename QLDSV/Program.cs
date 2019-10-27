@@ -16,7 +16,7 @@ namespace QLDSV
     {
         public static bool running = true;
         public static KetNoiDB KetNoiDB = new KetNoiDB();
-        public static QLDSVDataSetKhoa QLDSVDataSetKhoa = new QLDSVDataSetKhoa();
+        public static QLDSVDataSetKhoa QLDSVDataSetKhoa = new QLDSVDataSetKhoa(); 
         public static TableAdapterManager TableAdapterManager = new TableAdapterManager()
         {
             KhoaTableAdapter = new KhoaTableAdapter(),
