@@ -41,6 +41,7 @@ namespace QLDSV
             v_DSPMComboBox.Enabled = KetNoiDB.GroupId == "PGV";
             userControlLop.UserControlLop_Load();
             userControlSinhVien.UserControlSinhVien_Load();
+            userControlGiangVien.UserControlGiangVien_Load();
         }
 
         private void v_DSPMComboBox_SelectedIndexChanged(object sender, EventArgs e)

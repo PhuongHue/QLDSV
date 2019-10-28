@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
@@ -12,14 +12,14 @@ using BatLoi;
 
 namespace QLDSV.Component
 {
-    public partial class UserControlLop : DevExpress.XtraEditors.XtraUserControl
+    public partial class UserControlGiangVien : DevExpress.XtraEditors.XtraUserControl
     {
-        public UserControlLop()
+        public UserControlGiangVien()
         {
             InitializeComponent();
         }
 
-        public void UserControlLop_Load()
+        public void UserControlGiangVien_Load()
         {
             khoaBindingSource.DataSource = Program.QLDSVDataSetKhoa;
         }
@@ -28,9 +28,8 @@ namespace QLDSV.Component
         {
             if (status == "edit")
             {
-                groupBoxLop.Enabled = false;
-                lopGridControl.Enabled = false;
-                groupBoxLop.Enabled = true;
+                groupBoxGiangVien.Enabled = false;
+                giangVienGridControl.Enabled = false;
                 barbtnThem.Enabled = false;
                 barbtnXoa.Enabled = false;
                 barbtnSua.Enabled = false;
@@ -39,9 +38,8 @@ namespace QLDSV.Component
             }
             else if (status == "normal")
             {
-                groupBoxLop.Enabled = true;
-                lopGridControl.Enabled = true;
-                groupBoxLop.Enabled = false;
+                groupBoxGiangVien.Enabled = true;
+                giangVienGridControl.Enabled = true;
                 barbtnThem.Enabled = true;
                 barbtnXoa.Enabled = true;
                 barbtnSua.Enabled = true;
@@ -50,40 +48,49 @@ namespace QLDSV.Component
             }
         }
 
-        private void ClearErrorLop()
+        private void ClearErrorGiangVien()
         {
-            maLopTextEdit.ErrorText = "";
-            tenLopTextEdit.ErrorText = "";
+            maGVTextEdit.ErrorText = "";
+            hoTextEdit.ErrorText = "";
+            tenTextEdit.ErrorText = "";
+            hocViTextEdit.ErrorText = "";
+            hocHamTextEdit.ErrorText = "";
+            chuyenMonTextEdit.ErrorText = "";
+            chucVuTextEdit.ErrorText = "";
         }
 
-        private string AllErrorLop()
+        private string AllErrorGiangVien()
         {
             string error = "";
-            maLopTextEdit.Focus();
-            tenLopTextEdit.Focus();
-            btnOkSinhVien.Focus();
-            if (maLopTextEdit.ErrorText != "") error += maLopTextEdit.ErrorText + "\n";
-            if (tenLopTextEdit.ErrorText != "") error += tenLopTextEdit.ErrorText + "\n";
+            maGVTextEdit.Focus();
+            hoTextEdit.Focus();
+            tenTextEdit.Focus();
+            hocViTextEdit.Focus();
+            hocHamTextEdit.Focus();
+            chuyenMonTextEdit.Focus();
+            chucVuTextEdit.Focus();
+            btnOkGiangVien.Focus();
+            if (maGVTextEdit.ErrorText != "") error += maGVTextEdit.ErrorText + "\n";
+            if (hoTextEdit.ErrorText != "") error += hoTextEdit.ErrorText + "\n";
+            if (tenTextEdit.ErrorText != "") error += tenTextEdit.ErrorText + "\n";
+            if (hocViTextEdit.ErrorText != "") error += hocViTextEdit.ErrorText + "\n";
+            if (hocHamTextEdit.ErrorText != "") error += hocHamTextEdit.ErrorText + "\n";
+            if (chuyenMonTextEdit.ErrorText != "") error += chuyenMonTextEdit.ErrorText + "\n";
+            if (chucVuTextEdit.ErrorText != "") error += chucVuTextEdit.ErrorText + "\n";
             return error;
         }
 
         private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("edit");
-            maLopTextEdit.Focus();
-            lopBindingSource.AddNew();
+            maGVTextEdit.Focus();
+            giangVienBindingSource.AddNew();
         }
 
         private void barbtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (sinhVienBindingSource.Count > 0)
-            {
-                MessageBox.Show("Không thể xóa lớp này vì đã có sinh viên.", "Thông báo",
-                       MessageBoxButtons.OK);
-                return;
-            }
             if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                lopBindingSource.RemoveCurrent();
+                giangVienBindingSource.RemoveCurrent();
         }
 
         private void barbtnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -101,22 +108,22 @@ namespace QLDSV.Component
             Program.FillAllTable();
         }
 
-        private void btnOkLop_Click(object sender, EventArgs e)
+        private void btnOkSinhVien_Click(object sender, EventArgs e)
         {
-            string errors = AllErrorLop();
+            string errors = AllErrorGiangVien();
             if (errors != "")
             {
                 MessageBox.Show(errors, "Lỗi nhập liệu, vui lòng sửa lại");
                 return;
             }
-            lopBindingSource.EndEdit();
+            giangVienBindingSource.EndEdit();
             Layout_Setting("normal");
         }
 
         private void btnSinhVienHuy_Click(object sender, EventArgs e)
         {
-            lopBindingSource.CancelEdit();
-            ClearErrorLop();
+            giangVienBindingSource.CancelEdit();
+            ClearErrorGiangVien();
             Layout_Setting("normal");
         }
 
@@ -134,6 +141,16 @@ namespace QLDSV.Component
         {
             TextEdit textEdit = (TextEdit)sender;
             string error = Validation.ValidateName(textEdit.Properties.AccessibleName, textEdit.Text);
+            if (error != "")
+            {
+                textEdit.ErrorText = error;
+            }
+        }
+        
+        private void commonTextEdit_Validating(object sender, CancelEventArgs e)
+        {
+            TextEdit textEdit = (TextEdit)sender;
+            string error = Validation.ValidateCommonText(textEdit.Properties.AccessibleName, textEdit.Text);
             if (error != "")
             {
                 textEdit.ErrorText = error;

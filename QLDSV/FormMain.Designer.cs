@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.qLDSVDataSetMaster = new QLDSV.QLDSVDataSetMaster();
-            this.v_DSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_DSPMBindingSource = new System.Windows.Forms.BindingSource();
             this.v_DSPMTableAdapter = new QLDSV.QLDSVDataSetMasterTableAdapters.V_DSPMTableAdapter();
             this.tableAdapterManager = new QLDSV.QLDSVDataSetMasterTableAdapters.TableAdapterManager();
             this.v_DSPMComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
+            this.tabLop = new DevExpress.XtraTab.XtraTabPage();
+            this.userControlLop = new QLDSV.Component.UserControlLop();
             this.tabSinhVien = new DevExpress.XtraTab.XtraTabPage();
             this.userControlSinhVien = new QLDSV.UserControlSinhVien();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.tabGiangVien = new DevExpress.XtraTab.XtraTabPage();
+            this.userControlGiangVien = new QLDSV.Component.UserControlGiangVien();
             this.tabMonHoc = new DevExpress.XtraTab.XtraTabPage();
             this.tabLopTinChi = new DevExpress.XtraTab.XtraTabPage();
             this.tabDiem = new DevExpress.XtraTab.XtraTabPage();
@@ -48,13 +49,13 @@
             this.txtStripMaGV = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripNhom = new System.Windows.Forms.ToolStripStatusLabel();
-            this.userControlLop = new QLDSV.Component.UserControlLop();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
+            this.tabLop.SuspendLayout();
             this.tabSinhVien.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.tabGiangVien.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,16 +108,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControlMain.Location = new System.Drawing.Point(0, 33);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
-            this.xtraTabControlMain.SelectedTabPage = this.tabSinhVien;
+            this.xtraTabControlMain.SelectedTabPage = this.tabLop;
             this.xtraTabControlMain.Size = new System.Drawing.Size(763, 322);
             this.xtraTabControlMain.TabIndex = 3;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
+            this.tabLop,
             this.tabSinhVien,
             this.tabGiangVien,
             this.tabMonHoc,
             this.tabLopTinChi,
             this.tabDiem});
+            // 
+            // tabLop
+            // 
+            this.tabLop.Controls.Add(this.userControlLop);
+            this.tabLop.Name = "tabLop";
+            this.tabLop.Size = new System.Drawing.Size(757, 294);
+            this.tabLop.Text = "Lớp";
+            // 
+            // userControlLop
+            // 
+            this.userControlLop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlLop.Location = new System.Drawing.Point(0, 0);
+            this.userControlLop.Name = "userControlLop";
+            this.userControlLop.Size = new System.Drawing.Size(757, 294);
+            this.userControlLop.TabIndex = 0;
             // 
             // tabSinhVien
             // 
@@ -125,26 +141,28 @@
             this.tabSinhVien.Size = new System.Drawing.Size(757, 294);
             this.tabSinhVien.Text = "Sinh viên";
             // 
-            // userControlLop_SinhVien
+            // userControlSinhVien
             // 
             this.userControlSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlSinhVien.Location = new System.Drawing.Point(0, 0);
-            this.userControlSinhVien.Name = "userControlLop_SinhVien";
+            this.userControlSinhVien.Name = "userControlSinhVien";
             this.userControlSinhVien.Size = new System.Drawing.Size(757, 294);
             this.userControlSinhVien.TabIndex = 0;
             // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.userControlLop);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(757, 294);
-            this.xtraTabPage1.Text = "Lớp";
-            // 
             // tabGiangVien
             // 
+            this.tabGiangVien.Controls.Add(this.userControlGiangVien);
             this.tabGiangVien.Name = "tabGiangVien";
             this.tabGiangVien.Size = new System.Drawing.Size(757, 294);
             this.tabGiangVien.Text = "Giảng viên";
+            // 
+            // userControlGiangVien
+            // 
+            this.userControlGiangVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlGiangVien.Location = new System.Drawing.Point(0, 0);
+            this.userControlGiangVien.Name = "userControlGiangVien";
+            this.userControlGiangVien.Size = new System.Drawing.Size(757, 294);
+            this.userControlGiangVien.TabIndex = 0;
             // 
             // tabMonHoc
             // 
@@ -206,14 +224,6 @@
             this.txtStripNhom.Size = new System.Drawing.Size(57, 15);
             this.txtStripNhom.Text = "Chức vụ: ";
             // 
-            // userControlLop1
-            // 
-            this.userControlLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlLop.Location = new System.Drawing.Point(0, 0);
-            this.userControlLop.Name = "userControlLop1";
-            this.userControlLop.Size = new System.Drawing.Size(757, 294);
-            this.userControlLop.TabIndex = 0;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,8 +241,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
+            this.tabLop.ResumeLayout(false);
             this.tabSinhVien.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.tabGiangVien.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -260,7 +271,8 @@
         private DevExpress.XtraTab.XtraTabPage tabLopTinChi;
         private DevExpress.XtraTab.XtraTabPage tabDiem;
         private UserControlSinhVien userControlSinhVien;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage tabLop;
         private Component.UserControlLop userControlLop;
+        private Component.UserControlGiangVien userControlGiangVien;
     }
 }

@@ -57,6 +57,12 @@
   <ItemGroup>
     <Compile Include="BatLoi\SqlMessageResolver.cs" />
     <Compile Include="BatLoi\Validation.cs" />
+    <Compile Include="Component\UserControlGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\UserControlGiangVien.Designer.cs">
+      <DependentUpon>UserControlGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\UserControlLop.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Component\UserControlSinhVien.Designer.cs">
       <DependentUpon>UserControlSinhVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component\UserControlGiangVien.resx">
+      <DependentUpon>UserControlGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\UserControlLop.resx">
       <DependentUpon>UserControlLop.cs</DependentUpon>
     </EmbeddedResource>

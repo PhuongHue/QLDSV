@@ -306,6 +306,7 @@
             this.tenLopTextEdit.Location = new System.Drawing.Point(263, 38);
             this.tenLopTextEdit.MenuManager = this.barManager;
             this.tenLopTextEdit.Name = "tenLopTextEdit";
+            this.tenLopTextEdit.Properties.AccessibleName = "Tên lớp";
             this.tenLopTextEdit.Size = new System.Drawing.Size(100, 20);
             this.tenLopTextEdit.TabIndex = 25;
             this.tenLopTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextEdit_Validating);
@@ -316,6 +317,7 @@
             this.maLopTextEdit.Location = new System.Drawing.Point(72, 38);
             this.maLopTextEdit.MenuManager = this.barManager;
             this.maLopTextEdit.Name = "maLopTextEdit";
+            this.maLopTextEdit.Properties.AccessibleName = "Mã lớp";
             this.maLopTextEdit.Size = new System.Drawing.Size(100, 20);
             this.maLopTextEdit.TabIndex = 24;
             this.maLopTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.codeTextEdit_Validating);

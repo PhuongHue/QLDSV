@@ -22,6 +22,7 @@ namespace QLDSV
         public void UserControlSinhVien_Load()
         {
             lopBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+            chuyenNganhBindingSource.DataSource = Program.QLDSVDataSetKhoa;
         }
         private void Layout_Setting(string status)
         {
@@ -53,17 +54,21 @@ namespace QLDSV
             maSVTextEdit.ErrorText = "";
             hoTextEdit.ErrorText = "";
             tenTextEdit.ErrorText = "";
-            maCNTextEdit.ErrorText = "";
             diaChiTextEdit.ErrorText = "";
         }
-        private bool HasErrorSinhVien()
+        private string AllErrorSinhVien()
         {
-            if (maSVTextEdit.ErrorText != "") return true;
-            if (hoTextEdit.ErrorText != "") return true;
-            if (tenTextEdit.ErrorText != "") return true;
-            if (maCNTextEdit.ErrorText != "") return true;
-            if (diaChiTextEdit.ErrorText != "") return true;
-            return false;
+            string errors = "";
+            maSVTextEdit.Focus();
+            hoTextEdit.Focus();
+            tenTextEdit.Focus();
+            diaChiTextEdit.Focus();
+            btnOkSinhVien.Focus();
+            if (maSVTextEdit.ErrorText != "") errors += maSVTextEdit.ErrorText + "\n";
+            if (hoTextEdit.ErrorText != "") errors += hoTextEdit.ErrorText + "\n";
+            if (tenTextEdit.ErrorText != "") errors += tenTextEdit.ErrorText + "\n";
+            if (diaChiTextEdit.ErrorText != "") errors += diaChiTextEdit.ErrorText + "\n";
+            return errors;
         }
         private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -89,22 +94,30 @@ namespace QLDSV
             Layout_Setting("edit");
         }
 
+        private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.UpdateAll();
+        }
+
+        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.FillAllTable();
+        }
+
         private void btnOkSinhVien_Click(object sender, EventArgs e)
         {
-            hoTextEdit.Focus();
-            tenTextEdit.Focus();
-            maCNTextEdit.Focus();
-            maSVTextEdit.Focus();
-            diaChiTextEdit.Focus();
-            if (HasErrorSinhVien())
+            string errors = AllErrorSinhVien();
+            if (errors != "")
             {
-                MessageBox.Show("Lỗi nhập liệu, vui lòng sửa lại");
+                MessageBox.Show(errors,"Lỗi nhập liệu, vui lòng sửa lại");
                 return;
             }
             ((DataRowView)sinhVienBindingSource.Current)["Phai"] = comboBoxPhai.SelectedItem.ToString();
+            ((DataRowView)sinhVienBindingSource.Current)["MaCN"] = ((DataRowView)chuyenNganhBindingSource.Current)["MaCN"];
             try
             {
                 sinhVienBindingSource.EndEdit();
+                Layout_Setting("normal");
             }
             catch (ConstraintException ex)
             {
@@ -119,16 +132,6 @@ namespace QLDSV
             ClearErrorSinhVien();
             Layout_Setting("normal");
 
-        }
-
-        private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Program.UpdateAll();
-        }
-
-        private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Program.FillAllTable();
         }
 
         private void codeTextEdit_Validating(object sender, CancelEventArgs e)
@@ -150,7 +153,5 @@ namespace QLDSV
                 textEdit.ErrorText = error;
             }
         }
-
-
     }
 }

@@ -43,10 +43,11 @@
             this.qLDSVDataSetKhoa = new QLDSV.QLDSVDataSetKhoa();
             this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxSinhVien = new System.Windows.Forms.GroupBox();
+            this.chuyenNganhComboBox = new System.Windows.Forms.ComboBox();
+            this.chuyenNganhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnOkSinhVien = new System.Windows.Forms.Button();
             this.btnSinhVienHuy = new System.Windows.Forms.Button();
             this.comboBoxPhai = new System.Windows.Forms.ComboBox();
-            this.maCNTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nienKhoaSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.ngaySinhDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -95,7 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
             this.groupBoxSinhVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maCNTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chuyenNganhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nienKhoaSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -141,7 +142,7 @@
             // phaiLabel
             // 
             phaiLabel.AutoSize = true;
-            phaiLabel.Location = new System.Drawing.Point(481, 23);
+            phaiLabel.Location = new System.Drawing.Point(476, 23);
             phaiLabel.Name = "phaiLabel";
             phaiLabel.Size = new System.Drawing.Size(31, 13);
             phaiLabel.TabIndex = 6;
@@ -179,9 +180,9 @@
             maCNLabel.AutoSize = true;
             maCNLabel.Location = new System.Drawing.Point(591, 24);
             maCNLabel.Name = "maCNLabel";
-            maCNLabel.Size = new System.Drawing.Size(42, 13);
+            maCNLabel.Size = new System.Drawing.Size(77, 13);
             maCNLabel.TabIndex = 16;
-            maCNLabel.Text = "Ma CN:";
+            maCNLabel.Text = "Chuyên ngành";
             // 
             // maLopLabel
             // 
@@ -213,11 +214,11 @@
             // 
             // groupBoxSinhVien
             // 
+            this.groupBoxSinhVien.Controls.Add(this.chuyenNganhComboBox);
             this.groupBoxSinhVien.Controls.Add(this.btnOkSinhVien);
             this.groupBoxSinhVien.Controls.Add(this.btnSinhVienHuy);
             this.groupBoxSinhVien.Controls.Add(this.comboBoxPhai);
             this.groupBoxSinhVien.Controls.Add(maCNLabel);
-            this.groupBoxSinhVien.Controls.Add(this.maCNTextEdit);
             this.groupBoxSinhVien.Controls.Add(nienKhoaLabel);
             this.groupBoxSinhVien.Controls.Add(this.nienKhoaSpinEdit);
             this.groupBoxSinhVien.Controls.Add(ngaySinhLabel);
@@ -233,11 +234,27 @@
             this.groupBoxSinhVien.Controls.Add(hoLabel);
             this.groupBoxSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxSinhVien.Enabled = false;
-            this.groupBoxSinhVien.Location = new System.Drawing.Point(0, 583);
+            this.groupBoxSinhVien.Location = new System.Drawing.Point(0, 351);
             this.groupBoxSinhVien.Name = "groupBoxSinhVien";
-            this.groupBoxSinhVien.Size = new System.Drawing.Size(1067, 103);
+            this.groupBoxSinhVien.Size = new System.Drawing.Size(1086, 103);
             this.groupBoxSinhVien.TabIndex = 7;
             this.groupBoxSinhVien.TabStop = false;
+            // 
+            // chuyenNganhComboBox
+            // 
+            this.chuyenNganhComboBox.DataSource = this.chuyenNganhBindingSource;
+            this.chuyenNganhComboBox.DisplayMember = "TenCN";
+            this.chuyenNganhComboBox.FormattingEnabled = true;
+            this.chuyenNganhComboBox.Location = new System.Drawing.Point(674, 21);
+            this.chuyenNganhComboBox.Name = "chuyenNganhComboBox";
+            this.chuyenNganhComboBox.Size = new System.Drawing.Size(138, 21);
+            this.chuyenNganhComboBox.TabIndex = 21;
+            this.chuyenNganhComboBox.ValueMember = "MaCN";
+            // 
+            // chuyenNganhBindingSource
+            // 
+            this.chuyenNganhBindingSource.DataMember = "ChuyenNganh";
+            this.chuyenNganhBindingSource.DataSource = this.qLDSVDataSetKhoa;
             // 
             // btnOkSinhVien
             // 
@@ -261,25 +278,16 @@
             // 
             // comboBoxPhai
             // 
+            this.comboBoxPhai.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sinhVienBindingSource, "Phai", true));
             this.comboBoxPhai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPhai.FormattingEnabled = true;
             this.comboBoxPhai.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBoxPhai.Location = new System.Drawing.Point(513, 21);
+            this.comboBoxPhai.Location = new System.Drawing.Point(513, 20);
             this.comboBoxPhai.Name = "comboBoxPhai";
             this.comboBoxPhai.Size = new System.Drawing.Size(60, 21);
             this.comboBoxPhai.TabIndex = 20;
-            // 
-            // maCNTextEdit
-            // 
-            this.maCNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sinhVienBindingSource, "MaCN", true));
-            this.maCNTextEdit.Location = new System.Drawing.Point(639, 21);
-            this.maCNTextEdit.Name = "maCNTextEdit";
-            this.maCNTextEdit.Properties.AccessibleName = "Mã CN";
-            this.maCNTextEdit.Size = new System.Drawing.Size(90, 20);
-            this.maCNTextEdit.TabIndex = 17;
-            this.maCNTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.codeTextEdit_Validating);
             // 
             // sinhVienBindingSource
             // 
@@ -297,6 +305,7 @@
             0});
             this.nienKhoaSpinEdit.Location = new System.Drawing.Point(406, 54);
             this.nienKhoaSpinEdit.Name = "nienKhoaSpinEdit";
+            this.nienKhoaSpinEdit.Properties.AccessibleName = "Niên khóa";
             this.nienKhoaSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nienKhoaSpinEdit.Properties.IsFloatValue = false;
@@ -320,6 +329,7 @@
             this.ngaySinhDateEdit.EditValue = null;
             this.ngaySinhDateEdit.Location = new System.Drawing.Point(233, 55);
             this.ngaySinhDateEdit.Name = "ngaySinhDateEdit";
+            this.ngaySinhDateEdit.Properties.AccessibleName = "Ngày sinh";
             this.ngaySinhDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ngaySinhDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -332,6 +342,7 @@
             this.diaChiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sinhVienBindingSource, "DiaChi", true));
             this.diaChiTextEdit.Location = new System.Drawing.Point(51, 55);
             this.diaChiTextEdit.Name = "diaChiTextEdit";
+            this.diaChiTextEdit.Properties.AccessibleName = "Địa chỉ";
             this.diaChiTextEdit.Size = new System.Drawing.Size(100, 20);
             this.diaChiTextEdit.TabIndex = 9;
             // 
@@ -350,6 +361,7 @@
             this.tenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sinhVienBindingSource, "Ten", true));
             this.tenTextEdit.Location = new System.Drawing.Point(370, 20);
             this.tenTextEdit.Name = "tenTextEdit";
+            this.tenTextEdit.Properties.AccessibleName = "Tên";
             this.tenTextEdit.Size = new System.Drawing.Size(100, 20);
             this.tenTextEdit.TabIndex = 6;
             this.tenTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextEdit_Validating);
@@ -359,6 +371,7 @@
             this.hoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sinhVienBindingSource, "Ho", true));
             this.hoTextEdit.Location = new System.Drawing.Point(190, 20);
             this.hoTextEdit.Name = "hoTextEdit";
+            this.hoTextEdit.Properties.AccessibleName = "Họ";
             this.hoTextEdit.Size = new System.Drawing.Size(139, 20);
             this.hoTextEdit.TabIndex = 4;
             this.hoTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextEdit_Validating);
@@ -372,7 +385,7 @@
             this.sinhVienGridControl.Location = new System.Drawing.Point(3, 121);
             this.sinhVienGridControl.MainView = this.gridViewSinhVien;
             this.sinhVienGridControl.Name = "sinhVienGridControl";
-            this.sinhVienGridControl.Size = new System.Drawing.Size(1061, 469);
+            this.sinhVienGridControl.Size = new System.Drawing.Size(1080, 237);
             this.sinhVienGridControl.TabIndex = 8;
             this.sinhVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSinhVien});
@@ -590,15 +603,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager;
-            this.barDockControlTop.Size = new System.Drawing.Size(1067, 47);
+            this.barDockControlTop.Size = new System.Drawing.Size(1086, 47);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 686);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 454);
             this.barDockControlBottom.Manager = this.barManager;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1067, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1086, 0);
             // 
             // barDockControlLeft
             // 
@@ -606,15 +619,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
             this.barDockControlLeft.Manager = this.barManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 639);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 407);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1067, 47);
+            this.barDockControlRight.Location = new System.Drawing.Point(1086, 47);
             this.barDockControlRight.Manager = this.barManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 639);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
             // 
             // groupBoxLop
             // 
@@ -627,7 +640,7 @@
             this.groupBoxLop.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxLop.Location = new System.Drawing.Point(0, 47);
             this.groupBoxLop.Name = "groupBoxLop";
-            this.groupBoxLop.Size = new System.Drawing.Size(1067, 68);
+            this.groupBoxLop.Size = new System.Drawing.Size(1086, 68);
             this.groupBoxLop.TabIndex = 15;
             this.groupBoxLop.TabStop = false;
             // 
@@ -648,12 +661,12 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UserControlSinhVien";
-            this.Size = new System.Drawing.Size(1067, 686);
+            this.Size = new System.Drawing.Size(1086, 454);
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
             this.groupBoxSinhVien.ResumeLayout(false);
             this.groupBoxSinhVien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maCNTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chuyenNganhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nienKhoaSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ngaySinhDateEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -692,7 +705,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaLop1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaCN;
         private System.Windows.Forms.GroupBox groupBoxSinhVien;
-        private DevExpress.XtraEditors.TextEdit maCNTextEdit;
         private DevExpress.XtraEditors.SpinEdit nienKhoaSpinEdit;
         private DevExpress.XtraEditors.DateEdit ngaySinhDateEdit;
         private DevExpress.XtraEditors.TextEdit diaChiTextEdit;
@@ -717,5 +729,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtnRefresh;
         private System.Windows.Forms.BindingSource dangKyBindingSource;
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
+        private System.Windows.Forms.ComboBox chuyenNganhComboBox;
+        private System.Windows.Forms.BindingSource chuyenNganhBindingSource;
     }
 }
