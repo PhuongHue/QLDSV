@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatLoi\BindingSourceMessage.cs" />
     <Compile Include="BatLoi\SqlMessageResolver.cs" />
     <Compile Include="BatLoi\Validation.cs" />
     <Compile Include="Component\UserControlGiangVien.cs">
@@ -68,6 +69,18 @@
     </Compile>
     <Compile Include="Component\UserControlLop.Designer.cs">
       <DependentUpon>UserControlLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UserControlLopTC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\UserControlLopTC.Designer.cs">
+      <DependentUpon>UserControlLopTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UserControlMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Component\UserControlMonHoc.Designer.cs">
+      <DependentUpon>UserControlMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
@@ -105,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\UserControlLop.resx">
       <DependentUpon>UserControlLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UserControlLopTC.resx">
+      <DependentUpon>UserControlLopTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UserControlMonHoc.resx">
+      <DependentUpon>UserControlMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>

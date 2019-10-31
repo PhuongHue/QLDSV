@@ -309,6 +309,7 @@
             // 
             this.colMaGV.FieldName = "MaGV";
             this.colMaGV.Name = "colMaGV";
+            this.colMaGV.OptionsColumn.AllowEdit = false;
             this.colMaGV.Visible = true;
             this.colMaGV.VisibleIndex = 0;
             // 
@@ -316,6 +317,7 @@
             // 
             this.colHo.FieldName = "Ho";
             this.colHo.Name = "colHo";
+            this.colHo.OptionsColumn.AllowEdit = false;
             this.colHo.Visible = true;
             this.colHo.VisibleIndex = 1;
             // 
@@ -323,6 +325,7 @@
             // 
             this.colTen.FieldName = "Ten";
             this.colTen.Name = "colTen";
+            this.colTen.OptionsColumn.AllowEdit = false;
             this.colTen.Visible = true;
             this.colTen.VisibleIndex = 2;
             // 
@@ -330,6 +333,7 @@
             // 
             this.colHocVi.FieldName = "HocVi";
             this.colHocVi.Name = "colHocVi";
+            this.colHocVi.OptionsColumn.AllowEdit = false;
             this.colHocVi.Visible = true;
             this.colHocVi.VisibleIndex = 3;
             // 
@@ -337,6 +341,7 @@
             // 
             this.colHocHam.FieldName = "HocHam";
             this.colHocHam.Name = "colHocHam";
+            this.colHocHam.OptionsColumn.AllowEdit = false;
             this.colHocHam.Visible = true;
             this.colHocHam.VisibleIndex = 4;
             // 
@@ -344,6 +349,7 @@
             // 
             this.colChuyenMon.FieldName = "ChuyenMon";
             this.colChuyenMon.Name = "colChuyenMon";
+            this.colChuyenMon.OptionsColumn.AllowEdit = false;
             this.colChuyenMon.Visible = true;
             this.colChuyenMon.VisibleIndex = 5;
             // 
@@ -360,6 +366,7 @@
             // 
             this.colChucVu.FieldName = "ChucVu";
             this.colChucVu.Name = "colChucVu";
+            this.colChucVu.OptionsColumn.AllowEdit = false;
             this.colChucVu.Visible = true;
             this.colChucVu.VisibleIndex = 7;
             // 
@@ -382,6 +389,7 @@
             this.groupBoxGiangVien.Controls.Add(maGVLabel);
             this.groupBoxGiangVien.Controls.Add(this.maGVTextEdit);
             this.groupBoxGiangVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBoxGiangVien.Enabled = false;
             this.groupBoxGiangVien.Location = new System.Drawing.Point(0, 351);
             this.groupBoxGiangVien.Name = "groupBoxGiangVien";
             this.groupBoxGiangVien.Size = new System.Drawing.Size(881, 92);
@@ -413,6 +421,7 @@
             this.chucVuTextEdit.Location = new System.Drawing.Point(245, 56);
             this.chucVuTextEdit.MenuManager = this.barManager;
             this.chucVuTextEdit.Name = "chucVuTextEdit";
+            this.chucVuTextEdit.Properties.AccessibleName = "Chức vụ";
             this.chucVuTextEdit.Size = new System.Drawing.Size(100, 20);
             this.chucVuTextEdit.TabIndex = 13;
             this.chucVuTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.commonTextEdit_Validating);
@@ -422,6 +431,7 @@
             this.chuyenMonTextEdit.Location = new System.Drawing.Point(83, 56);
             this.chuyenMonTextEdit.MenuManager = this.barManager;
             this.chuyenMonTextEdit.Name = "chuyenMonTextEdit";
+            this.chuyenMonTextEdit.Properties.AccessibleName = "Chuyên môn";
             this.chuyenMonTextEdit.Size = new System.Drawing.Size(100, 20);
             this.chuyenMonTextEdit.TabIndex = 11;
             this.chuyenMonTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.commonTextEdit_Validating);
@@ -431,6 +441,7 @@
             this.hocHamTextEdit.Location = new System.Drawing.Point(647, 14);
             this.hocHamTextEdit.MenuManager = this.barManager;
             this.hocHamTextEdit.Name = "hocHamTextEdit";
+            this.hocHamTextEdit.Properties.AccessibleName = "Học hàm";
             this.hocHamTextEdit.Size = new System.Drawing.Size(100, 20);
             this.hocHamTextEdit.TabIndex = 9;
             this.hocHamTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.commonTextEdit_Validating);
@@ -440,6 +451,7 @@
             this.hocViTextEdit.Location = new System.Drawing.Point(482, 14);
             this.hocViTextEdit.MenuManager = this.barManager;
             this.hocViTextEdit.Name = "hocViTextEdit";
+            this.hocViTextEdit.Properties.AccessibleName = "Học vị";
             this.hocViTextEdit.Size = new System.Drawing.Size(100, 20);
             this.hocViTextEdit.TabIndex = 7;
             this.hocViTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.commonTextEdit_Validating);
@@ -449,6 +461,7 @@
             this.tenTextEdit.Location = new System.Drawing.Point(330, 14);
             this.tenTextEdit.MenuManager = this.barManager;
             this.tenTextEdit.Name = "tenTextEdit";
+            this.tenTextEdit.Properties.AccessibleName = "Tên";
             this.tenTextEdit.Size = new System.Drawing.Size(100, 20);
             this.tenTextEdit.TabIndex = 5;
             this.tenTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextEdit_Validating);
@@ -458,6 +471,7 @@
             this.hoTextEdit.Location = new System.Drawing.Point(189, 14);
             this.hoTextEdit.MenuManager = this.barManager;
             this.hoTextEdit.Name = "hoTextEdit";
+            this.hoTextEdit.Properties.AccessibleName = "Họ";
             this.hoTextEdit.Size = new System.Drawing.Size(100, 20);
             this.hoTextEdit.TabIndex = 3;
             this.hoTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextEdit_Validating);
@@ -467,6 +481,7 @@
             this.maGVTextEdit.Location = new System.Drawing.Point(53, 14);
             this.maGVTextEdit.MenuManager = this.barManager;
             this.maGVTextEdit.Name = "maGVTextEdit";
+            this.maGVTextEdit.Properties.AccessibleName = "Mã GV";
             this.maGVTextEdit.Size = new System.Drawing.Size(100, 20);
             this.maGVTextEdit.TabIndex = 1;
             this.maGVTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.codeTextEdit_Validating);

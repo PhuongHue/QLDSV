@@ -56,8 +56,8 @@
             this.maKhoaTextBox = new System.Windows.Forms.TextBox();
             this.tenLopTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.maLopTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.btnOkSinhVien = new System.Windows.Forms.Button();
-            this.btnSinhVienHuy = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             maLopLabel = new System.Windows.Forms.Label();
             tenLopLabel = new System.Windows.Forms.Label();
@@ -281,8 +281,8 @@
             this.groupBoxLop.Controls.Add(this.tenLopTextEdit);
             this.groupBoxLop.Controls.Add(maLopLabel);
             this.groupBoxLop.Controls.Add(this.maLopTextEdit);
-            this.groupBoxLop.Controls.Add(this.btnOkSinhVien);
-            this.groupBoxLop.Controls.Add(this.btnSinhVienHuy);
+            this.groupBoxLop.Controls.Add(this.btnOk);
+            this.groupBoxLop.Controls.Add(this.btnHuy);
             this.groupBoxLop.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxLop.Enabled = false;
             this.groupBoxLop.Location = new System.Drawing.Point(0, 469);
@@ -322,25 +322,25 @@
             this.maLopTextEdit.TabIndex = 24;
             this.maLopTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.codeTextEdit_Validating);
             // 
-            // btnOkSinhVien
+            // btnOk
             // 
-            this.btnOkSinhVien.Location = new System.Drawing.Point(589, 36);
-            this.btnOkSinhVien.Name = "btnOkSinhVien";
-            this.btnOkSinhVien.Size = new System.Drawing.Size(75, 23);
-            this.btnOkSinhVien.TabIndex = 22;
-            this.btnOkSinhVien.Text = "OK";
-            this.btnOkSinhVien.UseVisualStyleBackColor = true;
-            this.btnOkSinhVien.Click += new System.EventHandler(this.btnOkLop_Click);
+            this.btnOk.Location = new System.Drawing.Point(589, 36);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 22;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // btnSinhVienHuy
+            // btnHuy
             // 
-            this.btnSinhVienHuy.Location = new System.Drawing.Point(670, 36);
-            this.btnSinhVienHuy.Name = "btnSinhVienHuy";
-            this.btnSinhVienHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnSinhVienHuy.TabIndex = 23;
-            this.btnSinhVienHuy.Text = "Hủy";
-            this.btnSinhVienHuy.UseVisualStyleBackColor = true;
-            this.btnSinhVienHuy.Click += new System.EventHandler(this.btnSinhVienHuy_Click);
+            this.btnHuy.Location = new System.Drawing.Point(670, 36);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 23;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // sinhVienBindingSource
             // 
@@ -396,8 +396,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaLop;
         private DevExpress.XtraGrid.Columns.GridColumn colTenLop;
         private DevExpress.XtraGrid.Columns.GridColumn colMaKhoa;
-        private System.Windows.Forms.Button btnOkSinhVien;
-        private System.Windows.Forms.Button btnSinhVienHuy;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.TextBox maKhoaTextBox;
         private System.Windows.Forms.BindingSource khoaBindingSource;
         private DevExpress.XtraEditors.TextEdit tenLopTextEdit;

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.qLDSVDataSetMaster = new QLDSV.QLDSVDataSetMaster();
-            this.v_DSPMBindingSource = new System.Windows.Forms.BindingSource();
+            this.v_DSPMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_DSPMTableAdapter = new QLDSV.QLDSVDataSetMasterTableAdapters.V_DSPMTableAdapter();
             this.tableAdapterManager = new QLDSV.QLDSVDataSetMasterTableAdapters.TableAdapterManager();
             this.v_DSPMComboBox = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,7 @@
             this.tabGiangVien = new DevExpress.XtraTab.XtraTabPage();
             this.userControlGiangVien = new QLDSV.Component.UserControlGiangVien();
             this.tabMonHoc = new DevExpress.XtraTab.XtraTabPage();
+            this.userControlMonHoc = new QLDSV.Component.UserControlMonHoc();
             this.tabLopTinChi = new DevExpress.XtraTab.XtraTabPage();
             this.tabDiem = new DevExpress.XtraTab.XtraTabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -49,6 +51,7 @@
             this.txtStripMaGV = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripNhom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.userControlLopTC = new QLDSV.Component.UserControlLopTC();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
@@ -56,6 +59,8 @@
             this.tabLop.SuspendLayout();
             this.tabSinhVien.SuspendLayout();
             this.tabGiangVien.SuspendLayout();
+            this.tabMonHoc.SuspendLayout();
+            this.tabLopTinChi.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +114,7 @@
             this.xtraTabControlMain.Location = new System.Drawing.Point(0, 33);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.SelectedTabPage = this.tabLop;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(763, 322);
+            this.xtraTabControlMain.Size = new System.Drawing.Size(879, 396);
             this.xtraTabControlMain.TabIndex = 3;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.tabLop,
@@ -123,7 +128,7 @@
             // 
             this.tabLop.Controls.Add(this.userControlLop);
             this.tabLop.Name = "tabLop";
-            this.tabLop.Size = new System.Drawing.Size(757, 294);
+            this.tabLop.Size = new System.Drawing.Size(873, 368);
             this.tabLop.Text = "Lớp";
             // 
             // userControlLop
@@ -131,14 +136,14 @@
             this.userControlLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlLop.Location = new System.Drawing.Point(0, 0);
             this.userControlLop.Name = "userControlLop";
-            this.userControlLop.Size = new System.Drawing.Size(757, 294);
+            this.userControlLop.Size = new System.Drawing.Size(873, 368);
             this.userControlLop.TabIndex = 0;
             // 
             // tabSinhVien
             // 
             this.tabSinhVien.Controls.Add(this.userControlSinhVien);
             this.tabSinhVien.Name = "tabSinhVien";
-            this.tabSinhVien.Size = new System.Drawing.Size(757, 294);
+            this.tabSinhVien.Size = new System.Drawing.Size(873, 368);
             this.tabSinhVien.Text = "Sinh viên";
             // 
             // userControlSinhVien
@@ -146,14 +151,14 @@
             this.userControlSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlSinhVien.Location = new System.Drawing.Point(0, 0);
             this.userControlSinhVien.Name = "userControlSinhVien";
-            this.userControlSinhVien.Size = new System.Drawing.Size(757, 294);
+            this.userControlSinhVien.Size = new System.Drawing.Size(873, 368);
             this.userControlSinhVien.TabIndex = 0;
             // 
             // tabGiangVien
             // 
             this.tabGiangVien.Controls.Add(this.userControlGiangVien);
             this.tabGiangVien.Name = "tabGiangVien";
-            this.tabGiangVien.Size = new System.Drawing.Size(757, 294);
+            this.tabGiangVien.Size = new System.Drawing.Size(873, 368);
             this.tabGiangVien.Text = "Giảng viên";
             // 
             // userControlGiangVien
@@ -161,25 +166,35 @@
             this.userControlGiangVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.userControlGiangVien.Location = new System.Drawing.Point(0, 0);
             this.userControlGiangVien.Name = "userControlGiangVien";
-            this.userControlGiangVien.Size = new System.Drawing.Size(757, 294);
+            this.userControlGiangVien.Size = new System.Drawing.Size(873, 368);
             this.userControlGiangVien.TabIndex = 0;
             // 
             // tabMonHoc
             // 
+            this.tabMonHoc.Controls.Add(this.userControlMonHoc);
             this.tabMonHoc.Name = "tabMonHoc";
-            this.tabMonHoc.Size = new System.Drawing.Size(757, 294);
+            this.tabMonHoc.Size = new System.Drawing.Size(873, 368);
             this.tabMonHoc.Text = "Môn học";
+            // 
+            // userControlMonHoc
+            // 
+            this.userControlMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlMonHoc.Location = new System.Drawing.Point(0, 0);
+            this.userControlMonHoc.Name = "userControlMonHoc";
+            this.userControlMonHoc.Size = new System.Drawing.Size(873, 368);
+            this.userControlMonHoc.TabIndex = 0;
             // 
             // tabLopTinChi
             // 
+            this.tabLopTinChi.Controls.Add(this.userControlLopTC);
             this.tabLopTinChi.Name = "tabLopTinChi";
-            this.tabLopTinChi.Size = new System.Drawing.Size(757, 294);
+            this.tabLopTinChi.Size = new System.Drawing.Size(873, 368);
             this.tabLopTinChi.Text = "Lớp tín chỉ";
             // 
             // tabDiem
             // 
             this.tabDiem.Name = "tabDiem";
-            this.tabDiem.Size = new System.Drawing.Size(757, 294);
+            this.tabDiem.Size = new System.Drawing.Size(873, 368);
             this.tabDiem.Text = "Nhập Điểm";
             // 
             // statusStrip1
@@ -189,9 +204,9 @@
             this.txtStripMaGV,
             this.txtStripHoTen,
             this.txtStripNhom});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 355);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 429);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(763, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(879, 25);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -224,11 +239,19 @@
             this.txtStripNhom.Size = new System.Drawing.Size(57, 15);
             this.txtStripNhom.Text = "Chức vụ: ";
             // 
+            // userControlLopTC
+            // 
+            this.userControlLopTC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlLopTC.Location = new System.Drawing.Point(0, 0);
+            this.userControlLopTC.Name = "userControlLopTC";
+            this.userControlLopTC.Size = new System.Drawing.Size(873, 368);
+            this.userControlLopTC.TabIndex = 0;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 380);
+            this.ClientSize = new System.Drawing.Size(879, 454);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.xtraTabControlMain);
             this.Controls.Add(this.label1);
@@ -244,6 +267,8 @@
             this.tabLop.ResumeLayout(false);
             this.tabSinhVien.ResumeLayout(false);
             this.tabGiangVien.ResumeLayout(false);
+            this.tabMonHoc.ResumeLayout(false);
+            this.tabLopTinChi.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -274,5 +299,7 @@
         private DevExpress.XtraTab.XtraTabPage tabLop;
         private Component.UserControlLop userControlLop;
         private Component.UserControlGiangVien userControlGiangVien;
+        private Component.UserControlMonHoc userControlMonHoc;
+        private Component.UserControlLopTC userControlLopTC;
     }
 }

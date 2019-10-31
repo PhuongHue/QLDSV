@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BatLoi;
+using QLDSV.BatLoi;
 
 namespace QLDSV.Component
 {
@@ -61,7 +62,7 @@ namespace QLDSV.Component
             string error = "";
             maLopTextEdit.Focus();
             tenLopTextEdit.Focus();
-            btnOkSinhVien.Focus();
+            btnOk.Focus();
             if (maLopTextEdit.ErrorText != "") error += maLopTextEdit.ErrorText + "\n";
             if (tenLopTextEdit.ErrorText != "") error += tenLopTextEdit.ErrorText + "\n";
             return error;
@@ -101,7 +102,7 @@ namespace QLDSV.Component
             Program.FillAllTable();
         }
 
-        private void btnOkLop_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
             string errors = AllErrorLop();
             if (errors != "")
@@ -109,11 +110,20 @@ namespace QLDSV.Component
                 MessageBox.Show(errors, "Lỗi nhập liệu, vui lòng sửa lại");
                 return;
             }
-            lopBindingSource.EndEdit();
-            Layout_Setting("normal");
+            try
+            {
+                lopBindingSource.EndEdit();
+                Layout_Setting("normal");
+            }
+            catch (ConstraintException ex)
+            {
+                MessageBox.Show(BindingSourceMessage.ToMessage(ex, "Lớp"));
+            }
+
+            
         }
 
-        private void btnSinhVienHuy_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             lopBindingSource.CancelEdit();
             ClearErrorLop();

@@ -42,6 +42,8 @@ namespace QLDSV
             userControlLop.UserControlLop_Load();
             userControlSinhVien.UserControlSinhVien_Load();
             userControlGiangVien.UserControlGiangVien_Load();
+            userControlMonHoc.UserControlMonHoc_Load();
+            userControlLopTC.UserControlLopTC_Load();
         }
 
         private void v_DSPMComboBox_SelectedIndexChanged(object sender, EventArgs e)
