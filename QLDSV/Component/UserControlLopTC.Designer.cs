@@ -42,13 +42,13 @@
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barSubItemThem = new DevExpress.XtraBars.BarSubItem();
             this.barbtnThemLopTC = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnThemCTLopTC = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnThemLichHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItemXoa = new DevExpress.XtraBars.BarSubItem();
             this.barbtnXoaLopTC = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnXoaCTLopTC = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnXoaLichHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItemSua = new DevExpress.XtraBars.BarSubItem();
             this.barbtnSuaLopTC = new DevExpress.XtraBars.BarButtonItem();
-            this.barbtnSuaCTLopTC = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtnSuaLichHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -86,18 +86,18 @@
             this.hocKySpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.maLopTCTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.cTLopTCBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cTLopTCGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridViewCTLopTC = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lichHocGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridViewLichHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaLopTC1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colThu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBuoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxCTLopTC = new System.Windows.Forms.GroupBox();
-            this.buoiTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.thuTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.groupBoxLichHoc = new System.Windows.Forms.GroupBox();
+            this.btnOKLichHoc = new System.Windows.Forms.Button();
+            this.btnHuyLichHoc = new System.Windows.Forms.Button();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxBuoi = new System.Windows.Forms.ComboBox();
+            this.comboBoxThu = new System.Windows.Forms.ComboBox();
             maLopTCLabel = new System.Windows.Forms.Label();
             hocKyLabel = new System.Windows.Forms.Label();
             namLabel = new System.Windows.Forms.Label();
@@ -122,12 +122,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.hocKySpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maLopTCTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTLopTCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTLopTCGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCTLopTC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lichHocGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLichHoc)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
-            this.groupBoxCTLopTC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buoiTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thuTextEdit.Properties)).BeginInit();
+            this.groupBoxLichHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dangKyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,7 +195,7 @@
             // buoiLabel
             // 
             buoiLabel.AutoSize = true;
-            buoiLabel.Location = new System.Drawing.Point(147, 17);
+            buoiLabel.Location = new System.Drawing.Point(190, 17);
             buoiLabel.Name = "buoiLabel";
             buoiLabel.Size = new System.Drawing.Size(31, 13);
             buoiLabel.TabIndex = 28;
@@ -219,11 +217,11 @@
             this.barBtnRefresh,
             this.barSubItemSua,
             this.barbtnSuaLopTC,
-            this.barbtnSuaCTLopTC,
+            this.barbtnSuaLichHoc,
             this.barSubItemThem,
-            this.barbtnThemCTLopTC,
+            this.barbtnThemLichHoc,
             this.barSubItemXoa,
-            this.barbtnXoaCTLopTC});
+            this.barbtnXoaLichHoc});
             this.barManager.MaxItemId = 12;
             // 
             // bar1
@@ -247,7 +245,7 @@
             this.barSubItemThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItemThem.ImageOptions.Image")));
             this.barSubItemThem.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnThemLopTC, DevExpress.XtraBars.BarItemPaintStyle.CaptionInMenu),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnThemCTLopTC)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnThemLichHoc)});
             this.barSubItemThem.Name = "barSubItemThem";
             // 
             // barbtnThemLopTC
@@ -258,12 +256,12 @@
             this.barbtnThemLopTC.Name = "barbtnThemLopTC";
             this.barbtnThemLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnThemLopTC_ItemClick);
             // 
-            // barbtnThemCTLopTC
+            // barbtnThemLichHoc
             // 
-            this.barbtnThemCTLopTC.Caption = "Thêm CT lớp TC";
-            this.barbtnThemCTLopTC.Id = 9;
-            this.barbtnThemCTLopTC.Name = "barbtnThemCTLopTC";
-            this.barbtnThemCTLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnThemCTLopTC_ItemClick);
+            this.barbtnThemLichHoc.Caption = "Thêm lịch học";
+            this.barbtnThemLichHoc.Id = 9;
+            this.barbtnThemLichHoc.Name = "barbtnThemLichHoc";
+            this.barbtnThemLichHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnThemLichHoc_ItemClick);
             // 
             // barSubItemXoa
             // 
@@ -272,7 +270,7 @@
             this.barSubItemXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItemXoa.ImageOptions.Image")));
             this.barSubItemXoa.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnXoaLopTC, DevExpress.XtraBars.BarItemPaintStyle.Caption),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnXoaCTLopTC)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnXoaLichHoc)});
             this.barSubItemXoa.Name = "barSubItemXoa";
             // 
             // barbtnXoaLopTC
@@ -283,11 +281,11 @@
             this.barbtnXoaLopTC.Name = "barbtnXoaLopTC";
             this.barbtnXoaLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnXoaLopTC_ItemClick);
             // 
-            // barbtnXoaCTLopTC
+            // barbtnXoaLichHoc
             // 
-            this.barbtnXoaCTLopTC.Caption = "Xóa CT lớp TC";
-            this.barbtnXoaCTLopTC.Id = 11;
-            this.barbtnXoaCTLopTC.Name = "barbtnXoaCTLopTC";
+            this.barbtnXoaLichHoc.Caption = "Xóa lịch học";
+            this.barbtnXoaLichHoc.Id = 11;
+            this.barbtnXoaLichHoc.Name = "barbtnXoaLichHoc";
             // 
             // barSubItemSua
             // 
@@ -297,22 +295,22 @@
             this.barSubItemSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItemSua.ImageOptions.LargeImage")));
             this.barSubItemSua.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barbtnSuaLopTC),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnSuaCTLopTC)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barbtnSuaLichHoc)});
             this.barSubItemSua.Name = "barSubItemSua";
             // 
             // barbtnSuaLopTC
             // 
-            this.barbtnSuaLopTC.Caption = "Lớp tín chỉ";
+            this.barbtnSuaLopTC.Caption = "Sửa lớp tín chỉ";
             this.barbtnSuaLopTC.Id = 6;
             this.barbtnSuaLopTC.Name = "barbtnSuaLopTC";
             this.barbtnSuaLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSuaLopTC_ItemClick);
             // 
-            // barbtnSuaCTLopTC
+            // barbtnSuaLichHoc
             // 
-            this.barbtnSuaCTLopTC.Caption = "CT lớp tín chỉ";
-            this.barbtnSuaCTLopTC.Id = 7;
-            this.barbtnSuaCTLopTC.Name = "barbtnSuaCTLopTC";
-            this.barbtnSuaCTLopTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSuaCTLopTC_ItemClick);
+            this.barbtnSuaLichHoc.Caption = "Sửa lịch học";
+            this.barbtnSuaLichHoc.Id = 7;
+            this.barbtnSuaLichHoc.Name = "barbtnSuaLichHoc";
+            this.barbtnSuaLichHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnSuaLichHoc_ItemClick);
             // 
             // barbtnLuu
             // 
@@ -384,7 +382,7 @@
             this.lopTinChiGridControl.MainView = this.gridViewLopTC;
             this.lopTinChiGridControl.MenuManager = this.barManager;
             this.lopTinChiGridControl.Name = "lopTinChiGridControl";
-            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 320);
+            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 328);
             this.lopTinChiGridControl.TabIndex = 5;
             this.lopTinChiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLopTC});
@@ -516,7 +514,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 405);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 415);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -691,28 +689,28 @@
             this.cTLopTCBindingSource.DataMember = "FK_LopTC_CTLopTC";
             this.cTLopTCBindingSource.DataSource = this.lopTinChiBindingSource;
             // 
-            // cTLopTCGridControl
+            // lichHocGridControl
             // 
-            this.cTLopTCGridControl.DataSource = this.cTLopTCBindingSource;
-            this.cTLopTCGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cTLopTCGridControl.Location = new System.Drawing.Point(3, 329);
-            this.cTLopTCGridControl.MainView = this.gridViewCTLopTC;
-            this.cTLopTCGridControl.MenuManager = this.barManager;
-            this.cTLopTCGridControl.Name = "cTLopTCGridControl";
-            this.cTLopTCGridControl.Size = new System.Drawing.Size(958, 70);
-            this.cTLopTCGridControl.TabIndex = 6;
-            this.cTLopTCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewCTLopTC});
+            this.lichHocGridControl.DataSource = this.cTLopTCBindingSource;
+            this.lichHocGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lichHocGridControl.Location = new System.Drawing.Point(3, 337);
+            this.lichHocGridControl.MainView = this.gridViewLichHoc;
+            this.lichHocGridControl.MenuManager = this.barManager;
+            this.lichHocGridControl.Name = "lichHocGridControl";
+            this.lichHocGridControl.Size = new System.Drawing.Size(958, 72);
+            this.lichHocGridControl.TabIndex = 6;
+            this.lichHocGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewLichHoc});
             // 
-            // gridViewCTLopTC
+            // gridViewLichHoc
             // 
-            this.gridViewCTLopTC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewLichHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaLopTC1,
             this.colThu,
             this.colBuoi});
-            this.gridViewCTLopTC.GridControl = this.cTLopTCGridControl;
-            this.gridViewCTLopTC.Name = "gridViewCTLopTC";
-            this.gridViewCTLopTC.OptionsView.ShowGroupPanel = false;
+            this.gridViewLichHoc.GridControl = this.lichHocGridControl;
+            this.gridViewLichHoc.Name = "gridViewLichHoc";
+            this.gridViewLichHoc.OptionsView.ShowGroupPanel = false;
             // 
             // colMaLopTC1
             // 
@@ -744,9 +742,9 @@
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.Controls.Add(this.lopTinChiGridControl, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.groupBoxCTLopTC, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.groupBoxLichHoc, 0, 3);
             this.tableLayoutPanel.Controls.Add(this.groupBoxLopTC, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.cTLopTCGridControl, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.lichHocGridControl, 0, 1);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 47);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -758,64 +756,73 @@
             this.tableLayoutPanel.Size = new System.Drawing.Size(964, 549);
             this.tableLayoutPanel.TabIndex = 7;
             // 
-            // groupBoxCTLopTC
+            // groupBoxLichHoc
             // 
-            this.groupBoxCTLopTC.Controls.Add(buoiLabel);
-            this.groupBoxCTLopTC.Controls.Add(this.buoiTextEdit);
-            this.groupBoxCTLopTC.Controls.Add(thuLabel);
-            this.groupBoxCTLopTC.Controls.Add(this.thuTextEdit);
-            this.groupBoxCTLopTC.Controls.Add(this.button1);
-            this.groupBoxCTLopTC.Controls.Add(this.button2);
-            this.groupBoxCTLopTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxCTLopTC.Location = new System.Drawing.Point(3, 490);
-            this.groupBoxCTLopTC.Name = "groupBoxCTLopTC";
-            this.groupBoxCTLopTC.Size = new System.Drawing.Size(958, 56);
-            this.groupBoxCTLopTC.TabIndex = 8;
-            this.groupBoxCTLopTC.TabStop = false;
-            this.groupBoxCTLopTC.Visible = false;
+            this.groupBoxLichHoc.Controls.Add(this.comboBoxThu);
+            this.groupBoxLichHoc.Controls.Add(this.comboBoxBuoi);
+            this.groupBoxLichHoc.Controls.Add(buoiLabel);
+            this.groupBoxLichHoc.Controls.Add(thuLabel);
+            this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
+            this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
+            this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 500);
+            this.groupBoxLichHoc.Name = "groupBoxLichHoc";
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 46);
+            this.groupBoxLichHoc.TabIndex = 8;
+            this.groupBoxLichHoc.TabStop = false;
+            this.groupBoxLichHoc.Visible = false;
             // 
-            // buoiTextEdit
+            // btnOKLichHoc
             // 
-            this.buoiTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cTLopTCBindingSource, "Buoi", true));
-            this.buoiTextEdit.Location = new System.Drawing.Point(184, 14);
-            this.buoiTextEdit.MenuManager = this.barManager;
-            this.buoiTextEdit.Name = "buoiTextEdit";
-            this.buoiTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.buoiTextEdit.TabIndex = 29;
+            this.btnOKLichHoc.Location = new System.Drawing.Point(754, 12);
+            this.btnOKLichHoc.Name = "btnOKLichHoc";
+            this.btnOKLichHoc.Size = new System.Drawing.Size(75, 23);
+            this.btnOKLichHoc.TabIndex = 26;
+            this.btnOKLichHoc.Text = "OK";
+            this.btnOKLichHoc.UseVisualStyleBackColor = true;
+            this.btnOKLichHoc.Click += new System.EventHandler(this.btnOkLichHoc_Click);
             // 
-            // thuTextEdit
+            // btnHuyLichHoc
             // 
-            this.thuTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cTLopTCBindingSource, "Thu", true));
-            this.thuTextEdit.Location = new System.Drawing.Point(41, 14);
-            this.thuTextEdit.MenuManager = this.barManager;
-            this.thuTextEdit.Name = "thuTextEdit";
-            this.thuTextEdit.Size = new System.Drawing.Size(100, 20);
-            this.thuTextEdit.TabIndex = 28;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(754, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnOkCTLopTC_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(835, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Hủy";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnHuyCTLopTC_Click);
+            this.btnHuyLichHoc.Location = new System.Drawing.Point(835, 12);
+            this.btnHuyLichHoc.Name = "btnHuyLichHoc";
+            this.btnHuyLichHoc.Size = new System.Drawing.Size(75, 23);
+            this.btnHuyLichHoc.TabIndex = 27;
+            this.btnHuyLichHoc.Text = "Hủy";
+            this.btnHuyLichHoc.UseVisualStyleBackColor = true;
+            this.btnHuyLichHoc.Click += new System.EventHandler(this.btnHuyLichHoc_Click);
             // 
             // dangKyBindingSource
             // 
             this.dangKyBindingSource.DataMember = "FK_DangKy_LopTinChi";
             this.dangKyBindingSource.DataSource = this.lopTinChiBindingSource;
+            // 
+            // comboBoxBuoi
+            // 
+            this.comboBoxBuoi.FormattingEnabled = true;
+            this.comboBoxBuoi.Items.AddRange(new object[] {
+            "Sáng",
+            "Chiều",
+            "Tối"});
+            this.comboBoxBuoi.Location = new System.Drawing.Point(225, 14);
+            this.comboBoxBuoi.Name = "comboBoxBuoi";
+            this.comboBoxBuoi.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBuoi.TabIndex = 29;
+            // 
+            // comboBoxThu
+            // 
+            this.comboBoxThu.FormattingEnabled = true;
+            this.comboBoxThu.Items.AddRange(new object[] {
+            "Hai",
+            "Ba",
+            "Tư",
+            "Năm",
+            "Sáu",
+            "Bảy"});
+            this.comboBoxThu.Location = new System.Drawing.Point(41, 14);
+            this.comboBoxThu.Name = "comboBoxThu";
+            this.comboBoxThu.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxThu.TabIndex = 29;
             // 
             // UserControlLopTC
             // 
@@ -845,13 +852,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.hocKySpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maLopTCTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cTLopTCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cTLopTCGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCTLopTC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lichHocGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewLichHoc)).EndInit();
             this.tableLayoutPanel.ResumeLayout(false);
-            this.groupBoxCTLopTC.ResumeLayout(false);
-            this.groupBoxCTLopTC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buoiTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thuTextEdit.Properties)).EndInit();
+            this.groupBoxLichHoc.ResumeLayout(false);
+            this.groupBoxLichHoc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dangKyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -901,24 +906,24 @@
         private System.Windows.Forms.Button btnOkLopTC;
         private System.Windows.Forms.Button btnHuyLopTC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private DevExpress.XtraGrid.GridControl cTLopTCGridControl;
+        private DevExpress.XtraGrid.GridControl lichHocGridControl;
         private System.Windows.Forms.BindingSource cTLopTCBindingSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCTLopTC;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewLichHoc;
         private DevExpress.XtraGrid.Columns.GridColumn colMaLopTC1;
         private DevExpress.XtraGrid.Columns.GridColumn colThu;
         private DevExpress.XtraGrid.Columns.GridColumn colBuoi;
-        private System.Windows.Forms.GroupBox groupBoxCTLopTC;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBoxLichHoc;
+        private System.Windows.Forms.Button btnOKLichHoc;
+        private System.Windows.Forms.Button btnHuyLichHoc;
         private System.Windows.Forms.BindingSource dangKyBindingSource;
-        private DevExpress.XtraEditors.TextEdit buoiTextEdit;
-        private DevExpress.XtraEditors.TextEdit thuTextEdit;
         private DevExpress.XtraBars.BarSubItem barSubItemSua;
         private DevExpress.XtraBars.BarButtonItem barbtnSuaLopTC;
-        private DevExpress.XtraBars.BarButtonItem barbtnSuaCTLopTC;
+        private DevExpress.XtraBars.BarButtonItem barbtnSuaLichHoc;
         private DevExpress.XtraBars.BarSubItem barSubItemThem;
-        private DevExpress.XtraBars.BarButtonItem barbtnThemCTLopTC;
+        private DevExpress.XtraBars.BarButtonItem barbtnThemLichHoc;
         private DevExpress.XtraBars.BarSubItem barSubItemXoa;
-        private DevExpress.XtraBars.BarButtonItem barbtnXoaCTLopTC;
+        private DevExpress.XtraBars.BarButtonItem barbtnXoaLichHoc;
+        private System.Windows.Forms.ComboBox comboBoxThu;
+        private System.Windows.Forms.ComboBox comboBoxBuoi;
     }
 }

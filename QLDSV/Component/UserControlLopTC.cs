@@ -25,6 +25,8 @@ namespace QLDSV.Component
             khoaBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             giangVienBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             monHocBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+            comboBoxThu.SelectedItem = comboBoxThu.Items[0];
+            comboBoxBuoi.SelectedItem = comboBoxBuoi.Items[0];
         }
 
         private void Layout_Setting(string status)
@@ -32,7 +34,7 @@ namespace QLDSV.Component
             if (status == "editLopTC")
             {
                 lopTinChiGridControl.Enabled = false;
-                cTLopTCGridControl.Enabled = false;
+                lichHocGridControl.Enabled = false;
                 groupBoxLopTC.Visible = true;
                 barSubItemThem.Enabled = false;
                 barSubItemXoa.Enabled = false;
@@ -43,8 +45,8 @@ namespace QLDSV.Component
             if (status == "editCTLopTC")
             {
                 lopTinChiGridControl.Enabled = false;
-                cTLopTCGridControl.Enabled = false;
-                groupBoxCTLopTC.Visible = true;
+                lichHocGridControl.Enabled = false;
+                groupBoxLichHoc.Visible = true;
                 barSubItemThem.Enabled = false;
                 barSubItemXoa.Enabled = false;
                 barSubItemSua.Enabled = false;
@@ -54,9 +56,9 @@ namespace QLDSV.Component
             else if (status == "normal")
             {
                 lopTinChiGridControl.Enabled = true;
-                cTLopTCGridControl.Enabled = true;
+                lichHocGridControl.Enabled = true;
                 groupBoxLopTC.Visible = false;
-                groupBoxCTLopTC.Visible = false;
+                groupBoxLichHoc.Visible = false;
                 barSubItemThem.Enabled = true;
                 barSubItemXoa.Enabled = true;
                 barSubItemSua.Enabled = true;
@@ -71,8 +73,7 @@ namespace QLDSV.Component
         }
         private void ClearErrorCTLopTC()
         {
-            thuTextEdit.ErrorText = "";
-            buoiTextEdit.ErrorText = "";
+
         }
         private string AllErrorLop()
         {
@@ -90,13 +91,12 @@ namespace QLDSV.Component
             lopTinChiBindingSource.AddNew();
         }
 
-        private void barbtnThemCTLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtnThemLichHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Layout_Setting("editLopTC");
-            thuTextEdit.Focus();
+            Layout_Setting("editCTLopTC");
+            comboBoxThu.Focus();
             cTLopTCBindingSource.AddNew();
         }
-
         private void barbtnXoaLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (dangKyBindingSource.Count > 0)
@@ -114,7 +114,7 @@ namespace QLDSV.Component
             Layout_Setting("editLopTC");
         }
 
-        private void barbtnSuaCTLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtnSuaLichHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("editCTLopTC");
         }
@@ -141,7 +141,7 @@ namespace QLDSV.Component
             {
                 ((DataRowView)lopTinChiBindingSource.Current)["MaGV"] = ((DataRowView)giangVienBindingSource.Current)["MaGV"];
                 ((DataRowView)lopTinChiBindingSource.Current)["MaMH"] = ((DataRowView)monHocBindingSource.Current)["MaMH"];
-                ((DataRowView)lopTinChiBindingSource.Current)["SLDaDangKy"] = 0; 
+                ((DataRowView)lopTinChiBindingSource.Current)["SLDaDangKy"] = 0;
                 lopTinChiBindingSource.EndEdit();
                 Layout_Setting("normal");
             }
@@ -158,14 +158,10 @@ namespace QLDSV.Component
             Layout_Setting("normal");
         }
 
-        private void btnOkCTLopTC_Click(object sender, EventArgs e)
+        private void btnOkLichHoc_Click(object sender, EventArgs e)
         {
-            string errors = AllErrorLop();
-            if (errors != "")
-            {
-                MessageBox.Show(errors, "Lỗi nhập liệu, vui lòng sửa lại");
-                return;
-            }
+            ((DataRowView)cTLopTCBindingSource.Current)["Thu"] = comboBoxThu.SelectedItem.ToString();
+            ((DataRowView)cTLopTCBindingSource.Current)["Buoi"] = comboBoxBuoi.SelectedItem.ToString();
             try
             {
                 cTLopTCBindingSource.EndEdit();
@@ -177,7 +173,7 @@ namespace QLDSV.Component
             }
         }
 
-        private void btnHuyCTLopTC_Click(object sender, EventArgs e)
+        private void btnHuyLichHoc_Click(object sender, EventArgs e)
         {
             cTLopTCBindingSource.CancelEdit();
             ClearErrorCTLopTC();
