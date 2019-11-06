@@ -44,6 +44,8 @@ namespace QLDSV
             userControlGiangVien.UserControlGiangVien_Load();
             userControlMonHoc.UserControlMonHoc_Load();
             userControlLopTC.UserControlLopTC_Load();
+            userControlNhapDiem.UserControlNhapDiem_Load();
+            userControlTaiKhoan.UserControlTaiKhoan_Load();
         }
 
         private void v_DSPMComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace QLDSV
                 Program.KetNoiDB.Server = v_DSPMComboBox.SelectedValue.ToString();
                 Program.KetNoiDB.NewSqlConnection();
                 Program.KetNoiDB.ConnectServer();
-                //MessageBox.Show(Program.KetNoiDB.ConnectServer(),"Đổi Server");
+                //MessageBox.Show(Program.KetNoiDB.ConnectServer(), "Đổi Server");
                 Program.ChangeConnection(Program.KetNoiDB.SqlConnection);
                 Program.FillAllTable();
                 DSPM_ComboBox_Index = v_DSPMComboBox.SelectedIndex;
@@ -62,9 +64,8 @@ namespace QLDSV
                 MessageBox.Show(ex.Message, "Đổi Server");
                 v_DSPMComboBox.SelectedIndex = DSPM_ComboBox_Index;
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException ex)
             {
-
             }
         }
     }

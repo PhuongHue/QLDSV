@@ -16,7 +16,7 @@ namespace QLDSV
     {
         public static bool running = true;
         public static KetNoiDB KetNoiDB = new KetNoiDB();
-        public static QLDSVDataSetKhoa QLDSVDataSetKhoa = new QLDSVDataSetKhoa(); 
+        public static QLDSVDataSetKhoa QLDSVDataSetKhoa = new QLDSVDataSetKhoa();
         public static TableAdapterManager TableAdapterManager = new TableAdapterManager()
         {
             KhoaTableAdapter = new KhoaTableAdapter(),
@@ -30,9 +30,9 @@ namespace QLDSV
             LopTinChiTableAdapter = new LopTinChiTableAdapter(),
             CTLopTCTableAdapter = new CTLopTCTableAdapter(),
             KeHoachGiangTableAdapter = new KeHoachGiangTableAdapter(),
-            DangKyTableAdapter = new DangKyTableAdapter()
+            DangKyTableAdapter = new DangKyTableAdapter(),
         };
-
+        public static SP_List_LOGINTableAdapter SP_List_LOGINTableAdapter = new SP_List_LOGINTableAdapter();
         public static void FillAllTable()
         {
             try
@@ -78,8 +78,20 @@ namespace QLDSV
         {
             //Tables
             TableAdapterManager.Connection = sqlConnection;
+            TableAdapterManager.KhoaTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.GiangVienTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.CTTruongKhoaTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.MonHocTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.KhaNangDayTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.LopTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.ChuyenNganhTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.SinhVienTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.LopTinChiTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.CTLopTCTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.KeHoachGiangTableAdapter.Connection = sqlConnection;
+            TableAdapterManager.DangKyTableAdapter.Connection = sqlConnection;
             //SPs
-
+            SP_List_LOGINTableAdapter.Connection = sqlConnection;
         }
         private static void InitServices()
         {
@@ -98,8 +110,8 @@ namespace QLDSV
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            
-            
+
+
             while (running)
             {
                 Application.Run(new FormDangNhap());

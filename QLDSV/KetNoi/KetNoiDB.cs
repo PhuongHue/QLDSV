@@ -46,16 +46,25 @@ namespace KetNoi
         }
         public SqlDataReader ExcuteSP(String SPName)
         {
-            string sql = $"DECLARE @return_value int EXEC @return_value = {SPName} SELECT 'Return Value' = @return_value";
-            SqlCommand sqlCommand = new SqlCommand(sql, this.SqlConnection);
-            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-            sqlDataReader.Read();
-            return sqlDataReader;
+            try
+            {
+                string sql = $"DECLARE @return_value int EXEC @return_value = {SPName} SELECT 'Return Value' = @return_value";
+                SqlCommand sqlCommand = new SqlCommand(sql, this.SqlConnection);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                sqlDataReader.Read();
+                return sqlDataReader;
+            }
+            catch (SqlException)
+            {
+
+                throw;
+            }
         }
         public string ConnectServer()
         {
             try
             {
+                if (SqlConnection.State == System.Data.ConnectionState.Open) SqlConnection.Close();
                 this.SqlConnection.Open();
                 this.GetLoginInfomation();
                 this.Ready = true;

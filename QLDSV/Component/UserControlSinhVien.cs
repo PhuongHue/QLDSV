@@ -17,8 +17,7 @@ namespace QLDSV
         public UserControlSinhVien()
         {
             InitializeComponent();
-            comboBoxPhai.SelectedItem = comboBoxPhai.Items[0];
-        }
+        }       
         public void UserControlSinhVien_Load()
         {
             lopBindingSource.DataSource = Program.QLDSVDataSetKhoa;

@@ -45,13 +45,16 @@
             this.tabMonHoc = new DevExpress.XtraTab.XtraTabPage();
             this.userControlMonHoc = new QLDSV.Component.UserControlMonHoc();
             this.tabLopTinChi = new DevExpress.XtraTab.XtraTabPage();
+            this.userControlLopTC = new QLDSV.Component.UserControlLopTC();
             this.tabDiem = new DevExpress.XtraTab.XtraTabPage();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.userControlNhapDiem = new QLDSV.Component.UserControlNhapDiem();
+            this.tabTaiKhoan = new DevExpress.XtraTab.XtraTabPage();
+            this.statusStripLoginInfo = new System.Windows.Forms.StatusStrip();
             this.txtStripLoginName = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripMaGV = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripNhom = new System.Windows.Forms.ToolStripStatusLabel();
-            this.userControlLopTC = new QLDSV.Component.UserControlLopTC();
+            this.userControlTaiKhoan = new QLDSV.Component.UserControlTaiKhoan();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
@@ -61,7 +64,9 @@
             this.tabGiangVien.SuspendLayout();
             this.tabMonHoc.SuspendLayout();
             this.tabLopTinChi.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.tabDiem.SuspendLayout();
+            this.tabTaiKhoan.SuspendLayout();
+            this.statusStripLoginInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // qLDSVDataSetMaster
@@ -122,7 +127,8 @@
             this.tabGiangVien,
             this.tabMonHoc,
             this.tabLopTinChi,
-            this.tabDiem});
+            this.tabDiem,
+            this.tabTaiKhoan});
             // 
             // tabLop
             // 
@@ -191,24 +197,48 @@
             this.tabLopTinChi.Size = new System.Drawing.Size(873, 368);
             this.tabLopTinChi.Text = "Lớp tín chỉ";
             // 
+            // userControlLopTC
+            // 
+            this.userControlLopTC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlLopTC.Location = new System.Drawing.Point(0, 0);
+            this.userControlLopTC.Name = "userControlLopTC";
+            this.userControlLopTC.Size = new System.Drawing.Size(873, 368);
+            this.userControlLopTC.TabIndex = 0;
+            // 
             // tabDiem
             // 
+            this.tabDiem.Controls.Add(this.userControlNhapDiem);
             this.tabDiem.Name = "tabDiem";
             this.tabDiem.Size = new System.Drawing.Size(873, 368);
             this.tabDiem.Text = "Nhập Điểm";
             // 
-            // statusStrip1
+            // userControlNhapDiem
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.userControlNhapDiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlNhapDiem.Location = new System.Drawing.Point(0, 0);
+            this.userControlNhapDiem.Name = "userControlNhapDiem";
+            this.userControlNhapDiem.Size = new System.Drawing.Size(873, 368);
+            this.userControlNhapDiem.TabIndex = 0;
+            // 
+            // tabTaiKhoan
+            // 
+            this.tabTaiKhoan.Controls.Add(this.userControlTaiKhoan);
+            this.tabTaiKhoan.Name = "tabTaiKhoan";
+            this.tabTaiKhoan.Size = new System.Drawing.Size(873, 368);
+            this.tabTaiKhoan.Text = "Tài khoản";
+            // 
+            // statusStripLoginInfo
+            // 
+            this.statusStripLoginInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.txtStripLoginName,
             this.txtStripMaGV,
             this.txtStripHoTen,
             this.txtStripNhom});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 429);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(879, 25);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStripLoginInfo.Location = new System.Drawing.Point(0, 429);
+            this.statusStripLoginInfo.Name = "statusStripLoginInfo";
+            this.statusStripLoginInfo.Size = new System.Drawing.Size(879, 25);
+            this.statusStripLoginInfo.TabIndex = 4;
+            this.statusStripLoginInfo.Text = "statusStrip1";
             // 
             // txtStripLoginName
             // 
@@ -239,20 +269,20 @@
             this.txtStripNhom.Size = new System.Drawing.Size(57, 15);
             this.txtStripNhom.Text = "Chức vụ: ";
             // 
-            // userControlLopTC
+            // userControlTaiKhoan1
             // 
-            this.userControlLopTC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlLopTC.Location = new System.Drawing.Point(0, 0);
-            this.userControlLopTC.Name = "userControlLopTC";
-            this.userControlLopTC.Size = new System.Drawing.Size(873, 368);
-            this.userControlLopTC.TabIndex = 0;
+            this.userControlTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.userControlTaiKhoan.Name = "userControlTaiKhoan1";
+            this.userControlTaiKhoan.Size = new System.Drawing.Size(873, 368);
+            this.userControlTaiKhoan.TabIndex = 0;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 454);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusStripLoginInfo);
             this.Controls.Add(this.xtraTabControlMain);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.v_DSPMComboBox);
@@ -269,8 +299,10 @@
             this.tabGiangVien.ResumeLayout(false);
             this.tabMonHoc.ResumeLayout(false);
             this.tabLopTinChi.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.tabDiem.ResumeLayout(false);
+            this.tabTaiKhoan.ResumeLayout(false);
+            this.statusStripLoginInfo.ResumeLayout(false);
+            this.statusStripLoginInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,7 +318,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
         private DevExpress.XtraTab.XtraTabPage tabSinhVien;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStripLoginInfo;
         private System.Windows.Forms.ToolStripStatusLabel txtStripLoginName;
         private System.Windows.Forms.ToolStripStatusLabel txtStripHoTen;
         private System.Windows.Forms.ToolStripStatusLabel txtStripNhom;
@@ -301,5 +333,8 @@
         private Component.UserControlGiangVien userControlGiangVien;
         private Component.UserControlMonHoc userControlMonHoc;
         private Component.UserControlLopTC userControlLopTC;
+        private Component.UserControlNhapDiem userControlNhapDiem;
+        private DevExpress.XtraTab.XtraTabPage tabTaiKhoan;
+        private Component.UserControlTaiKhoan userControlTaiKhoan;
     }
 }
