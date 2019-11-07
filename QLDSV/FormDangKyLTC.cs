@@ -17,5 +17,17 @@ namespace QLDSV
         {
             InitializeComponent();
         }
+
+        private void FormDangKyLTC_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qLDSVDataSetKhoa.SP_List_SV_DangKy_LopTC' table. You can move, or remove it, as needed.
+            this.sP_List_SV_DangKy_LopTCTableAdapter.Fill(this.qLDSVDataSetKhoa.SP_List_SV_DangKy_LopTC);
+
+        }
+
+        private void repositoryItemCheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
