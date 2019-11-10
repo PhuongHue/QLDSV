@@ -9,15 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BatLoi;
+using System.Data.SqlClient;
 
 namespace QLDSV
 {
     public partial class UserControlSinhVien : DevExpress.XtraEditors.XtraUserControl
     {
+        bool IsAddNew = false;
         public UserControlSinhVien()
         {
             InitializeComponent();
-        }       
+        }
         public void UserControlSinhVien_Load()
         {
             lopBindingSource.DataSource = Program.QLDSVDataSetKhoa;
@@ -72,6 +74,7 @@ namespace QLDSV
         private void barbtnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("edit");
+            IsAddNew = true;
             maSVTextEdit.Focus();
             sinhVienBindingSource.AddNew();
         }
@@ -108,7 +111,7 @@ namespace QLDSV
             string errors = AllErrorSinhVien();
             if (errors != "")
             {
-                MessageBox.Show(errors,"Lỗi nhập liệu, vui lòng sửa lại");
+                MessageBox.Show(errors, "Lỗi nhập liệu, vui lòng sửa lại");
                 return;
             }
             ((DataRowView)sinhVienBindingSource.Current)["Phai"] = comboBoxPhai.SelectedItem.ToString();
@@ -117,6 +120,17 @@ namespace QLDSV
             {
                 sinhVienBindingSource.EndEdit();
                 Layout_Setting("normal");
+                if (IsAddNew == false) return;
+                string MaSV = (string)((DataRowView)sinhVienBindingSource.Current)["MaSV"];
+                string cmdString = $"SP_TaoLogin @LGNAME = N'{MaSV}', @PASS = NULL, @USERNAME = N'{MaSV}', @ROLE = N'SinhVien'";
+                try
+                {
+                    var resReader = Program.KetNoiDB.ExcuteSP(cmdString);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message + " Code: " + ex.Number);
+                }
             }
             catch (ConstraintException ex)
             {
@@ -130,7 +144,7 @@ namespace QLDSV
             sinhVienBindingSource.CancelEdit();
             ClearErrorSinhVien();
             Layout_Setting("normal");
-
+            IsAddNew = false;
         }
 
         private void codeTextEdit_Validating(object sender, CancelEventArgs e)

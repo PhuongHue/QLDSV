@@ -70,5 +70,11 @@ namespace BatLoi
             }
             return "";
         }
+        public static string ValidateScore(String name, double? point)
+        {
+            if (point == null) return $"{name} không được rỗng";
+            if (point < 0 || point > 10) return $"{name} không được nhỏ hơn 0 hoặc lớn hơn 10";
+            return "";
+        }
     }
 }

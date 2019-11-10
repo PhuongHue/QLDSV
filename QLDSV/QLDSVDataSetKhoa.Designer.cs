@@ -5391,6 +5391,8 @@ namespace QLDSV {
             
             private global::System.Data.DataColumn columnSLDaDangKy;
             
+            private global::System.Data.DataColumn columnselected;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SP_List_SV_DangKy_LopTCDataTable() {
@@ -5522,6 +5524,14 @@ namespace QLDSV {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn selectedColumn {
+                get {
+                    return this.columnselected;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5557,7 +5567,7 @@ namespace QLDSV {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SP_List_SV_DangKy_LopTCRow AddSP_List_SV_DangKy_LopTCRow(string MaLopTC, string MaGV, string Ho, string Ten, string MaMH, string TenMH, int HocKy, int Nam, int SoSvMax, int SoSvMin, int Nhom, int SLDaDangKy) {
+            public SP_List_SV_DangKy_LopTCRow AddSP_List_SV_DangKy_LopTCRow(string MaLopTC, string MaGV, string Ho, string Ten, string MaMH, string TenMH, int HocKy, int Nam, int SoSvMax, int SoSvMin, int Nhom, int SLDaDangKy, bool selected) {
                 SP_List_SV_DangKy_LopTCRow rowSP_List_SV_DangKy_LopTCRow = ((SP_List_SV_DangKy_LopTCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaLopTC,
@@ -5571,7 +5581,8 @@ namespace QLDSV {
                         SoSvMax,
                         SoSvMin,
                         Nhom,
-                        SLDaDangKy};
+                        SLDaDangKy,
+                        selected};
                 rowSP_List_SV_DangKy_LopTCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_List_SV_DangKy_LopTCRow);
                 return rowSP_List_SV_DangKy_LopTCRow;
@@ -5613,6 +5624,7 @@ namespace QLDSV {
                 this.columnSoSvMin = base.Columns["SoSvMin"];
                 this.columnNhom = base.Columns["Nhom"];
                 this.columnSLDaDangKy = base.Columns["SLDaDangKy"];
+                this.columnselected = base.Columns["selected"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5642,6 +5654,8 @@ namespace QLDSV {
                 base.Columns.Add(this.columnNhom);
                 this.columnSLDaDangKy = new global::System.Data.DataColumn("SLDaDangKy", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSLDaDangKy);
+                this.columnselected = new global::System.Data.DataColumn("selected", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnselected);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaLopTC}, true));
                 this.columnMaLopTC.AllowDBNull = false;
@@ -7464,6 +7478,34 @@ namespace QLDSV {
                 set {
                     this[this.tableSP_List_SV_DangKy_LopTC.SLDaDangKyColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool selected {
+                get {
+                    try {
+                        return ((bool)(this[this.tableSP_List_SV_DangKy_LopTC.selectedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'selected\' in table \'SP_List_SV_DangKy_LopTC\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_List_SV_DangKy_LopTC.selectedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsselectedNull() {
+                return this.IsNull(this.tableSP_List_SV_DangKy_LopTC.selectedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetselectedNull() {
+                this[this.tableSP_List_SV_DangKy_LopTC.selectedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13306,6 +13348,7 @@ SELECT MaSV, Ho, Ten, Phai, DiaChi, NgaySinh, NienKhoa, MaLop, MaCN FROM SinhVie
             tableMapping.ColumnMappings.Add("SoSvMin", "SoSvMin");
             tableMapping.ColumnMappings.Add("Nhom", "Nhom");
             tableMapping.ColumnMappings.Add("SLDaDangKy", "SLDaDangKy");
+            tableMapping.ColumnMappings.Add("selected", "selected");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13325,14 +13368,28 @@ SELECT MaSV, Ho, Ten, Phai, DiaChi, NgaySinh, NienKhoa, MaLop, MaCN FROM SinhVie
             this._commandCollection[0].CommandText = "dbo.SP_List_SV_DangKy_LopTC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nam", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HocKy", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTCDataTable dataTable) {
+        public virtual int Fill(QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTCDataTable dataTable, global::System.Nullable<int> Nam, global::System.Nullable<int> HocKy) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Nam.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Nam.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((HocKy.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HocKy.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -13344,8 +13401,20 @@ SELECT MaSV, Ho, Ten, Phai, DiaChi, NgaySinh, NienKhoa, MaLop, MaCN FROM SinhVie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTCDataTable GetData() {
+        public virtual QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTCDataTable GetData(global::System.Nullable<int> Nam, global::System.Nullable<int> HocKy) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Nam.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Nam.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((HocKy.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(HocKy.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTCDataTable dataTable = new QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

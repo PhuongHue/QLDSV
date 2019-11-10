@@ -33,6 +33,7 @@ namespace QLDSV
             DangKyTableAdapter = new DangKyTableAdapter(),
         };
         public static SP_List_LOGINTableAdapter SP_List_LOGINTableAdapter = new SP_List_LOGINTableAdapter();
+        public static SP_List_SV_DangKy_LopTCTableAdapter SP_List_SV_DangKy_LopTCTableAdapter = new SP_List_SV_DangKy_LopTCTableAdapter();
         public static void FillAllTable()
         {
             try
@@ -92,11 +93,14 @@ namespace QLDSV
             TableAdapterManager.DangKyTableAdapter.Connection = sqlConnection;
             //SPs
             SP_List_LOGINTableAdapter.Connection = sqlConnection;
+            SP_List_SV_DangKy_LopTCTableAdapter.Connection = sqlConnection;
         }
         private static void InitServices()
         {
             TableAdapterManager.Connection = KetNoiDB.SqlConnection;
             FillAllTable();
+            SP_List_LOGINTableAdapter.Connection = KetNoiDB.SqlConnection;
+            SP_List_SV_DangKy_LopTCTableAdapter.Connection = KetNoiDB.SqlConnection;
         }
         /// <summary>
         /// The main entry point for the application.
@@ -118,7 +122,8 @@ namespace QLDSV
                 if (KetNoiDB.Ready)
                 {
                     InitServices();
-                    Application.Run(new FormMain());
+                    if (KetNoiDB.GroupId == "SinhVien") Application.Run(new FormDangKyLTC());
+                    else Application.Run(new FormMain());
                 }
             }
         }

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using BatLoi;
 
 namespace QLDSV.Component
 {
@@ -55,10 +57,29 @@ namespace QLDSV.Component
                 ((DataRowView)dangKyBindingSource[postion])["MaSV"] = ((DataRowView)sP_Fill_DiemBindingSource[e.RowHandle])["MaSV"];
                 ((DataRowView)dangKyBindingSource[postion])["MaLopTC"] = searchLookUpEditMaLop.EditValue;
             };
-            ((DataRowView) dangKyBindingSource[postion])["DiemCC"] = (double) ((DataRowView) sP_Fill_DiemBindingSource[e.RowHandle])["DiemCC"];
-            ((DataRowView) dangKyBindingSource[postion])["DiemGK"] = (double) ((DataRowView) sP_Fill_DiemBindingSource[e.RowHandle])["DiemGK"];
-            ((DataRowView) dangKyBindingSource[postion])["DiemCK"] = (double) ((DataRowView) sP_Fill_DiemBindingSource[e.RowHandle])["DiemCK"];
-            if(isNew) dangKyBindingSource.EndEdit();
+            ((DataRowView)dangKyBindingSource[postion])["DiemCC"] = (double)((DataRowView)sP_Fill_DiemBindingSource[e.RowHandle])["DiemCC"];
+            ((DataRowView)dangKyBindingSource[postion])["DiemGK"] = (double)((DataRowView)sP_Fill_DiemBindingSource[e.RowHandle])["DiemGK"];
+            ((DataRowView)dangKyBindingSource[postion])["DiemCK"] = (double)((DataRowView)sP_Fill_DiemBindingSource[e.RowHandle])["DiemCK"];
+            if (isNew) dangKyBindingSource.EndEdit();
+        }
+
+        private void gridViewSP_Fill_Lop_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var view = (GridView)sender;
+            string error ="";
+            switch (e.Column.FieldName)
+            {
+                case "DiemCC":
+                    error = Validation.ValidateScore("Điểm chuyên cần", (Double)e.Value);
+                    break;
+                case "DiemGK":
+                    error = Validation.ValidateScore("Điểm giữa kỳ", (Double)e.Value);
+                    break;
+                case "DiemCK":
+                    error = Validation.ValidateScore("Điểm cuối kỳ", (Double)e.Value);
+                    break;
+            }
+            view.SetColumnError(view.Columns[e.Column.FieldName], error);
         }
     }
 }

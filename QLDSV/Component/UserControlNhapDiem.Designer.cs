@@ -34,6 +34,11 @@
             this.sP_Fill_DiemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_Fill_DiemGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridViewSP_Fill_Lop = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaSV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemCC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemGK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemCK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sP_Fill_DiemTableAdapter = new QLDSV.QLDSVDataSetKhoaTableAdapters.SP_Fill_DiemTableAdapter();
             this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -58,11 +63,6 @@
             this.colNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSLDaDangKy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colMaSV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiemCC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiemGK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiemCK = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_Fill_DiemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_Fill_DiemGridControl)).BeginInit();
@@ -109,7 +109,43 @@
             this.colDiemCK});
             this.gridViewSP_Fill_Lop.GridControl = this.sP_Fill_DiemGridControl;
             this.gridViewSP_Fill_Lop.Name = "gridViewSP_Fill_Lop";
+            this.gridViewSP_Fill_Lop.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewSP_Fill_Lop_CellValueChanged);
             this.gridViewSP_Fill_Lop.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewSP_Fill_Lop_ValidateRow);
+            // 
+            // colMaSV
+            // 
+            this.colMaSV.FieldName = "MaSV";
+            this.colMaSV.Name = "colMaSV";
+            this.colMaSV.Visible = true;
+            this.colMaSV.VisibleIndex = 0;
+            // 
+            // colHoTen
+            // 
+            this.colHoTen.FieldName = "HoTen";
+            this.colHoTen.Name = "colHoTen";
+            this.colHoTen.Visible = true;
+            this.colHoTen.VisibleIndex = 1;
+            // 
+            // colDiemCC
+            // 
+            this.colDiemCC.FieldName = "DiemCC";
+            this.colDiemCC.Name = "colDiemCC";
+            this.colDiemCC.Visible = true;
+            this.colDiemCC.VisibleIndex = 2;
+            // 
+            // colDiemGK
+            // 
+            this.colDiemGK.FieldName = "DiemGK";
+            this.colDiemGK.Name = "colDiemGK";
+            this.colDiemGK.Visible = true;
+            this.colDiemGK.VisibleIndex = 3;
+            // 
+            // colDiemCK
+            // 
+            this.colDiemCK.FieldName = "DiemCK";
+            this.colDiemCK.Name = "colDiemCK";
+            this.colDiemCK.Visible = true;
+            this.colDiemCK.VisibleIndex = 4;
             // 
             // sP_Fill_DiemTableAdapter
             // 
@@ -331,41 +367,6 @@
             this.dangKyBindingSource.AllowNew = true;
             this.dangKyBindingSource.DataMember = "FK_DangKy_LopTinChi";
             this.dangKyBindingSource.DataSource = this.lopTinChiBindingSource;
-            // 
-            // colMaSV
-            // 
-            this.colMaSV.FieldName = "MaSV";
-            this.colMaSV.Name = "colMaSV";
-            this.colMaSV.Visible = true;
-            this.colMaSV.VisibleIndex = 0;
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.FieldName = "HoTen";
-            this.colHoTen.Name = "colHoTen";
-            this.colHoTen.Visible = true;
-            this.colHoTen.VisibleIndex = 1;
-            // 
-            // colDiemCC
-            // 
-            this.colDiemCC.FieldName = "DiemCC";
-            this.colDiemCC.Name = "colDiemCC";
-            this.colDiemCC.Visible = true;
-            this.colDiemCC.VisibleIndex = 2;
-            // 
-            // colDiemGK
-            // 
-            this.colDiemGK.FieldName = "DiemGK";
-            this.colDiemGK.Name = "colDiemGK";
-            this.colDiemGK.Visible = true;
-            this.colDiemGK.VisibleIndex = 3;
-            // 
-            // colDiemCK
-            // 
-            this.colDiemCK.FieldName = "DiemCK";
-            this.colDiemCK.Name = "colDiemCK";
-            this.colDiemCK.Visible = true;
-            this.colDiemCK.VisibleIndex = 4;
             // 
             // UserControlNhapDiem
             // 

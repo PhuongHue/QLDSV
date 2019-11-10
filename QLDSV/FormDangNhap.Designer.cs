@@ -130,7 +130,7 @@
             this.textBoxLoginName.Name = "textBoxLoginName";
             this.textBoxLoginName.Size = new System.Drawing.Size(199, 21);
             this.textBoxLoginName.TabIndex = 7;
-            this.textBoxLoginName.Text = "lvt";
+            this.textBoxLoginName.Text = "a";
             // 
             // textBoxPassword
             // 
@@ -139,13 +139,13 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(199, 21);
             this.textBoxPassword.TabIndex = 7;
-            this.textBoxPassword.Text = "123";
             // 
             // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 319);
+            this.ControlBox = false;
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLoginName);
             this.Controls.Add(this.Thoat);
@@ -155,6 +155,7 @@
             this.Controls.Add(this.Khoa);
             this.Controls.Add(this.v_DSPMComboBox);
             this.Name = "FormDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).EndInit();
