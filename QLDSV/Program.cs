@@ -31,6 +31,7 @@ namespace QLDSV
             CTLopTCTableAdapter = new CTLopTCTableAdapter(),
             KeHoachGiangTableAdapter = new KeHoachGiangTableAdapter(),
             DangKyTableAdapter = new DangKyTableAdapter(),
+            V_NhapDiemTableAdapter = new V_NhapDiemTableAdapter()
         };
         public static SP_List_LOGINTableAdapter SP_List_LOGINTableAdapter = new SP_List_LOGINTableAdapter();
         public static SP_List_SV_DangKy_LopTCTableAdapter SP_List_SV_DangKy_LopTCTableAdapter = new SP_List_SV_DangKy_LopTCTableAdapter();
@@ -51,6 +52,7 @@ namespace QLDSV
                 TableAdapterManager.CTLopTCTableAdapter.Fill(QLDSVDataSetKhoa.CTLopTC);
                 TableAdapterManager.KeHoachGiangTableAdapter.Fill(QLDSVDataSetKhoa.KeHoachGiang);
                 TableAdapterManager.DangKyTableAdapter.Fill(QLDSVDataSetKhoa.DangKy);
+                TableAdapterManager.V_NhapDiemTableAdapter.Fill(QLDSVDataSetKhoa.V_NhapDiem);
             }
             catch (SqlException e)
             {
@@ -114,7 +116,6 @@ namespace QLDSV
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-
 
             while (running)
             {

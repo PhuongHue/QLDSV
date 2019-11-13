@@ -31,15 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlNhapDiem));
             this.qLDSVDataSetKhoa = new QLDSV.QLDSVDataSetKhoa();
-            this.sP_Fill_DiemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_Fill_DiemGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridViewSP_Fill_Lop = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaSV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiemCC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiemGK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiemCK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sP_Fill_DiemTableAdapter = new QLDSV.QLDSVDataSetKhoaTableAdapters.SP_Fill_DiemTableAdapter();
             this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barbtnLuu = new DevExpress.XtraBars.BarButtonItem();
@@ -62,94 +53,31 @@
             this.colSoSvMin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSLDaDangKy = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_NhapDiemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_NhapDiemGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridViewV_NhapDiem = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaLopTC1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaSV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemCC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemGK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemCK = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_Fill_DiemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_Fill_DiemGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewSP_Fill_Lop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopTinChiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditMaLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditMaLopView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangKyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_NhapDiemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_NhapDiemGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewV_NhapDiem)).BeginInit();
             this.SuspendLayout();
             // 
             // qLDSVDataSetKhoa
             // 
             this.qLDSVDataSetKhoa.DataSetName = "QLDSVDataSetKhoa";
             this.qLDSVDataSetKhoa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Fill_DiemBindingSource
-            // 
-            this.sP_Fill_DiemBindingSource.DataMember = "SP_Fill_Diem";
-            this.sP_Fill_DiemBindingSource.DataSource = this.qLDSVDataSetKhoa;
-            // 
-            // sP_Fill_DiemGridControl
-            // 
-            this.sP_Fill_DiemGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sP_Fill_DiemGridControl.DataSource = this.sP_Fill_DiemBindingSource;
-            this.sP_Fill_DiemGridControl.Location = new System.Drawing.Point(0, 80);
-            this.sP_Fill_DiemGridControl.MainView = this.gridViewSP_Fill_Lop;
-            this.sP_Fill_DiemGridControl.Name = "sP_Fill_DiemGridControl";
-            this.sP_Fill_DiemGridControl.Size = new System.Drawing.Size(927, 391);
-            this.sP_Fill_DiemGridControl.TabIndex = 2;
-            this.sP_Fill_DiemGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewSP_Fill_Lop});
-            // 
-            // gridViewSP_Fill_Lop
-            // 
-            this.gridViewSP_Fill_Lop.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaSV,
-            this.colHoTen,
-            this.colDiemCC,
-            this.colDiemGK,
-            this.colDiemCK});
-            this.gridViewSP_Fill_Lop.GridControl = this.sP_Fill_DiemGridControl;
-            this.gridViewSP_Fill_Lop.Name = "gridViewSP_Fill_Lop";
-            this.gridViewSP_Fill_Lop.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewSP_Fill_Lop_CellValueChanged);
-            this.gridViewSP_Fill_Lop.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewSP_Fill_Lop_ValidateRow);
-            // 
-            // colMaSV
-            // 
-            this.colMaSV.FieldName = "MaSV";
-            this.colMaSV.Name = "colMaSV";
-            this.colMaSV.Visible = true;
-            this.colMaSV.VisibleIndex = 0;
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.FieldName = "HoTen";
-            this.colHoTen.Name = "colHoTen";
-            this.colHoTen.Visible = true;
-            this.colHoTen.VisibleIndex = 1;
-            // 
-            // colDiemCC
-            // 
-            this.colDiemCC.FieldName = "DiemCC";
-            this.colDiemCC.Name = "colDiemCC";
-            this.colDiemCC.Visible = true;
-            this.colDiemCC.VisibleIndex = 2;
-            // 
-            // colDiemGK
-            // 
-            this.colDiemGK.FieldName = "DiemGK";
-            this.colDiemGK.Name = "colDiemGK";
-            this.colDiemGK.Visible = true;
-            this.colDiemGK.VisibleIndex = 3;
-            // 
-            // colDiemCK
-            // 
-            this.colDiemCK.FieldName = "DiemCK";
-            this.colDiemCK.Name = "colDiemCK";
-            this.colDiemCK.Visible = true;
-            this.colDiemCK.VisibleIndex = 4;
-            // 
-            // sP_Fill_DiemTableAdapter
-            // 
-            this.sP_Fill_DiemTableAdapter.ClearBeforeFill = true;
             // 
             // barManager
             // 
@@ -362,19 +290,98 @@
             this.colSLDaDangKy.VisibleIndex = 8;
             this.colSLDaDangKy.Width = 30;
             // 
-            // dangKyBindingSource
+            // v_NhapDiemBindingSource
             // 
-            this.dangKyBindingSource.AllowNew = true;
-            this.dangKyBindingSource.DataMember = "FK_DangKy_LopTinChi";
-            this.dangKyBindingSource.DataSource = this.lopTinChiBindingSource;
+            this.v_NhapDiemBindingSource.AllowNew = false;
+            this.v_NhapDiemBindingSource.DataMember = "V_NhapDiem";
+            this.v_NhapDiemBindingSource.DataSource = this.qLDSVDataSetKhoa;
+            // 
+            // v_NhapDiemGridControl
+            // 
+            this.v_NhapDiemGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.v_NhapDiemGridControl.DataSource = this.v_NhapDiemBindingSource;
+            this.v_NhapDiemGridControl.Location = new System.Drawing.Point(0, 79);
+            this.v_NhapDiemGridControl.MainView = this.gridViewV_NhapDiem;
+            this.v_NhapDiemGridControl.MenuManager = this.barManager;
+            this.v_NhapDiemGridControl.Name = "v_NhapDiemGridControl";
+            this.v_NhapDiemGridControl.Size = new System.Drawing.Size(927, 395);
+            this.v_NhapDiemGridControl.TabIndex = 15;
+            this.v_NhapDiemGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewV_NhapDiem});
+            // 
+            // gridViewV_NhapDiem
+            // 
+            this.gridViewV_NhapDiem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaLopTC1,
+            this.colMaSV,
+            this.colHo,
+            this.colTen,
+            this.colDiemCC,
+            this.colDiemGK,
+            this.colDiemCK});
+            this.gridViewV_NhapDiem.GridControl = this.v_NhapDiemGridControl;
+            this.gridViewV_NhapDiem.Name = "gridViewV_NhapDiem";
+            this.gridViewV_NhapDiem.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewV_NhapDiem_CellValueChanged);
+            this.gridViewV_NhapDiem.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewV_NhapDiem_ValidateRow);
+            // 
+            // colMaLopTC1
+            // 
+            this.colMaLopTC1.FieldName = "MaLopTC";
+            this.colMaLopTC1.Name = "colMaLopTC1";
+            this.colMaLopTC1.Visible = true;
+            this.colMaLopTC1.VisibleIndex = 0;
+            // 
+            // colMaSV
+            // 
+            this.colMaSV.FieldName = "MaSV";
+            this.colMaSV.Name = "colMaSV";
+            this.colMaSV.Visible = true;
+            this.colMaSV.VisibleIndex = 1;
+            // 
+            // colHo
+            // 
+            this.colHo.FieldName = "Ho";
+            this.colHo.Name = "colHo";
+            this.colHo.Visible = true;
+            this.colHo.VisibleIndex = 2;
+            // 
+            // colTen
+            // 
+            this.colTen.FieldName = "Ten";
+            this.colTen.Name = "colTen";
+            this.colTen.Visible = true;
+            this.colTen.VisibleIndex = 3;
+            // 
+            // colDiemCC
+            // 
+            this.colDiemCC.FieldName = "DiemCC";
+            this.colDiemCC.Name = "colDiemCC";
+            this.colDiemCC.Visible = true;
+            this.colDiemCC.VisibleIndex = 4;
+            // 
+            // colDiemGK
+            // 
+            this.colDiemGK.FieldName = "DiemGK";
+            this.colDiemGK.Name = "colDiemGK";
+            this.colDiemGK.Visible = true;
+            this.colDiemGK.VisibleIndex = 5;
+            // 
+            // colDiemCK
+            // 
+            this.colDiemCK.FieldName = "DiemCK";
+            this.colDiemCK.Name = "colDiemCK";
+            this.colDiemCK.Visible = true;
+            this.colDiemCK.VisibleIndex = 6;
             // 
             // UserControlNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.v_NhapDiemGridControl);
             this.Controls.Add(this.searchLookUpEditMaLop);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.sP_Fill_DiemGridControl);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -382,15 +389,14 @@
             this.Name = "UserControlNhapDiem";
             this.Size = new System.Drawing.Size(927, 474);
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_Fill_DiemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_Fill_DiemGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewSP_Fill_Lop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxLop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopTinChiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditMaLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditMaLopView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dangKyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_NhapDiemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_NhapDiemGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewV_NhapDiem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,10 +405,6 @@
         #endregion
 
         private QLDSVDataSetKhoa qLDSVDataSetKhoa;
-        private System.Windows.Forms.BindingSource sP_Fill_DiemBindingSource;
-        private DevExpress.XtraGrid.GridControl sP_Fill_DiemGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewSP_Fill_Lop;
-        private QLDSVDataSetKhoaTableAdapters.SP_Fill_DiemTableAdapter sP_Fill_DiemTableAdapter;
         private DevExpress.XtraBars.BarManager barManager;
         private DevExpress.XtraBars.Bar bar1;
         private System.Windows.Forms.BindingSource lopTinChiBindingSource;
@@ -425,9 +427,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSoSvMin;
         private DevExpress.XtraGrid.Columns.GridColumn colNhom;
         private DevExpress.XtraGrid.Columns.GridColumn colSLDaDangKy;
-        private System.Windows.Forms.BindingSource dangKyBindingSource;
+        private DevExpress.XtraGrid.GridControl v_NhapDiemGridControl;
+        private System.Windows.Forms.BindingSource v_NhapDiemBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewV_NhapDiem;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaLopTC1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaSV;
-        private DevExpress.XtraGrid.Columns.GridColumn colHoTen;
+        private DevExpress.XtraGrid.Columns.GridColumn colHo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTen;
         private DevExpress.XtraGrid.Columns.GridColumn colDiemCC;
         private DevExpress.XtraGrid.Columns.GridColumn colDiemGK;
         private DevExpress.XtraGrid.Columns.GridColumn colDiemCK;

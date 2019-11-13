@@ -93,11 +93,11 @@
             this.colBuoi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxLichHoc = new System.Windows.Forms.GroupBox();
+            this.comboBoxThu = new System.Windows.Forms.ComboBox();
+            this.comboBoxBuoi = new System.Windows.Forms.ComboBox();
             this.btnOKLichHoc = new System.Windows.Forms.Button();
             this.btnHuyLichHoc = new System.Windows.Forms.Button();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBoxBuoi = new System.Windows.Forms.ComboBox();
-            this.comboBoxThu = new System.Windows.Forms.ComboBox();
             maLopTCLabel = new System.Windows.Forms.Label();
             hocKyLabel = new System.Windows.Forms.Label();
             namLabel = new System.Windows.Forms.Label();
@@ -382,7 +382,7 @@
             this.lopTinChiGridControl.MainView = this.gridViewLopTC;
             this.lopTinChiGridControl.MenuManager = this.barManager;
             this.lopTinChiGridControl.Name = "lopTinChiGridControl";
-            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 328);
+            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 327);
             this.lopTinChiGridControl.TabIndex = 5;
             this.lopTinChiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLopTC});
@@ -514,7 +514,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 415);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 413);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -604,6 +604,13 @@
             this.nhomSpinEdit.Name = "nhomSpinEdit";
             this.nhomSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nhomSpinEdit.Properties.IsFloatValue = false;
+            this.nhomSpinEdit.Properties.Mask.EditMask = "N00";
+            this.nhomSpinEdit.Properties.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.nhomSpinEdit.Size = new System.Drawing.Size(70, 20);
             this.nhomSpinEdit.TabIndex = 11;
             // 
@@ -620,8 +627,14 @@
             this.soSvMinSpinEdit.Name = "soSvMinSpinEdit";
             this.soSvMinSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soSvMinSpinEdit.Properties.MaxValue = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.soSvMinSpinEdit.Size = new System.Drawing.Size(100, 20);
             this.soSvMinSpinEdit.TabIndex = 9;
+            this.soSvMinSpinEdit.Validating += new System.ComponentModel.CancelEventHandler(this.soSvMaxSpinEdit_Validating);
             // 
             // soSvMaxSpinEdit
             // 
@@ -636,14 +649,20 @@
             this.soSvMaxSpinEdit.Name = "soSvMaxSpinEdit";
             this.soSvMaxSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soSvMaxSpinEdit.Properties.MaxValue = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
             this.soSvMaxSpinEdit.Size = new System.Drawing.Size(100, 20);
             this.soSvMaxSpinEdit.TabIndex = 7;
+            this.soSvMaxSpinEdit.Validating += new System.ComponentModel.CancelEventHandler(this.soSvMaxSpinEdit_Validating);
             // 
             // namSpinEdit
             // 
             this.namSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lopTinChiBindingSource, "Nam", true));
             this.namSpinEdit.EditValue = new decimal(new int[] {
-            0,
+            1997,
             0,
             0,
             0});
@@ -653,6 +672,16 @@
             this.namSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.namSpinEdit.Properties.Mask.EditMask = "d";
+            this.namSpinEdit.Properties.MaxValue = new decimal(new int[] {
+            2099,
+            0,
+            0,
+            0});
+            this.namSpinEdit.Properties.MinValue = new decimal(new int[] {
+            1997,
+            0,
+            0,
+            0});
             this.namSpinEdit.Size = new System.Drawing.Size(100, 20);
             this.namSpinEdit.TabIndex = 5;
             // 
@@ -660,7 +689,7 @@
             // 
             this.hocKySpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lopTinChiBindingSource, "HocKy", true));
             this.hocKySpinEdit.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -669,7 +698,18 @@
             this.hocKySpinEdit.Name = "hocKySpinEdit";
             this.hocKySpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.hocKySpinEdit.Properties.IsFloatValue = false;
             this.hocKySpinEdit.Properties.Mask.EditMask = "d";
+            this.hocKySpinEdit.Properties.MaxValue = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.hocKySpinEdit.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.hocKySpinEdit.Size = new System.Drawing.Size(100, 20);
             this.hocKySpinEdit.TabIndex = 3;
             // 
@@ -693,11 +733,11 @@
             // 
             this.lichHocGridControl.DataSource = this.cTLopTCBindingSource;
             this.lichHocGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichHocGridControl.Location = new System.Drawing.Point(3, 337);
+            this.lichHocGridControl.Location = new System.Drawing.Point(3, 336);
             this.lichHocGridControl.MainView = this.gridViewLichHoc;
             this.lichHocGridControl.MenuManager = this.barManager;
             this.lichHocGridControl.Name = "lichHocGridControl";
-            this.lichHocGridControl.Size = new System.Drawing.Size(958, 72);
+            this.lichHocGridControl.Size = new System.Drawing.Size(958, 71);
             this.lichHocGridControl.TabIndex = 6;
             this.lichHocGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLichHoc});
@@ -765,12 +805,39 @@
             this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
             this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
             this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 500);
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 498);
             this.groupBoxLichHoc.Name = "groupBoxLichHoc";
-            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 46);
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 48);
             this.groupBoxLichHoc.TabIndex = 8;
             this.groupBoxLichHoc.TabStop = false;
             this.groupBoxLichHoc.Visible = false;
+            // 
+            // comboBoxThu
+            // 
+            this.comboBoxThu.FormattingEnabled = true;
+            this.comboBoxThu.Items.AddRange(new object[] {
+            "Hai",
+            "Ba",
+            "Tư",
+            "Năm",
+            "Sáu",
+            "Bảy"});
+            this.comboBoxThu.Location = new System.Drawing.Point(41, 14);
+            this.comboBoxThu.Name = "comboBoxThu";
+            this.comboBoxThu.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxThu.TabIndex = 29;
+            // 
+            // comboBoxBuoi
+            // 
+            this.comboBoxBuoi.FormattingEnabled = true;
+            this.comboBoxBuoi.Items.AddRange(new object[] {
+            "Sáng",
+            "Chiều",
+            "Tối"});
+            this.comboBoxBuoi.Location = new System.Drawing.Point(225, 14);
+            this.comboBoxBuoi.Name = "comboBoxBuoi";
+            this.comboBoxBuoi.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxBuoi.TabIndex = 29;
             // 
             // btnOKLichHoc
             // 
@@ -796,33 +863,6 @@
             // 
             this.dangKyBindingSource.DataMember = "FK_DangKy_LopTinChi";
             this.dangKyBindingSource.DataSource = this.lopTinChiBindingSource;
-            // 
-            // comboBoxBuoi
-            // 
-            this.comboBoxBuoi.FormattingEnabled = true;
-            this.comboBoxBuoi.Items.AddRange(new object[] {
-            "Sáng",
-            "Chiều",
-            "Tối"});
-            this.comboBoxBuoi.Location = new System.Drawing.Point(225, 14);
-            this.comboBoxBuoi.Name = "comboBoxBuoi";
-            this.comboBoxBuoi.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxBuoi.TabIndex = 29;
-            // 
-            // comboBoxThu
-            // 
-            this.comboBoxThu.FormattingEnabled = true;
-            this.comboBoxThu.Items.AddRange(new object[] {
-            "Hai",
-            "Ba",
-            "Tư",
-            "Năm",
-            "Sáu",
-            "Bảy"});
-            this.comboBoxThu.Location = new System.Drawing.Point(41, 14);
-            this.comboBoxThu.Name = "comboBoxThu";
-            this.comboBoxThu.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxThu.TabIndex = 29;
             // 
             // UserControlLopTC
             // 

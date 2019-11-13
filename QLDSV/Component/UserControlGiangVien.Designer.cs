@@ -404,7 +404,7 @@
             this.btnOkGiangVien.TabIndex = 24;
             this.btnOkGiangVien.Text = "OK";
             this.btnOkGiangVien.UseVisualStyleBackColor = true;
-            this.btnOkGiangVien.Click += new System.EventHandler(this.btnOkSinhVien_Click);
+            this.btnOkGiangVien.Click += new System.EventHandler(this.btnOkGiangVien_Click);
             // 
             // btnGiangVienHuy
             // 
@@ -414,10 +414,11 @@
             this.btnGiangVienHuy.TabIndex = 25;
             this.btnGiangVienHuy.Text = "Hủy";
             this.btnGiangVienHuy.UseVisualStyleBackColor = true;
-            this.btnGiangVienHuy.Click += new System.EventHandler(this.btnSinhVienHuy_Click);
+            this.btnGiangVienHuy.Click += new System.EventHandler(this.btnGiangVienHuy_Click);
             // 
             // chucVuTextEdit
             // 
+            this.chucVuTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "ChucVu", true));
             this.chucVuTextEdit.Location = new System.Drawing.Point(245, 56);
             this.chucVuTextEdit.MenuManager = this.barManager;
             this.chucVuTextEdit.Name = "chucVuTextEdit";
@@ -428,6 +429,7 @@
             // 
             // chuyenMonTextEdit
             // 
+            this.chuyenMonTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "ChuyenMon", true));
             this.chuyenMonTextEdit.Location = new System.Drawing.Point(83, 56);
             this.chuyenMonTextEdit.MenuManager = this.barManager;
             this.chuyenMonTextEdit.Name = "chuyenMonTextEdit";
@@ -438,6 +440,7 @@
             // 
             // hocHamTextEdit
             // 
+            this.hocHamTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "HocHam", true));
             this.hocHamTextEdit.Location = new System.Drawing.Point(647, 14);
             this.hocHamTextEdit.MenuManager = this.barManager;
             this.hocHamTextEdit.Name = "hocHamTextEdit";
@@ -448,6 +451,7 @@
             // 
             // hocViTextEdit
             // 
+            this.hocViTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "HocVi", true));
             this.hocViTextEdit.Location = new System.Drawing.Point(482, 14);
             this.hocViTextEdit.MenuManager = this.barManager;
             this.hocViTextEdit.Name = "hocViTextEdit";
@@ -458,6 +462,7 @@
             // 
             // tenTextEdit
             // 
+            this.tenTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "Ten", true));
             this.tenTextEdit.Location = new System.Drawing.Point(330, 14);
             this.tenTextEdit.MenuManager = this.barManager;
             this.tenTextEdit.Name = "tenTextEdit";
@@ -468,6 +473,7 @@
             // 
             // hoTextEdit
             // 
+            this.hoTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "Ho", true));
             this.hoTextEdit.Location = new System.Drawing.Point(189, 14);
             this.hoTextEdit.MenuManager = this.barManager;
             this.hoTextEdit.Name = "hoTextEdit";
@@ -478,6 +484,7 @@
             // 
             // maGVTextEdit
             // 
+            this.maGVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.giangVienBindingSource, "MaGV", true));
             this.maGVTextEdit.Location = new System.Drawing.Point(53, 14);
             this.maGVTextEdit.MenuManager = this.barManager;
             this.maGVTextEdit.Name = "maGVTextEdit";

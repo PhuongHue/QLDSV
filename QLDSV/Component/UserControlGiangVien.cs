@@ -109,7 +109,7 @@ namespace QLDSV.Component
             Program.FillAllTable();
         }
 
-        private void btnOkSinhVien_Click(object sender, EventArgs e)
+        private void btnOkGiangVien_Click(object sender, EventArgs e)
         {
             string errors = AllErrorGiangVien();
             if (errors != "")
@@ -128,7 +128,7 @@ namespace QLDSV.Component
             }
         }
 
-        private void btnSinhVienHuy_Click(object sender, EventArgs e)
+        private void btnGiangVienHuy_Click(object sender, EventArgs e)
         {
             giangVienBindingSource.CancelEdit();
             ClearErrorGiangVien();

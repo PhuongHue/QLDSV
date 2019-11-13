@@ -21,6 +21,7 @@ namespace QLDSV
             sP_List_SV_DangKy_LopTCBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             dangKyBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             cTLopTCBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+            dangKyBindingSource.Filter = $"MaSV = '{Program.KetNoiDB.UserName}' ";
         }
 
         private void FormDangKyLTC_Load(object sender, EventArgs e)
@@ -35,15 +36,23 @@ namespace QLDSV
             if (now.Month < 6) hocKy = 2;
             else if (now.Month > 8) hocKy = 1;
             else hocKy = 3;
+            string listLTC = "and MaLopTC in (";
+
             Program.SP_List_SV_DangKy_LopTCTableAdapter.Fill(Program.QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTC, now.Year, hocKy);
-            dangKyBindingSource.Filter = $"MaSV = '{Program.KetNoiDB.UserName}'";
             foreach (object row in dangKyBindingSource)
             {
-                var maLop = ((DataRowView)row)["MaLopTC"];
+                string maLop = ((DataRowView)row)["MaLopTC"].ToString();
+                //maLop = maLop.Trim(new char[] {' '});
+                listLTC += $"'{maLop}', ";
                 int rowHandle = sP_List_SV_DangKy_LopTCBindingSource.Find("MaLopTC", maLop);
                 if (rowHandle < 0) continue;
                 ((DataRowView)sP_List_SV_DangKy_LopTCBindingSource[rowHandle])["selected"] = true;
             }
+            listLTC = listLTC.TrimEnd(new char[] { ',', ' '});
+            listLTC += ")";
+            string filter = $"MaSV = '{Program.KetNoiDB.UserName}' ";
+            if (dangKyBindingSource.Count > 0) filter += listLTC;
+            dangKyBindingSource.Filter = filter;
         }
         private void sP_List_SV_DangKy_LopTCGridControl_Load(object sender, EventArgs e)
         {
@@ -86,7 +95,8 @@ namespace QLDSV
             ((DataRowView)dangKyBindingSource.Current)["DiemCC"] = 0;
             ((DataRowView)dangKyBindingSource.Current)["DiemGK"] = 0;
             ((DataRowView)dangKyBindingSource.Current)["DiemCK"] = 0;
-            dangKyBindingSource.EndEdit();
+            try { dangKyBindingSource.EndEdit(); }
+            catch (Exception) { }
         }
         private void UnselectDangKy(int rowHandler)
         {

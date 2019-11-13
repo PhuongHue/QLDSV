@@ -70,6 +70,7 @@ namespace QLDSV.Component
         private void ClearErrorLopTC()
         {
             maLopTCTextEdit.ErrorText = "";
+            soSvMaxSpinEdit.ErrorText = "";
         }
         private void ClearErrorCTLopTC()
         {
@@ -81,6 +82,7 @@ namespace QLDSV.Component
             maLopTCTextEdit.Focus();
             btnOkLopTC.Focus();
             if (maLopTCTextEdit.ErrorText != "") error += maLopTCTextEdit.ErrorText + "\n";
+            if (soSvMaxSpinEdit.ErrorText != "") error += soSvMaxSpinEdit.ErrorText + "\n";
             return error;
         }
 
@@ -187,6 +189,14 @@ namespace QLDSV.Component
             if (error != "")
             {
                 textEdit.ErrorText = error;
+            }
+        }
+
+        private void soSvMaxSpinEdit_Validating(object sender, CancelEventArgs e)
+        {
+            if(soSvMinSpinEdit.Value> soSvMaxSpinEdit.Value)
+            {
+                soSvMaxSpinEdit.ErrorText = "Số sinh viên tối thiểu không được lớn hơn số sinh viên tối đa";
             }
         }
     }

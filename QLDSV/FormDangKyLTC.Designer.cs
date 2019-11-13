@@ -294,6 +294,7 @@
             // 
             this.colMaLopTC2.FieldName = "MaLopTC";
             this.colMaLopTC2.Name = "colMaLopTC2";
+            this.colMaLopTC2.OptionsColumn.AllowEdit = false;
             this.colMaLopTC2.Visible = true;
             this.colMaLopTC2.VisibleIndex = 0;
             // 
@@ -301,6 +302,7 @@
             // 
             this.colThu.FieldName = "Thu";
             this.colThu.Name = "colThu";
+            this.colThu.OptionsColumn.AllowEdit = false;
             this.colThu.Visible = true;
             this.colThu.VisibleIndex = 1;
             // 
@@ -308,6 +310,7 @@
             // 
             this.colBuoi.FieldName = "Buoi";
             this.colBuoi.Name = "colBuoi";
+            this.colBuoi.OptionsColumn.AllowEdit = false;
             this.colBuoi.Visible = true;
             this.colBuoi.VisibleIndex = 2;
             // 
@@ -335,6 +338,7 @@
             // 
             this.colMaLopTC1.FieldName = "MaLopTC";
             this.colMaLopTC1.Name = "colMaLopTC1";
+            this.colMaLopTC1.OptionsColumn.AllowEdit = false;
             this.colMaLopTC1.Visible = true;
             this.colMaLopTC1.VisibleIndex = 0;
             // 
@@ -342,6 +346,7 @@
             // 
             this.colMaSV.FieldName = "MaSV";
             this.colMaSV.Name = "colMaSV";
+            this.colMaSV.OptionsColumn.AllowEdit = false;
             this.colMaSV.Visible = true;
             this.colMaSV.VisibleIndex = 1;
             // 
@@ -453,6 +458,7 @@
             this.Controls.Add(this.barDockControl1);
             this.Name = "FormDangKyLTC";
             this.Text = "FormDangKyLTC";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormDangKyLTC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_List_SV_DangKy_LopTCBindingSource)).EndInit();
