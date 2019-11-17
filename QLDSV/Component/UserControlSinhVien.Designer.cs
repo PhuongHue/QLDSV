@@ -83,6 +83,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.groupBoxLop = new System.Windows.Forms.GroupBox();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barBtnChuyenLop = new DevExpress.XtraBars.BarButtonItem();
             maSVLabel = new System.Windows.Forms.Label();
             hoLabel = new System.Windows.Forms.Label();
             tenLabel = new System.Windows.Forms.Label();
@@ -539,8 +540,9 @@
             this.barbtnXoa,
             this.barbtnSua,
             this.barbtnLuu,
-            this.barBtnRefresh});
-            this.barManager.MaxItemId = 5;
+            this.barBtnRefresh,
+            this.barBtnChuyenLop});
+            this.barManager.MaxItemId = 6;
             // 
             // bar1
             // 
@@ -553,7 +555,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnLuu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnChuyenLop, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
             // barbtnThem
@@ -649,6 +652,14 @@
             this.dangKyBindingSource.DataMember = "FK_DangKy_SinhVien";
             this.dangKyBindingSource.DataSource = this.sinhVienBindingSource;
             // 
+            // barBtnChuyenLop
+            // 
+            this.barBtnChuyenLop.Caption = "Chuyển lớp";
+            this.barBtnChuyenLop.Id = 5;
+            this.barBtnChuyenLop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnChuyenLop.ImageOptions.Image")));
+            this.barBtnChuyenLop.Name = "barBtnChuyenLop";
+            this.barBtnChuyenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnChuyenLop_ItemClick);
+            // 
             // UserControlSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,5 +742,6 @@
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
         private System.Windows.Forms.ComboBox chuyenNganhComboBox;
         private System.Windows.Forms.BindingSource chuyenNganhBindingSource;
+        private DevExpress.XtraBars.BarButtonItem barBtnChuyenLop;
     }
 }

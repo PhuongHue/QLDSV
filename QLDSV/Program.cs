@@ -93,6 +93,8 @@ namespace QLDSV
             TableAdapterManager.CTLopTCTableAdapter.Connection = sqlConnection;
             TableAdapterManager.KeHoachGiangTableAdapter.Connection = sqlConnection;
             TableAdapterManager.DangKyTableAdapter.Connection = sqlConnection;
+            //views
+            TableAdapterManager.V_NhapDiemTableAdapter.Connection = sqlConnection;
             //SPs
             SP_List_LOGINTableAdapter.Connection = sqlConnection;
             SP_List_SV_DangKy_LopTCTableAdapter.Connection = sqlConnection;
@@ -100,6 +102,20 @@ namespace QLDSV
         private static void InitServices()
         {
             TableAdapterManager.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.KhoaTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.GiangVienTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.CTTruongKhoaTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.MonHocTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.KhaNangDayTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.LopTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.ChuyenNganhTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.SinhVienTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.LopTinChiTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.CTLopTCTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.KeHoachGiangTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.DangKyTableAdapter.Connection = KetNoiDB.SqlConnection;
+            TableAdapterManager.V_NhapDiemTableAdapter.Connection = KetNoiDB.SqlConnection;
             FillAllTable();
             SP_List_LOGINTableAdapter.Connection = KetNoiDB.SqlConnection;
             SP_List_SV_DangKy_LopTCTableAdapter.Connection = KetNoiDB.SqlConnection;

@@ -32,6 +32,7 @@ namespace QLDSV.Component
             if (Program.KetNoiDB.GroupId == "PGV") comboBoxRole.Items.Add(new Role() { des = "Phòng Giáo vụ", role = "PGV" });
             else
             if (Program.KetNoiDB.GroupId == "Khoa") comboBoxRole.Items.Add(new Role() { des = "Khoa", role = "Khoa" });
+            comboBoxRole.SelectedIndex = 0;
         }
 
         private void UserControlTaiKhoan_Fill()

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BatLoi;
 using System.Data.SqlClient;
+using QLDSV.Component;
 
 namespace QLDSV
 {
@@ -165,6 +166,13 @@ namespace QLDSV
             {
                 textEdit.ErrorText = error;
             }
+        }
+
+        private void barBtnChuyenLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string maSV = (string)((DataRowView)sinhVienBindingSource.Current)["MaSV"];
+            string ten = (string)((DataRowView)sinhVienBindingSource.Current)["Ten"];
+            new FormChuyenLop(ten, maSV).Show();
         }
     }
 }
