@@ -199,5 +199,20 @@ namespace QLDSV.Component
                 soSvMaxSpinEdit.ErrorText = "Số sinh viên tối thiểu không được lớn hơn số sinh viên tối đa";
             }
         }
+
+        private void barBtnPrintBDTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string maLop = (string)((DataRowView)lopTinChiBindingSource.Current)["MaLopTC"];
+            new Reports.ReportBangDiemTongKet(maLop);
+        }
+
+        private void barBtnPrintDSTHM_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string maLop = (string)((DataRowView)lopTinChiBindingSource.Current)["MaLopTC"];
+            string maMH = (string)((DataRowView)lopTinChiBindingSource.Current)["MaMH"];
+            int indexMH = monHocBindingSource.Find("MaMH",maMH);
+            string tenMH = (string)((DataRowView)monHocBindingSource[indexMH])["TenMH"];
+            new Reports.FormPrintDSTHM(maLop,tenMH).Show();
+        }
     }
 }

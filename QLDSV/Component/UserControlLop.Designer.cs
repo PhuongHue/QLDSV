@@ -59,6 +59,7 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barBtnPrintDS = new DevExpress.XtraBars.BarButtonItem();
             maLopLabel = new System.Windows.Forms.Label();
             tenLopLabel = new System.Windows.Forms.Label();
             maKhoaLabel = new System.Windows.Forms.Label();
@@ -124,8 +125,9 @@
             this.barbtnXoa,
             this.barbtnSua,
             this.barbtnLuu,
-            this.barBtnRefresh});
-            this.barManager.MaxItemId = 5;
+            this.barBtnRefresh,
+            this.barBtnPrintDS});
+            this.barManager.MaxItemId = 6;
             // 
             // bar1
             // 
@@ -138,7 +140,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnLuu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnPrintDS, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
             // barbtnThem
@@ -347,6 +350,14 @@
             this.sinhVienBindingSource.DataMember = "FK_SinhVien_Lop";
             this.sinhVienBindingSource.DataSource = this.lopBindingSource;
             // 
+            // barBtnPrintDS
+            // 
+            this.barBtnPrintDS.Caption = "In Danh sách";
+            this.barBtnPrintDS.Id = 5;
+            this.barBtnPrintDS.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barBtnPrintDS.Name = "barBtnPrintDS";
+            this.barBtnPrintDS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDS_ItemClick);
+            // 
             // UserControlLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,5 +414,6 @@
         private DevExpress.XtraEditors.TextEdit tenLopTextEdit;
         private DevExpress.XtraEditors.TextEdit maLopTextEdit;
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
+        private DevExpress.XtraBars.BarButtonItem barBtnPrintDS;
     }
 }

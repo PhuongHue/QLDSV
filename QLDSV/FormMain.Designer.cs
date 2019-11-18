@@ -49,12 +49,12 @@
             this.tabDiem = new DevExpress.XtraTab.XtraTabPage();
             this.userControlNhapDiem = new QLDSV.Component.UserControlNhapDiem();
             this.tabTaiKhoan = new DevExpress.XtraTab.XtraTabPage();
+            this.userControlTaiKhoan = new QLDSV.Component.UserControlTaiKhoan();
             this.statusStripLoginInfo = new System.Windows.Forms.StatusStrip();
             this.txtStripLoginName = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripMaGV = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripHoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtStripNhom = new System.Windows.Forms.ToolStripStatusLabel();
-            this.userControlTaiKhoan = new QLDSV.Component.UserControlTaiKhoan();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetMaster)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_DSPMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
@@ -227,6 +227,14 @@
             this.tabTaiKhoan.Size = new System.Drawing.Size(873, 368);
             this.tabTaiKhoan.Text = "Tài khoản";
             // 
+            // userControlTaiKhoan
+            // 
+            this.userControlTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControlTaiKhoan.Location = new System.Drawing.Point(0, 0);
+            this.userControlTaiKhoan.Name = "userControlTaiKhoan";
+            this.userControlTaiKhoan.Size = new System.Drawing.Size(873, 368);
+            this.userControlTaiKhoan.TabIndex = 0;
+            // 
             // statusStripLoginInfo
             // 
             this.statusStripLoginInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -268,14 +276,6 @@
             this.txtStripNhom.Name = "txtStripNhom";
             this.txtStripNhom.Size = new System.Drawing.Size(57, 15);
             this.txtStripNhom.Text = "Chức vụ: ";
-            // 
-            // userControlTaiKhoan1
-            // 
-            this.userControlTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.userControlTaiKhoan.Name = "userControlTaiKhoan1";
-            this.userControlTaiKhoan.Size = new System.Drawing.Size(873, 368);
-            this.userControlTaiKhoan.TabIndex = 0;
             // 
             // FormMain
             // 

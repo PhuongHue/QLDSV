@@ -154,6 +154,30 @@
     <Compile Include="Component\UserControlSinhVien.Designer.cs">
       <DependentUpon>UserControlSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\FormPrintDSTHM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormPrintDSTHM.Designer.cs">
+      <DependentUpon>FormPrintDSTHM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportBangDiemTongKet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportBangDiemTongKet.Designer.cs">
+      <DependentUpon>ReportBangDiemTongKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDSThiHetMon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportDSThiHetMon.Designer.cs">
+      <DependentUpon>ReportDSThiHetMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportPhieuDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportPhieuDiem.Designer.cs">
+      <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Report_DSSinhVien.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -202,6 +226,18 @@
     </Compile>
     <EmbeddedResource Include="Component\UserControlSinhVien.resx">
       <DependentUpon>UserControlSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormPrintDSTHM.resx">
+      <DependentUpon>FormPrintDSTHM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportBangDiemTongKet.resx">
+      <DependentUpon>ReportBangDiemTongKet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDSThiHetMon.resx">
+      <DependentUpon>ReportDSThiHetMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportPhieuDiem.resx">
+      <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report_DSSinhVien.resx">
       <DependentUpon>Report_DSSinhVien.cs</DependentUpon>

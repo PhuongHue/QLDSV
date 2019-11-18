@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BatLoi;
 using QLDSV.BatLoi;
+using QLDSV.Reports;
 
 namespace QLDSV.Component
 {
@@ -148,6 +149,13 @@ namespace QLDSV.Component
             {
                 textEdit.ErrorText = error;
             }
+        }
+
+        private void barBtnPrintDS_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string maLop = (string)((DataRowView)lopBindingSource.Current)["MaLop"];
+            string tenLop = (string)((DataRowView)lopBindingSource.Current)["TenLop"];
+            new Report_DSSinhVien(maLop, tenLop);
         }
     }
 }

@@ -51,6 +51,7 @@
             this.barbtnSuaLichHoc = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPrintBDTK = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -98,6 +99,7 @@
             this.btnOKLichHoc = new System.Windows.Forms.Button();
             this.btnHuyLichHoc = new System.Windows.Forms.Button();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.barBtnPrintDSTHM = new DevExpress.XtraBars.BarButtonItem();
             maLopTCLabel = new System.Windows.Forms.Label();
             hocKyLabel = new System.Windows.Forms.Label();
             namLabel = new System.Windows.Forms.Label();
@@ -221,8 +223,10 @@
             this.barSubItemThem,
             this.barbtnThemLichHoc,
             this.barSubItemXoa,
-            this.barbtnXoaLichHoc});
-            this.barManager.MaxItemId = 12;
+            this.barbtnXoaLichHoc,
+            this.barBtnPrintBDTK,
+            this.barBtnPrintDSTHM});
+            this.barManager.MaxItemId = 14;
             // 
             // bar1
             // 
@@ -235,7 +239,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItemXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSubItemSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barbtnLuu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnRefresh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnPrintBDTK, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnPrintDSTHM, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
             // barSubItemThem
@@ -327,6 +333,14 @@
             this.barBtnRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnRefresh.ImageOptions.LargeImage")));
             this.barBtnRefresh.Name = "barBtnRefresh";
             // 
+            // barBtnPrintBDTK
+            // 
+            this.barBtnPrintBDTK.Caption = "In bảng điểm tổng kết";
+            this.barBtnPrintBDTK.Id = 12;
+            this.barBtnPrintBDTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnPrintBDTK.ImageOptions.Image")));
+            this.barBtnPrintBDTK.Name = "barBtnPrintBDTK";
+            this.barBtnPrintBDTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintBDTK_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -382,7 +396,7 @@
             this.lopTinChiGridControl.MainView = this.gridViewLopTC;
             this.lopTinChiGridControl.MenuManager = this.barManager;
             this.lopTinChiGridControl.Name = "lopTinChiGridControl";
-            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 327);
+            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 325);
             this.lopTinChiGridControl.TabIndex = 5;
             this.lopTinChiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLopTC});
@@ -514,7 +528,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 413);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 411);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -733,7 +747,7 @@
             // 
             this.lichHocGridControl.DataSource = this.cTLopTCBindingSource;
             this.lichHocGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichHocGridControl.Location = new System.Drawing.Point(3, 336);
+            this.lichHocGridControl.Location = new System.Drawing.Point(3, 334);
             this.lichHocGridControl.MainView = this.gridViewLichHoc;
             this.lichHocGridControl.MenuManager = this.barManager;
             this.lichHocGridControl.Name = "lichHocGridControl";
@@ -805,9 +819,9 @@
             this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
             this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
             this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 498);
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 496);
             this.groupBoxLichHoc.Name = "groupBoxLichHoc";
-            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 48);
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 50);
             this.groupBoxLichHoc.TabIndex = 8;
             this.groupBoxLichHoc.TabStop = false;
             this.groupBoxLichHoc.Visible = false;
@@ -863,6 +877,14 @@
             // 
             this.dangKyBindingSource.DataMember = "FK_DangKy_LopTinChi";
             this.dangKyBindingSource.DataSource = this.lopTinChiBindingSource;
+            // 
+            // barBtnPrintDSTHM
+            // 
+            this.barBtnPrintDSTHM.Caption = "In danh sách thi hết môn";
+            this.barBtnPrintDSTHM.Id = 13;
+            this.barBtnPrintDSTHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barBtnPrintDSTHM.Name = "barBtnPrintDSTHM";
+            this.barBtnPrintDSTHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDSTHM_ItemClick);
             // 
             // UserControlLopTC
             // 
@@ -965,5 +987,7 @@
         private DevExpress.XtraBars.BarButtonItem barbtnXoaLichHoc;
         private System.Windows.Forms.ComboBox comboBoxThu;
         private System.Windows.Forms.ComboBox comboBoxBuoi;
+        private DevExpress.XtraBars.BarButtonItem barBtnPrintBDTK;
+        private DevExpress.XtraBars.BarButtonItem barBtnPrintDSTHM;
     }
 }
