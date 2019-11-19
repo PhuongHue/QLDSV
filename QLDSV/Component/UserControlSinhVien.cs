@@ -172,7 +172,15 @@ namespace QLDSV
         {
             string maSV = (string)((DataRowView)sinhVienBindingSource.Current)["MaSV"];
             string ten = (string)((DataRowView)sinhVienBindingSource.Current)["Ten"];
-            new FormChuyenLop(ten, maSV).Show();
+            string currentMaLop = (string)((DataRowView)sinhVienBindingSource.Current)["MaLop"];
+            FormChuyenLop form = new FormChuyenLop(ten, maSV, currentMaLop);
+            form.Show();
+            form.Disposed += Form_Disposed;
+        }
+
+        private void Form_Disposed(object sender, EventArgs e)
+        {
+            Program.FillAllTable();
         }
     }
 }

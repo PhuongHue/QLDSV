@@ -15,12 +15,13 @@ namespace QLDSV.Component
     public partial class FormChuyenLop : DevExpress.XtraEditors.XtraForm
     {
         string MaSV;
-        public FormChuyenLop(string Ten, string MaSV)
+        public FormChuyenLop(string Ten, string MaSV, string currentMaLop)
         {
             InitializeComponent();
             labelTenSV.Text += Ten;
             labelMaSV.Text += MaSV;
             this.MaSV = MaSV;
+            this.lopBindingSource.Filter = $"MaLop <> '{currentMaLop}'";
         }
 
 
@@ -35,12 +36,13 @@ namespace QLDSV.Component
         {
             try
             {
-                Program.KetNoiDB.ExcuteSP($"SP_Chuyen_SinhVien @MaSV = '{MaSV}' @MaLop = '{lopComboBox.SelectedItem.ToString()}'");
+                Program.KetNoiDB.ExcuteSP($"SP_Chuyen_SinhVien @MaSV = N'{MaSV}', @MaLop = N'{lopComboBox.SelectedValue.ToString()}'");
+                MessageBox.Show("Thành công!", "Thông báo");
                 Dispose();
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show(ex.Message, "Thông báo");
             }
         }
     }

@@ -77,13 +77,13 @@
             this.barbtnSua = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnChuyenLop = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.groupBoxLop = new System.Windows.Forms.GroupBox();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barBtnChuyenLop = new DevExpress.XtraBars.BarButtonItem();
             maSVLabel = new System.Windows.Forms.Label();
             hoLabel = new System.Windows.Forms.Label();
             tenLabel = new System.Windows.Forms.Label();
@@ -600,6 +600,14 @@
             this.barBtnRefresh.Name = "barBtnRefresh";
             this.barBtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnRefresh_ItemClick);
             // 
+            // barBtnChuyenLop
+            // 
+            this.barBtnChuyenLop.Caption = "Chuyển lớp";
+            this.barBtnChuyenLop.Id = 5;
+            this.barBtnChuyenLop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnChuyenLop.ImageOptions.Image")));
+            this.barBtnChuyenLop.Name = "barBtnChuyenLop";
+            this.barBtnChuyenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnChuyenLop_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -651,14 +659,6 @@
             // 
             this.dangKyBindingSource.DataMember = "FK_DangKy_SinhVien";
             this.dangKyBindingSource.DataSource = this.sinhVienBindingSource;
-            // 
-            // barBtnChuyenLop
-            // 
-            this.barBtnChuyenLop.Caption = "Chuyển lớp";
-            this.barBtnChuyenLop.Id = 5;
-            this.barBtnChuyenLop.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnChuyenLop.ImageOptions.Image")));
-            this.barBtnChuyenLop.Name = "barBtnChuyenLop";
-            this.barBtnChuyenLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnChuyenLop_ItemClick);
             // 
             // UserControlSinhVien
             // 

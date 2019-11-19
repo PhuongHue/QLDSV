@@ -52,6 +52,7 @@
             this.barbtnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPrintBDTK = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPrintDSTHM = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -99,7 +100,6 @@
             this.btnOKLichHoc = new System.Windows.Forms.Button();
             this.btnHuyLichHoc = new System.Windows.Forms.Button();
             this.dangKyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barBtnPrintDSTHM = new DevExpress.XtraBars.BarButtonItem();
             maLopTCLabel = new System.Windows.Forms.Label();
             hocKyLabel = new System.Windows.Forms.Label();
             namLabel = new System.Windows.Forms.Label();
@@ -341,6 +341,14 @@
             this.barBtnPrintBDTK.Name = "barBtnPrintBDTK";
             this.barBtnPrintBDTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintBDTK_ItemClick);
             // 
+            // barBtnPrintDSTHM
+            // 
+            this.barBtnPrintDSTHM.Caption = "In danh sách thi hết môn";
+            this.barBtnPrintDSTHM.Id = 13;
+            this.barBtnPrintDSTHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnPrintDSTHM.ImageOptions.Image")));
+            this.barBtnPrintDSTHM.Name = "barBtnPrintDSTHM";
+            this.barBtnPrintDSTHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDSTHM_ItemClick);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -396,7 +404,7 @@
             this.lopTinChiGridControl.MainView = this.gridViewLopTC;
             this.lopTinChiGridControl.MenuManager = this.barManager;
             this.lopTinChiGridControl.Name = "lopTinChiGridControl";
-            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 325);
+            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 324);
             this.lopTinChiGridControl.TabIndex = 5;
             this.lopTinChiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLopTC});
@@ -528,7 +536,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 411);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 410);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -632,7 +640,7 @@
             // 
             this.soSvMinSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lopTinChiBindingSource, "SoSvMin", true));
             this.soSvMinSpinEdit.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -641,8 +649,15 @@
             this.soSvMinSpinEdit.Name = "soSvMinSpinEdit";
             this.soSvMinSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soSvMinSpinEdit.Properties.IsFloatValue = false;
+            this.soSvMinSpinEdit.Properties.Mask.EditMask = "N00";
             this.soSvMinSpinEdit.Properties.MaxValue = new decimal(new int[] {
             50,
+            0,
+            0,
+            0});
+            this.soSvMinSpinEdit.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -654,7 +669,7 @@
             // 
             this.soSvMaxSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lopTinChiBindingSource, "SoSvMax", true));
             this.soSvMaxSpinEdit.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -663,8 +678,15 @@
             this.soSvMaxSpinEdit.Name = "soSvMaxSpinEdit";
             this.soSvMaxSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soSvMaxSpinEdit.Properties.IsFloatValue = false;
+            this.soSvMaxSpinEdit.Properties.Mask.EditMask = "N00";
             this.soSvMaxSpinEdit.Properties.MaxValue = new decimal(new int[] {
             150,
+            0,
+            0,
+            0});
+            this.soSvMaxSpinEdit.Properties.MinValue = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -747,7 +769,7 @@
             // 
             this.lichHocGridControl.DataSource = this.cTLopTCBindingSource;
             this.lichHocGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichHocGridControl.Location = new System.Drawing.Point(3, 334);
+            this.lichHocGridControl.Location = new System.Drawing.Point(3, 333);
             this.lichHocGridControl.MainView = this.gridViewLichHoc;
             this.lichHocGridControl.MenuManager = this.barManager;
             this.lichHocGridControl.Name = "lichHocGridControl";
@@ -819,9 +841,9 @@
             this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
             this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
             this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 496);
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 495);
             this.groupBoxLichHoc.Name = "groupBoxLichHoc";
-            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 50);
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 51);
             this.groupBoxLichHoc.TabIndex = 8;
             this.groupBoxLichHoc.TabStop = false;
             this.groupBoxLichHoc.Visible = false;
@@ -877,14 +899,6 @@
             // 
             this.dangKyBindingSource.DataMember = "FK_DangKy_LopTinChi";
             this.dangKyBindingSource.DataSource = this.lopTinChiBindingSource;
-            // 
-            // barBtnPrintDSTHM
-            // 
-            this.barBtnPrintDSTHM.Caption = "In danh sách thi hết môn";
-            this.barBtnPrintDSTHM.Id = 13;
-            this.barBtnPrintDSTHM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barBtnPrintDSTHM.Name = "barBtnPrintDSTHM";
-            this.barBtnPrintDSTHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDSTHM_ItemClick);
             // 
             // UserControlLopTC
             // 

@@ -14,7 +14,7 @@ namespace QLDSV
 {
     public partial class FormDangKyLTC : DevExpress.XtraEditors.XtraForm
     {
-        bool Flag_Load = false;
+        bool[] HetSoLuong;
         public FormDangKyLTC()
         {
             InitializeComponent();
@@ -28,9 +28,9 @@ namespace QLDSV
         {
 
         }
+
         private void Fill_Data()
         {
-            Flag_Load = true;
             DateTime now = DateTime.Now;
             int hocKy;
             if (now.Month < 6) hocKy = 2;
@@ -39,21 +39,32 @@ namespace QLDSV
             string listLTC = "and MaLopTC in (";
 
             Program.SP_List_SV_DangKy_LopTCTableAdapter.Fill(Program.QLDSVDataSetKhoa.SP_List_SV_DangKy_LopTC, now.Year, hocKy);
+            HetSoLuong = new bool[sP_List_SV_DangKy_LopTCBindingSource.Count];
+            for (int i = 0; i < HetSoLuong.Length; i++)
+            {
+                HetSoLuong[i] = false;
+            }
+            foreach (object row in sP_List_SV_DangKy_LopTCBindingSource)
+            {
+                string maLop = ((DataRowView)row)["MaLopTC"].ToString();
+                listLTC += $"'{maLop}', ";
+
+            }
+            listLTC = listLTC.TrimEnd(new char[] { ',', ' ' });
+            listLTC += ")";
+            string filter = $"MaSV = '{Program.KetNoiDB.UserName}' ";
+            if (sP_List_SV_DangKy_LopTCBindingSource.Count > 0) filter += listLTC;
+            dangKyBindingSource.Filter = filter;
+
             foreach (object row in dangKyBindingSource)
             {
                 string maLop = ((DataRowView)row)["MaLopTC"].ToString();
-                //maLop = maLop.Trim(new char[] {' '});
-                listLTC += $"'{maLop}', ";
                 int rowHandle = sP_List_SV_DangKy_LopTCBindingSource.Find("MaLopTC", maLop);
                 if (rowHandle < 0) continue;
                 ((DataRowView)sP_List_SV_DangKy_LopTCBindingSource[rowHandle])["selected"] = true;
             }
-            listLTC = listLTC.TrimEnd(new char[] { ',', ' '});
-            listLTC += ")";
-            string filter = $"MaSV = '{Program.KetNoiDB.UserName}' ";
-            if (dangKyBindingSource.Count > 0) filter += listLTC;
-            dangKyBindingSource.Filter = filter;
         }
+
         private void sP_List_SV_DangKy_LopTCGridControl_Load(object sender, EventArgs e)
         {
             Fill_Data();
@@ -63,28 +74,30 @@ namespace QLDSV
         {
             Fill_Data();
         }
+
         private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Program.UpdateAll();
         }
-        private void gridViewSP_List_SV_DangKy_LopTC_RowStyle(object sender, RowStyleEventArgs e)
-        {
-            try
-            {
-                var view = (GridView)sender;
-                DataRowView row = (DataRowView)view.GetRow(e.RowHandle);
-                if ((int)row["SoSvMax"] == (int)row["SLDaDangKy"]) e.Appearance.BackColor = Color.LightGray;
-            }
-            catch (Exception) { }
-        }
+
         private void gridViewSP_List_SV_DangKy_LopTC_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            var view = (GridView)sender;
             if (e.Column.FieldName == "selected")
             {
-                if ((bool)e.Value == true) SelectDangKy(e.RowHandle);
-                else UnselectDangKy(e.RowHandle);
+                if (HetSoLuong[e.RowHandle])
+                {
+                    view.SetRowCellValue(e.RowHandle, "selected", false);
+                }
+                else
+                {
+                    if ((bool)e.Value == true) SelectDangKy(e.RowHandle);
+                    else UnselectDangKy(e.RowHandle);
+                }
+
             }
         }
+
         private void SelectDangKy(int rowHandler)
         {
             var maLopTC = ((DataRowView)sP_List_SV_DangKy_LopTCBindingSource[rowHandler])["MaLopTC"];
@@ -98,12 +111,18 @@ namespace QLDSV
             try { dangKyBindingSource.EndEdit(); }
             catch (Exception) { }
         }
+
         private void UnselectDangKy(int rowHandler)
         {
             var maLopTC = ((DataRowView)sP_List_SV_DangKy_LopTCBindingSource[rowHandler])["MaLopTC"];
             int index = dangKyBindingSource.Find("MaLopTC", maLopTC);
             if (index == -1) return;
-            dangKyBindingSource.RemoveAt(index);
+            if ((double)((DataRowView)dangKyBindingSource[index])["DiemCC"] != 0
+                || (double)((DataRowView)dangKyBindingSource[index])["DiemGK"] != 0
+                || (double)((DataRowView)dangKyBindingSource[index])["DiemCK"] != 0)
+                MessageBox.Show("Không thể hủy đăng ký vì đã bắt đầu học.", "Thông báo");
+            else
+                dangKyBindingSource.RemoveAt(index);
         }
 
 
@@ -113,6 +132,21 @@ namespace QLDSV
             {
                 var row = (DataRowView)((BindingSource)sender).Current;
                 cTLopTCBindingSource.Filter = $"MaLopTC = '{row["MaLopTC"].ToString()}'";
+            }
+            catch (Exception) { }
+        }
+
+        private void gridViewSP_List_SV_DangKy_LopTC_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            try
+            {
+                var view = (GridView)sender;
+                DataRowView row = (DataRowView)view.GetRow(e.RowHandle);
+                if ((int)row["SoSvMax"] == (int)row["SLDaDangKy"])
+                {
+                    HetSoLuong[e.RowHandle] = true;
+                    e.Appearance.BackColor = Color.LightGray;
+                }
             }
             catch (Exception) { }
         }
