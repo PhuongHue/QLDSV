@@ -180,6 +180,7 @@ namespace QLDSV
 
         private void Form_Disposed(object sender, EventArgs e)
         {
+            Program.UpdateAll();
             Program.FillAllTable();
         }
     }

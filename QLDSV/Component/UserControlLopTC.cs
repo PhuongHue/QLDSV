@@ -15,6 +15,8 @@ namespace QLDSV.Component
 {
     public partial class UserControlLopTC : DevExpress.XtraEditors.XtraUserControl
     {
+        bool newLTC = false;
+        
         public UserControlLopTC()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace QLDSV.Component
                 barSubItemSua.Enabled = false;
                 barbtnLuu.Enabled = false;
                 barBtnRefresh.Enabled = false;
+                newLTC = false;
             }
             if (status == "editCTLopTC")
             {
@@ -89,6 +92,7 @@ namespace QLDSV.Component
         private void barbtnThemLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("editLopTC");
+            newLTC = true;
             maLopTCTextEdit.Focus();
             lopTinChiBindingSource.AddNew();
         }
@@ -143,7 +147,7 @@ namespace QLDSV.Component
             {
                 ((DataRowView)lopTinChiBindingSource.Current)["MaGV"] = ((DataRowView)giangVienBindingSource.Current)["MaGV"];
                 ((DataRowView)lopTinChiBindingSource.Current)["MaMH"] = ((DataRowView)monHocBindingSource.Current)["MaMH"];
-                ((DataRowView)lopTinChiBindingSource.Current)["SLDaDangKy"] = 0;
+                if(newLTC) ((DataRowView)lopTinChiBindingSource.Current)["SLDaDangKy"] = 0;
                 lopTinChiBindingSource.EndEdit();
                 Layout_Setting("normal");
             }

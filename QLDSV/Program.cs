@@ -102,7 +102,6 @@ namespace QLDSV
         private static void InitServices()
         {
             TableAdapterManager.Connection = KetNoiDB.SqlConnection;
-            TableAdapterManager.Connection = KetNoiDB.SqlConnection;
             TableAdapterManager.KhoaTableAdapter.Connection = KetNoiDB.SqlConnection;
             TableAdapterManager.GiangVienTableAdapter.Connection = KetNoiDB.SqlConnection;
             TableAdapterManager.CTTruongKhoaTableAdapter.Connection = KetNoiDB.SqlConnection;
