@@ -18,6 +18,10 @@ namespace QLDSV.Component
         public UserControlNhapDiem()
         {
             InitializeComponent();
+            if(Program.KetNoiDB.GroupId == "PGV")
+            {
+                colDiemCC.OptionsColumn.ReadOnly = colDiemGK.OptionsColumn.ReadOnly = colDiemCK.OptionsColumn.ReadOnly = true;
+            }
         }
 
         public void UserControlNhapDiem_Load()
