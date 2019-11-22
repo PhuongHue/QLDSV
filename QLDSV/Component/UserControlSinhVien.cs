@@ -78,6 +78,7 @@ namespace QLDSV
             IsAddNew = true;
             maSVTextEdit.Focus();
             sinhVienBindingSource.AddNew();
+
         }
 
         private void barBtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -127,6 +128,7 @@ namespace QLDSV
                 try
                 {
                     var resReader = Program.KetNoiDB.ExcuteSP(cmdString);
+                    resReader.Close();
                 }
                 catch (SqlException ex)
                 {

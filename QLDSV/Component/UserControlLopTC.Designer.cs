@@ -292,6 +292,7 @@
             this.barbtnXoaLichHoc.Caption = "Xóa lịch học";
             this.barbtnXoaLichHoc.Id = 11;
             this.barbtnXoaLichHoc.Name = "barbtnXoaLichHoc";
+            this.barbtnXoaLichHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnXoaLichHoc_ItemClick);
             // 
             // barSubItemSua
             // 
@@ -324,6 +325,7 @@
             this.barbtnLuu.Id = 3;
             this.barbtnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barbtnLuu.ImageOptions.Image")));
             this.barbtnLuu.Name = "barbtnLuu";
+            this.barbtnLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtnLuu_ItemClick);
             // 
             // barBtnRefresh
             // 
@@ -332,6 +334,7 @@
             this.barBtnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnRefresh.ImageOptions.Image")));
             this.barBtnRefresh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnRefresh.ImageOptions.LargeImage")));
             this.barBtnRefresh.Name = "barBtnRefresh";
+            this.barBtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnRefresh_ItemClick);
             // 
             // barBtnPrintBDTK
             // 
@@ -404,7 +407,7 @@
             this.lopTinChiGridControl.MainView = this.gridViewLopTC;
             this.lopTinChiGridControl.MenuManager = this.barManager;
             this.lopTinChiGridControl.Name = "lopTinChiGridControl";
-            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 324);
+            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 323);
             this.lopTinChiGridControl.TabIndex = 5;
             this.lopTinChiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLopTC});
@@ -536,7 +539,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 410);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 409);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -769,7 +772,7 @@
             // 
             this.lichHocGridControl.DataSource = this.cTLopTCBindingSource;
             this.lichHocGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichHocGridControl.Location = new System.Drawing.Point(3, 333);
+            this.lichHocGridControl.Location = new System.Drawing.Point(3, 332);
             this.lichHocGridControl.MainView = this.gridViewLichHoc;
             this.lichHocGridControl.MenuManager = this.barManager;
             this.lichHocGridControl.Name = "lichHocGridControl";
@@ -841,9 +844,9 @@
             this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
             this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
             this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 495);
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 494);
             this.groupBoxLichHoc.Name = "groupBoxLichHoc";
-            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 51);
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 52);
             this.groupBoxLichHoc.TabIndex = 8;
             this.groupBoxLichHoc.TabStop = false;
             this.groupBoxLichHoc.Visible = false;

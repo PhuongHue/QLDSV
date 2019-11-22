@@ -130,7 +130,7 @@
             this.textBoxLoginName.Name = "textBoxLoginName";
             this.textBoxLoginName.Size = new System.Drawing.Size(199, 21);
             this.textBoxLoginName.TabIndex = 7;
-            this.textBoxLoginName.Text = "a";
+            this.textBoxLoginName.Text = "lvt";
             // 
             // textBoxPassword
             // 
@@ -139,6 +139,7 @@
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(199, 21);
             this.textBoxPassword.TabIndex = 7;
+            this.textBoxPassword.Text = "123";
             // 
             // FormDangNhap
             // 

@@ -115,6 +115,12 @@ namespace QLDSV.Component
                 lopTinChiBindingSource.RemoveCurrent();
         }
 
+        private void barbtnXoaLichHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn xóa?", "Xóa", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                cTLopTCBindingSource.RemoveCurrent();
+        }
+
         private void barbtnSuaLopTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Layout_Setting("editLopTC");
@@ -218,5 +224,6 @@ namespace QLDSV.Component
             string tenMH = (string)((DataRowView)monHocBindingSource[indexMH])["TenMH"];
             new Reports.FormPrintDSTHM(maLop,tenMH).Show();
         }
+
     }
 }

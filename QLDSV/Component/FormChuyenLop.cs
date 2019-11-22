@@ -36,7 +36,7 @@ namespace QLDSV.Component
         {
             try
             {
-                Program.KetNoiDB.ExcuteSP($"SP_Chuyen_SinhVien @MaSV = N'{MaSV}', @MaLop = N'{lopComboBox.SelectedValue.ToString()}'");
+                Program.KetNoiDB.ExcuteSP($"SP_Chuyen_SinhVien @MaSV = N'{MaSV}', @MaLop = N'{lopComboBox.SelectedValue.ToString()}'").Close();
                 MessageBox.Show("Thành công!", "Thông báo");
                 Dispose();
             }
