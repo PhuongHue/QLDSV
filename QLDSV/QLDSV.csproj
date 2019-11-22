@@ -166,6 +166,12 @@
     <Compile Include="Reports\ReportBangDiemTongKet.Designer.cs">
       <DependentUpon>ReportBangDiemTongKet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportDSSV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportDSSV.Designer.cs">
+      <DependentUpon>ReportDSSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportDSThiHetMon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -177,12 +183,6 @@
     </Compile>
     <Compile Include="Reports\ReportPhieuDiem.Designer.cs">
       <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\Report_DSSinhVien.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\Report_DSSinhVien.Designer.cs">
-      <DependentUpon>Report_DSSinhVien.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Component\FormChuyenLop.resx">
       <DependentUpon>FormChuyenLop.cs</DependentUpon>
@@ -233,14 +233,14 @@
     <EmbeddedResource Include="Reports\ReportBangDiemTongKet.resx">
       <DependentUpon>ReportBangDiemTongKet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDSSV.resx">
+      <DependentUpon>ReportDSSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportDSThiHetMon.resx">
       <DependentUpon>ReportDSThiHetMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportPhieuDiem.resx">
       <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report_DSSinhVien.resx">
-      <DependentUpon>Report_DSSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

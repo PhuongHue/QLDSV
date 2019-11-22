@@ -295,6 +295,7 @@
             this.sinhVienBindingSource.AllowNew = true;
             this.sinhVienBindingSource.DataMember = "FK_SinhVien_Lop";
             this.sinhVienBindingSource.DataSource = this.lopBindingSource;
+            this.sinhVienBindingSource.CurrentChanged += new System.EventHandler(this.sinhVienBindingSource_CurrentChanged);
             // 
             // nienKhoaSpinEdit
             // 

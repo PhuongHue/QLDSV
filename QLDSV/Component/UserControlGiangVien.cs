@@ -22,7 +22,8 @@ namespace QLDSV.Component
 
         public void UserControlGiangVien_Load()
         {
-            khoaBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+            giangVienBindingSource.DataSource = Program.QLDSVDataSetKhoa.GiangVien;
+            khoaBindingSource.DataSource = Program.QLDSVDataSetKhoa.Khoa;
         }
 
         private void Layout_Setting(string status)
@@ -119,6 +120,7 @@ namespace QLDSV.Component
             }
             try
             {
+                ((DataRowView)giangVienBindingSource.Current)["MaKhoa"] = ((DataRowView)khoaBindingSource.Current)["MaKhoa"];
                 giangVienBindingSource.EndEdit();
                 Layout_Setting("normal");
             }

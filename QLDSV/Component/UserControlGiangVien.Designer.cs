@@ -49,18 +49,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.qLDSVDataSetKhoa = new QLDSV.QLDSVDataSetKhoa();
-            this.giangVienGridControl = new DevExpress.XtraGrid.GridControl();
             this.giangVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.khoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridViewGiangVien = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaGV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHocVi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHocHam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMaKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colChucVu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxGiangVien = new System.Windows.Forms.GroupBox();
             this.btnOkGiangVien = new System.Windows.Forms.Button();
             this.btnGiangVienHuy = new System.Windows.Forms.Button();
@@ -71,6 +60,18 @@
             this.tenTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.hoTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.maGVTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.khoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colMaGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.giangVienGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaGV1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHocVi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHocHam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChuyenMon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colChucVu = new DevExpress.XtraGrid.Columns.GridColumn();
             maGVLabel = new System.Windows.Forms.Label();
             hoLabel = new System.Windows.Forms.Label();
             tenLabel = new System.Windows.Forms.Label();
@@ -80,10 +81,7 @@
             chucVuLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giangVienGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giangVienBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewGiangVien)).BeginInit();
             this.groupBoxGiangVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chucVuTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chuyenMonTextEdit.Properties)).BeginInit();
@@ -92,6 +90,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tenTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maGVTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giangVienGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // maGVLabel
@@ -241,7 +242,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 443);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 456);
             this.barDockControlBottom.Manager = this.barManager;
             this.barDockControlBottom.Size = new System.Drawing.Size(881, 0);
             // 
@@ -251,7 +252,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
             this.barDockControlLeft.Manager = this.barManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 396);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 409);
             // 
             // barDockControlRight
             // 
@@ -259,116 +260,17 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(881, 47);
             this.barDockControlRight.Manager = this.barManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 396);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 409);
             // 
             // qLDSVDataSetKhoa
             // 
             this.qLDSVDataSetKhoa.DataSetName = "QLDSVDataSetKhoa";
             this.qLDSVDataSetKhoa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // giangVienGridControl
-            // 
-            this.giangVienGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.giangVienGridControl.DataSource = this.giangVienBindingSource;
-            this.giangVienGridControl.Location = new System.Drawing.Point(0, 53);
-            this.giangVienGridControl.MainView = this.gridViewGiangVien;
-            this.giangVienGridControl.MenuManager = this.barManager;
-            this.giangVienGridControl.Name = "giangVienGridControl";
-            this.giangVienGridControl.Size = new System.Drawing.Size(881, 292);
-            this.giangVienGridControl.TabIndex = 5;
-            this.giangVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewGiangVien});
-            // 
             // giangVienBindingSource
             // 
-            this.giangVienBindingSource.DataMember = "FK_GiangVien_Khoa";
-            this.giangVienBindingSource.DataSource = this.khoaBindingSource;
-            // 
-            // khoaBindingSource
-            // 
-            this.khoaBindingSource.DataMember = "Khoa";
-            this.khoaBindingSource.DataSource = this.qLDSVDataSetKhoa;
-            // 
-            // gridViewGiangVien
-            // 
-            this.gridViewGiangVien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaGV,
-            this.colHo,
-            this.colTen,
-            this.colHocVi,
-            this.colHocHam,
-            this.colChuyenMon,
-            this.colMaKhoa,
-            this.colChucVu});
-            this.gridViewGiangVien.GridControl = this.giangVienGridControl;
-            this.gridViewGiangVien.Name = "gridViewGiangVien";
-            // 
-            // colMaGV
-            // 
-            this.colMaGV.FieldName = "MaGV";
-            this.colMaGV.Name = "colMaGV";
-            this.colMaGV.OptionsColumn.AllowEdit = false;
-            this.colMaGV.Visible = true;
-            this.colMaGV.VisibleIndex = 0;
-            // 
-            // colHo
-            // 
-            this.colHo.FieldName = "Ho";
-            this.colHo.Name = "colHo";
-            this.colHo.OptionsColumn.AllowEdit = false;
-            this.colHo.Visible = true;
-            this.colHo.VisibleIndex = 1;
-            // 
-            // colTen
-            // 
-            this.colTen.FieldName = "Ten";
-            this.colTen.Name = "colTen";
-            this.colTen.OptionsColumn.AllowEdit = false;
-            this.colTen.Visible = true;
-            this.colTen.VisibleIndex = 2;
-            // 
-            // colHocVi
-            // 
-            this.colHocVi.FieldName = "HocVi";
-            this.colHocVi.Name = "colHocVi";
-            this.colHocVi.OptionsColumn.AllowEdit = false;
-            this.colHocVi.Visible = true;
-            this.colHocVi.VisibleIndex = 3;
-            // 
-            // colHocHam
-            // 
-            this.colHocHam.FieldName = "HocHam";
-            this.colHocHam.Name = "colHocHam";
-            this.colHocHam.OptionsColumn.AllowEdit = false;
-            this.colHocHam.Visible = true;
-            this.colHocHam.VisibleIndex = 4;
-            // 
-            // colChuyenMon
-            // 
-            this.colChuyenMon.FieldName = "ChuyenMon";
-            this.colChuyenMon.Name = "colChuyenMon";
-            this.colChuyenMon.OptionsColumn.AllowEdit = false;
-            this.colChuyenMon.Visible = true;
-            this.colChuyenMon.VisibleIndex = 5;
-            // 
-            // colMaKhoa
-            // 
-            this.colMaKhoa.FieldName = "MaKhoa";
-            this.colMaKhoa.Name = "colMaKhoa";
-            this.colMaKhoa.OptionsColumn.AllowEdit = false;
-            this.colMaKhoa.OptionsColumn.AllowFocus = false;
-            this.colMaKhoa.Visible = true;
-            this.colMaKhoa.VisibleIndex = 6;
-            // 
-            // colChucVu
-            // 
-            this.colChucVu.FieldName = "ChucVu";
-            this.colChucVu.Name = "colChucVu";
-            this.colChucVu.OptionsColumn.AllowEdit = false;
-            this.colChucVu.Visible = true;
-            this.colChucVu.VisibleIndex = 7;
+            this.giangVienBindingSource.DataMember = "GiangVien";
+            this.giangVienBindingSource.DataSource = this.qLDSVDataSetKhoa;
             // 
             // groupBoxGiangVien
             // 
@@ -390,7 +292,7 @@
             this.groupBoxGiangVien.Controls.Add(this.maGVTextEdit);
             this.groupBoxGiangVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxGiangVien.Enabled = false;
-            this.groupBoxGiangVien.Location = new System.Drawing.Point(0, 351);
+            this.groupBoxGiangVien.Location = new System.Drawing.Point(0, 364);
             this.groupBoxGiangVien.Name = "groupBoxGiangVien";
             this.groupBoxGiangVien.Size = new System.Drawing.Size(881, 92);
             this.groupBoxGiangVien.TabIndex = 6;
@@ -493,24 +395,133 @@
             this.maGVTextEdit.TabIndex = 1;
             this.maGVTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.codeTextEdit_Validating);
             // 
+            // khoaBindingSource
+            // 
+            this.khoaBindingSource.DataMember = "Khoa";
+            this.khoaBindingSource.DataSource = this.qLDSVDataSetKhoa;
+            // 
+            // colMaGV
+            // 
+            this.colMaGV.FieldName = "MaGV";
+            this.colMaGV.Name = "colMaGV";
+            this.colMaGV.OptionsColumn.AllowEdit = false;
+            // 
+            // giangVienGridControl
+            // 
+            this.giangVienGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.giangVienGridControl.DataSource = this.giangVienBindingSource;
+            this.giangVienGridControl.Location = new System.Drawing.Point(0, 53);
+            this.giangVienGridControl.MainView = this.gridView1;
+            this.giangVienGridControl.MenuManager = this.barManager;
+            this.giangVienGridControl.Name = "giangVienGridControl";
+            this.giangVienGridControl.Size = new System.Drawing.Size(881, 305);
+            this.giangVienGridControl.TabIndex = 10;
+            this.giangVienGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaGV1,
+            this.colHo,
+            this.colTen,
+            this.colHocVi,
+            this.colHocHam,
+            this.colChuyenMon,
+            this.colMaKhoa,
+            this.colChucVu});
+            this.gridView1.GridControl = this.giangVienGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colMaGV1
+            // 
+            this.colMaGV1.FieldName = "MaGV";
+            this.colMaGV1.Name = "colMaGV1";
+            this.colMaGV1.OptionsColumn.AllowEdit = false;
+            this.colMaGV1.OptionsColumn.AllowFocus = false;
+            this.colMaGV1.Visible = true;
+            this.colMaGV1.VisibleIndex = 0;
+            // 
+            // colHo
+            // 
+            this.colHo.FieldName = "Ho";
+            this.colHo.Name = "colHo";
+            this.colHo.OptionsColumn.AllowEdit = false;
+            this.colHo.OptionsColumn.AllowFocus = false;
+            this.colHo.Visible = true;
+            this.colHo.VisibleIndex = 1;
+            // 
+            // colTen
+            // 
+            this.colTen.FieldName = "Ten";
+            this.colTen.Name = "colTen";
+            this.colTen.OptionsColumn.AllowEdit = false;
+            this.colTen.OptionsColumn.AllowFocus = false;
+            this.colTen.Visible = true;
+            this.colTen.VisibleIndex = 2;
+            // 
+            // colHocVi
+            // 
+            this.colHocVi.FieldName = "HocVi";
+            this.colHocVi.Name = "colHocVi";
+            this.colHocVi.OptionsColumn.AllowEdit = false;
+            this.colHocVi.OptionsColumn.AllowFocus = false;
+            this.colHocVi.Visible = true;
+            this.colHocVi.VisibleIndex = 3;
+            // 
+            // colHocHam
+            // 
+            this.colHocHam.FieldName = "HocHam";
+            this.colHocHam.Name = "colHocHam";
+            this.colHocHam.OptionsColumn.AllowEdit = false;
+            this.colHocHam.OptionsColumn.AllowFocus = false;
+            this.colHocHam.Visible = true;
+            this.colHocHam.VisibleIndex = 4;
+            // 
+            // colChuyenMon
+            // 
+            this.colChuyenMon.FieldName = "ChuyenMon";
+            this.colChuyenMon.Name = "colChuyenMon";
+            this.colChuyenMon.OptionsColumn.AllowEdit = false;
+            this.colChuyenMon.OptionsColumn.AllowFocus = false;
+            this.colChuyenMon.Visible = true;
+            this.colChuyenMon.VisibleIndex = 5;
+            // 
+            // colMaKhoa
+            // 
+            this.colMaKhoa.FieldName = "MaKhoa";
+            this.colMaKhoa.Name = "colMaKhoa";
+            this.colMaKhoa.OptionsColumn.AllowEdit = false;
+            this.colMaKhoa.OptionsColumn.AllowFocus = false;
+            this.colMaKhoa.Visible = true;
+            this.colMaKhoa.VisibleIndex = 6;
+            // 
+            // colChucVu
+            // 
+            this.colChucVu.FieldName = "ChucVu";
+            this.colChucVu.Name = "colChucVu";
+            this.colChucVu.OptionsColumn.AllowEdit = false;
+            this.colChucVu.OptionsColumn.AllowFocus = false;
+            this.colChucVu.Visible = true;
+            this.colChucVu.VisibleIndex = 7;
+            // 
             // UserControlGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBoxGiangVien);
             this.Controls.Add(this.giangVienGridControl);
+            this.Controls.Add(this.groupBoxGiangVien);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UserControlGiangVien";
-            this.Size = new System.Drawing.Size(881, 443);
+            this.Size = new System.Drawing.Size(881, 456);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.giangVienGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giangVienBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.khoaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewGiangVien)).EndInit();
             this.groupBoxGiangVien.ResumeLayout(false);
             this.groupBoxGiangVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chucVuTextEdit.Properties)).EndInit();
@@ -520,6 +531,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tenTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maGVTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khoaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giangVienGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,17 +553,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private QLDSVDataSetKhoa qLDSVDataSetKhoa;
-        private DevExpress.XtraGrid.GridControl giangVienGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewGiangVien;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaGV;
-        private DevExpress.XtraGrid.Columns.GridColumn colHo;
-        private DevExpress.XtraGrid.Columns.GridColumn colTen;
-        private DevExpress.XtraGrid.Columns.GridColumn colHocVi;
-        private DevExpress.XtraGrid.Columns.GridColumn colHocHam;
-        private DevExpress.XtraGrid.Columns.GridColumn colChuyenMon;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaKhoa;
-        private DevExpress.XtraGrid.Columns.GridColumn colChucVu;
-        private System.Windows.Forms.BindingSource khoaBindingSource;
         private System.Windows.Forms.GroupBox groupBoxGiangVien;
         private DevExpress.XtraEditors.TextEdit chucVuTextEdit;
         private DevExpress.XtraEditors.TextEdit chuyenMonTextEdit;
@@ -561,5 +564,17 @@
         private System.Windows.Forms.Button btnOkGiangVien;
         private System.Windows.Forms.Button btnGiangVienHuy;
         private System.Windows.Forms.BindingSource giangVienBindingSource;
+        private System.Windows.Forms.BindingSource khoaBindingSource;
+        private DevExpress.XtraGrid.GridControl giangVienGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaGV;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaGV1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTen;
+        private DevExpress.XtraGrid.Columns.GridColumn colHocVi;
+        private DevExpress.XtraGrid.Columns.GridColumn colHocHam;
+        private DevExpress.XtraGrid.Columns.GridColumn colChuyenMon;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaKhoa;
+        private DevExpress.XtraGrid.Columns.GridColumn colChucVu;
     }
 }

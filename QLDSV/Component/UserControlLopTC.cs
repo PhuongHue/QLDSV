@@ -225,5 +225,22 @@ namespace QLDSV.Component
             new Reports.FormPrintDSTHM(maLop,tenMH).Show();
         }
 
+        private void lopTinChiBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                var source = (BindingSource)sender;
+                var row = (DataRowView)source.Current;
+                int indexGV = giangVienBindingSource.Find("MaGV", row["MaGV"]);
+                int indexMH = monHocBindingSource.Find("MaMH", row["MaMH"]);
+                giangVienBindingSource.Position = indexGV;
+                monHocBindingSource.Position = indexMH;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

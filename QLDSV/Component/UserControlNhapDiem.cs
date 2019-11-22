@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using BatLoi;
+using System.Data.SqlClient;
 
 namespace QLDSV.Component
 {
@@ -18,7 +19,7 @@ namespace QLDSV.Component
         public UserControlNhapDiem()
         {
             InitializeComponent();
-            if(Program.KetNoiDB.GroupId == "PGV")
+            if (Program.KetNoiDB.GroupId == "PGV")
             {
                 colDiemCC.OptionsColumn.ReadOnly = colDiemGK.OptionsColumn.ReadOnly = colDiemCK.OptionsColumn.ReadOnly = true;
             }
@@ -32,7 +33,14 @@ namespace QLDSV.Component
 
         private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.TableAdapterManager.V_NhapDiemTableAdapter.Update(Program.QLDSVDataSetKhoa.V_NhapDiem);
+            try
+            {
+                Program.TableAdapterManager.V_NhapDiemTableAdapter.Update(Program.QLDSVDataSetKhoa.V_NhapDiem);
+                MessageBox.Show("Nhập điểm thành công", "Thông báo");
+            } catch (SqlException ex)
+            {
+
+            }
         }
 
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -72,7 +80,7 @@ namespace QLDSV.Component
             if (view.HasColumnErrors)
             {
                 string errors = "";
-                if(view.GetColumnError(colDiemCC) != "") errors += view.GetColumnError(colDiemCC) + '\n';
+                if (view.GetColumnError(colDiemCC) != "") errors += view.GetColumnError(colDiemCC) + '\n';
                 if (view.GetColumnError(colDiemGK) != "") errors += view.GetColumnError(colDiemGK) + '\n';
                 if (view.GetColumnError(colDiemCK) != "") errors += view.GetColumnError(colDiemCK);
                 MessageBox.Show(errors);

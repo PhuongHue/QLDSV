@@ -120,7 +120,6 @@ namespace QLDSV.Component
             {
                 MessageBox.Show(BindingSourceMessage.ToMessage(ex, "Lớp"));
             }
-
             
         }
 
@@ -141,10 +140,10 @@ namespace QLDSV.Component
             }
         }
 
-        private void nameTextEdit_Validating(object sender, CancelEventArgs e)
+        private void commonTextEdit_Validating(object sender, CancelEventArgs e)
         {
             TextEdit textEdit = (TextEdit)sender;
-            string error = Validation.ValidateName(textEdit.Properties.AccessibleName, textEdit.Text);
+            string error = Validation.ValidateCommonText(textEdit.Properties.AccessibleName, textEdit.Text);
             if (error != "")
             {
                 textEdit.ErrorText = error;
@@ -155,7 +154,7 @@ namespace QLDSV.Component
         {
             string maLop = (string)((DataRowView)lopBindingSource.Current)["MaLop"];
             string tenLop = (string)((DataRowView)lopBindingSource.Current)["TenLop"];
-            new Report_DSSinhVien(maLop, tenLop);
+            new ReportDSSV(maLop, tenLop);
         }
     }
 }

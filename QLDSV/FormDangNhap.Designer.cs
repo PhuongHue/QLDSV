@@ -130,7 +130,7 @@
             this.textBoxLoginName.Name = "textBoxLoginName";
             this.textBoxLoginName.Size = new System.Drawing.Size(199, 21);
             this.textBoxLoginName.TabIndex = 7;
-            this.textBoxLoginName.Text = "lvt";
+            this.textBoxLoginName.Text = "ns";
             // 
             // textBoxPassword
             // 

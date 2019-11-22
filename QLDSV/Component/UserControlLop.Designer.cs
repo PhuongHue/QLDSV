@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label maLopLabel;
             System.Windows.Forms.Label tenLopLabel;
-            System.Windows.Forms.Label maKhoaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlLop));
+            System.Windows.Forms.Label maKhoaLabel1;
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -41,6 +41,7 @@
             this.barbtnSua = new DevExpress.XtraBars.BarButtonItem();
             this.barbtnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPrintDS = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
@@ -53,16 +54,15 @@
             this.colTenLop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaKhoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBoxLop = new System.Windows.Forms.GroupBox();
-            this.maKhoaTextBox = new System.Windows.Forms.TextBox();
             this.tenLopTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.maLopTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.barBtnPrintDS = new DevExpress.XtraBars.BarButtonItem();
+            this.maKhoaTextBox = new DevExpress.XtraEditors.TextEdit();
             maLopLabel = new System.Windows.Forms.Label();
             tenLopLabel = new System.Windows.Forms.Label();
-            maKhoaLabel = new System.Windows.Forms.Label();
+            maKhoaLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
@@ -73,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tenLopTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maLopTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maKhoaTextBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // maLopLabel
@@ -92,16 +93,6 @@
             tenLopLabel.Size = new System.Drawing.Size(49, 13);
             tenLopLabel.TabIndex = 24;
             tenLopLabel.Text = "Ten Lop:";
-            // 
-            // maKhoaLabel
-            // 
-            maKhoaLabel.AutoSize = true;
-            maKhoaLabel.Enabled = false;
-            maKhoaLabel.Location = new System.Drawing.Point(387, 41);
-            maKhoaLabel.Name = "maKhoaLabel";
-            maKhoaLabel.Size = new System.Drawing.Size(52, 13);
-            maKhoaLabel.TabIndex = 25;
-            maKhoaLabel.Text = "Ma Khoa:";
             // 
             // barDockControlTop
             // 
@@ -185,11 +176,19 @@
             this.barBtnRefresh.Name = "barBtnRefresh";
             this.barBtnRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnRefresh_ItemClick);
             // 
+            // barBtnPrintDS
+            // 
+            this.barBtnPrintDS.Caption = "In Danh sách";
+            this.barBtnPrintDS.Id = 5;
+            this.barBtnPrintDS.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnPrintDS.ImageOptions.Image")));
+            this.barBtnPrintDS.Name = "barBtnPrintDS";
+            this.barBtnPrintDS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDS_ItemClick);
+            // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 561);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 653);
             this.barDockControlBottom.Manager = this.barManager;
             this.barDockControlBottom.Size = new System.Drawing.Size(895, 0);
             // 
@@ -199,7 +198,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 47);
             this.barDockControlLeft.Manager = this.barManager;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 514);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 606);
             // 
             // barDockControlRight
             // 
@@ -207,7 +206,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(895, 47);
             this.barDockControlRight.Manager = this.barManager;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 514);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 606);
             // 
             // qLDSVDataSetKhoa
             // 
@@ -235,7 +234,7 @@
             this.lopGridControl.MainView = this.gridViewLop;
             this.lopGridControl.MenuManager = this.barManager;
             this.lopGridControl.Name = "lopGridControl";
-            this.lopGridControl.Size = new System.Drawing.Size(895, 410);
+            this.lopGridControl.Size = new System.Drawing.Size(895, 502);
             this.lopGridControl.TabIndex = 5;
             this.lopGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLop});
@@ -278,7 +277,7 @@
             // 
             // groupBoxLop
             // 
-            this.groupBoxLop.Controls.Add(maKhoaLabel);
+            this.groupBoxLop.Controls.Add(maKhoaLabel1);
             this.groupBoxLop.Controls.Add(this.maKhoaTextBox);
             this.groupBoxLop.Controls.Add(tenLopLabel);
             this.groupBoxLop.Controls.Add(this.tenLopTextEdit);
@@ -288,20 +287,11 @@
             this.groupBoxLop.Controls.Add(this.btnHuy);
             this.groupBoxLop.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxLop.Enabled = false;
-            this.groupBoxLop.Location = new System.Drawing.Point(0, 469);
+            this.groupBoxLop.Location = new System.Drawing.Point(0, 561);
             this.groupBoxLop.Name = "groupBoxLop";
             this.groupBoxLop.Size = new System.Drawing.Size(895, 92);
             this.groupBoxLop.TabIndex = 6;
             this.groupBoxLop.TabStop = false;
-            // 
-            // maKhoaTextBox
-            // 
-            this.maKhoaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lopBindingSource, "MaKhoa", true));
-            this.maKhoaTextBox.Location = new System.Drawing.Point(445, 38);
-            this.maKhoaTextBox.Name = "maKhoaTextBox";
-            this.maKhoaTextBox.ReadOnly = true;
-            this.maKhoaTextBox.Size = new System.Drawing.Size(100, 21);
-            this.maKhoaTextBox.TabIndex = 26;
             // 
             // tenLopTextEdit
             // 
@@ -310,9 +300,10 @@
             this.tenLopTextEdit.MenuManager = this.barManager;
             this.tenLopTextEdit.Name = "tenLopTextEdit";
             this.tenLopTextEdit.Properties.AccessibleName = "Tên lớp";
+            this.tenLopTextEdit.Properties.MaxLength = 50;
             this.tenLopTextEdit.Size = new System.Drawing.Size(100, 20);
             this.tenLopTextEdit.TabIndex = 25;
-            this.tenLopTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextEdit_Validating);
+            this.tenLopTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.commonTextEdit_Validating);
             // 
             // maLopTextEdit
             // 
@@ -321,6 +312,7 @@
             this.maLopTextEdit.MenuManager = this.barManager;
             this.maLopTextEdit.Name = "maLopTextEdit";
             this.maLopTextEdit.Properties.AccessibleName = "Mã lớp";
+            this.maLopTextEdit.Properties.MaxLength = 10;
             this.maLopTextEdit.Size = new System.Drawing.Size(100, 20);
             this.maLopTextEdit.TabIndex = 24;
             this.maLopTextEdit.Validating += new System.ComponentModel.CancelEventHandler(this.codeTextEdit_Validating);
@@ -350,13 +342,24 @@
             this.sinhVienBindingSource.DataMember = "FK_SinhVien_Lop";
             this.sinhVienBindingSource.DataSource = this.lopBindingSource;
             // 
-            // barBtnPrintDS
+            // maKhoaLabel1
             // 
-            this.barBtnPrintDS.Caption = "In Danh sách";
-            this.barBtnPrintDS.Id = 5;
-            this.barBtnPrintDS.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barBtnPrintDS.Name = "barBtnPrintDS";
-            this.barBtnPrintDS.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDS_ItemClick);
+            maKhoaLabel1.AutoSize = true;
+            maKhoaLabel1.Location = new System.Drawing.Point(391, 41);
+            maKhoaLabel1.Name = "maKhoaLabel1";
+            maKhoaLabel1.Size = new System.Drawing.Size(52, 13);
+            maKhoaLabel1.TabIndex = 25;
+            maKhoaLabel1.Text = "Ma Khoa:";
+            // 
+            // maKhoaTextBox
+            // 
+            this.maKhoaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lopBindingSource, "MaKhoa", true));
+            this.maKhoaTextBox.Location = new System.Drawing.Point(449, 38);
+            this.maKhoaTextBox.MenuManager = this.barManager;
+            this.maKhoaTextBox.Name = "maKhoaTextBox";
+            this.maKhoaTextBox.Properties.ReadOnly = true;
+            this.maKhoaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.maKhoaTextBox.TabIndex = 26;
             // 
             // UserControlLop
             // 
@@ -369,7 +372,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "UserControlLop";
-            this.Size = new System.Drawing.Size(895, 561);
+            this.Size = new System.Drawing.Size(895, 653);
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
@@ -381,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tenLopTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maLopTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maKhoaTextBox.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,11 +413,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaKhoa;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.TextBox maKhoaTextBox;
         private System.Windows.Forms.BindingSource khoaBindingSource;
         private DevExpress.XtraEditors.TextEdit tenLopTextEdit;
         private DevExpress.XtraEditors.TextEdit maLopTextEdit;
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
         private DevExpress.XtraBars.BarButtonItem barBtnPrintDS;
+        private DevExpress.XtraEditors.TextEdit maKhoaTextBox;
     }
 }

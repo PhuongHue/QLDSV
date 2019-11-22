@@ -39,6 +39,7 @@ namespace QLDSV
         {
             try
             {
+                QLDSVDataSetKhoa.Clear();
                 // fill tables
                 TableAdapterManager.KhoaTableAdapter.Fill(QLDSVDataSetKhoa.Khoa);
                 TableAdapterManager.GiangVienTableAdapter.Fill(QLDSVDataSetKhoa.GiangVien);
@@ -59,20 +60,20 @@ namespace QLDSV
                 MessageBox.Show(e.Message);
                 MessageBox.Show(SqlMessageResolver.SqlMessageResolve(e.Message));
             }
-
         }
         public static void UpdateAll()
         {
             try
             {
                 TableAdapterManager.UpdateAll(QLDSVDataSetKhoa);
+                MessageBox.Show("Lưu thành công!","Thông báo");
             }
             catch (SqlException e)
             {
                 MessageBox.Show(e.Message);
                 MessageBox.Show(SqlMessageResolver.SqlMessageResolve(e.Message));
             }
-            catch (ArgumentException e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }

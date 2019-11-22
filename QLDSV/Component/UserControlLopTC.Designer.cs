@@ -393,6 +393,7 @@
             // 
             this.lopTinChiBindingSource.DataMember = "FK_LopTinChi_Khoa";
             this.lopTinChiBindingSource.DataSource = this.khoaBindingSource;
+            this.lopTinChiBindingSource.CurrentChanged += new System.EventHandler(this.lopTinChiBindingSource_CurrentChanged);
             // 
             // khoaBindingSource
             // 
@@ -539,7 +540,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 409);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 408);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -776,7 +777,7 @@
             this.lichHocGridControl.MainView = this.gridViewLichHoc;
             this.lichHocGridControl.MenuManager = this.barManager;
             this.lichHocGridControl.Name = "lichHocGridControl";
-            this.lichHocGridControl.Size = new System.Drawing.Size(958, 71);
+            this.lichHocGridControl.Size = new System.Drawing.Size(958, 70);
             this.lichHocGridControl.TabIndex = 6;
             this.lichHocGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLichHoc});
@@ -844,9 +845,9 @@
             this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
             this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
             this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 494);
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 493);
             this.groupBoxLichHoc.Name = "groupBoxLichHoc";
-            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 52);
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 53);
             this.groupBoxLichHoc.TabIndex = 8;
             this.groupBoxLichHoc.TabStop = false;
             this.groupBoxLichHoc.Visible = false;

@@ -33,6 +33,7 @@ namespace QLDSV
                 groupBoxLop.Enabled = false;
                 sinhVienGridControl.Enabled = false;
                 groupBoxSinhVien.Enabled = true;
+                barBtnChuyenLop.Enabled = false;
                 barbtnThem.Enabled = false;
                 barbtnXoa.Enabled = false;
                 barbtnSua.Enabled = false;
@@ -44,6 +45,7 @@ namespace QLDSV
                 groupBoxLop.Enabled = true;
                 sinhVienGridControl.Enabled = true;
                 groupBoxSinhVien.Enabled = false;
+                barBtnChuyenLop.Enabled = true;
                 barbtnThem.Enabled = true;
                 barbtnXoa.Enabled = true;
                 barbtnSua.Enabled = true;
@@ -184,6 +186,21 @@ namespace QLDSV
         {
             Program.UpdateAll();
             Program.FillAllTable();
+        }
+
+        private void sinhVienBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var source = (BindingSource)sender;
+                var row = (DataRowView)source.Current;
+                int index = chuyenNganhBindingSource.Find("MaCN", row["MaCN"]);
+                chuyenNganhBindingSource.Position = index;
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
