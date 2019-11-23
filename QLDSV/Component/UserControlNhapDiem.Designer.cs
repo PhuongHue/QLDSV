@@ -330,6 +330,7 @@
             // 
             this.colMaLopTC1.FieldName = "MaLopTC";
             this.colMaLopTC1.Name = "colMaLopTC1";
+            this.colMaLopTC1.OptionsColumn.AllowEdit = false;
             this.colMaLopTC1.Visible = true;
             this.colMaLopTC1.VisibleIndex = 0;
             // 
@@ -337,6 +338,7 @@
             // 
             this.colMaSV.FieldName = "MaSV";
             this.colMaSV.Name = "colMaSV";
+            this.colMaSV.OptionsColumn.AllowEdit = false;
             this.colMaSV.Visible = true;
             this.colMaSV.VisibleIndex = 1;
             // 
@@ -344,6 +346,7 @@
             // 
             this.colHo.FieldName = "Ho";
             this.colHo.Name = "colHo";
+            this.colHo.OptionsColumn.AllowEdit = false;
             this.colHo.Visible = true;
             this.colHo.VisibleIndex = 2;
             // 
@@ -351,6 +354,7 @@
             // 
             this.colTen.FieldName = "Ten";
             this.colTen.Name = "colTen";
+            this.colTen.OptionsColumn.AllowEdit = false;
             this.colTen.Visible = true;
             this.colTen.VisibleIndex = 3;
             // 

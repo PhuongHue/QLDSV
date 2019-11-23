@@ -29,6 +29,8 @@ namespace QLDSV.Component
         {
             lopTinChiBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             v_NhapDiemBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+          //  string MaLopTC = (string)searchLookUpEditMaLop.EditValue;
+         //   v_NhapDiemBindingSource.Filter = $"MaLopTC = '{MaLopTC}'";
         }
 
         private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -216,6 +216,7 @@
             // 
             this.colMaGV.FieldName = "MaGV";
             this.colMaGV.Name = "colMaGV";
+            this.colMaGV.OptionsColumn.AllowEdit = false;
             this.colMaGV.Visible = true;
             this.colMaGV.VisibleIndex = 0;
             // 
@@ -223,6 +224,7 @@
             // 
             this.colHo.FieldName = "Ho";
             this.colHo.Name = "colHo";
+            this.colHo.OptionsColumn.AllowEdit = false;
             this.colHo.Visible = true;
             this.colHo.VisibleIndex = 1;
             // 
@@ -230,6 +232,7 @@
             // 
             this.colTen.FieldName = "Ten";
             this.colTen.Name = "colTen";
+            this.colTen.OptionsColumn.AllowEdit = false;
             this.colTen.Visible = true;
             this.colTen.VisibleIndex = 2;
             // 
@@ -237,6 +240,7 @@
             // 
             this.colMaKhoa.FieldName = "MaKhoa";
             this.colMaKhoa.Name = "colMaKhoa";
+            this.colMaKhoa.OptionsColumn.AllowEdit = false;
             this.colMaKhoa.Visible = true;
             this.colMaKhoa.VisibleIndex = 3;
             // 
