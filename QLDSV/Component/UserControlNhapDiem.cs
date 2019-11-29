@@ -29,8 +29,14 @@ namespace QLDSV.Component
         {
             lopTinChiBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             v_NhapDiemBindingSource.DataSource = Program.QLDSVDataSetKhoa;
-          //  string MaLopTC = (string)searchLookUpEditMaLop.EditValue;
-         //   v_NhapDiemBindingSource.Filter = $"MaLopTC = '{MaLopTC}'";
+           
+            if(Program.KetNoiDB.GroupId == "Khoa")
+            {
+                lopTinChiBindingSource.Filter = $"MaGV = '{Program.KetNoiDB.UserName}'";
+                string MaLopTC = (string)searchLookUpEditMaLop.EditValue;
+                v_NhapDiemBindingSource.Filter = $"MaLopTC = '{MaLopTC}'";
+            }
+           
         }
 
         private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -54,7 +60,6 @@ namespace QLDSV.Component
         {
             string MaLopTC = (string)searchLookUpEditMaLop.EditValue;
             v_NhapDiemBindingSource.Filter = $"MaLopTC = '{MaLopTC}'";
-
         }
 
         private void gridViewV_NhapDiem_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

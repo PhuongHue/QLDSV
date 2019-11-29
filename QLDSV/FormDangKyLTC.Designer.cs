@@ -71,6 +71,14 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemComboBoxLop = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.statusStripLoginInfo = new System.Windows.Forms.StatusStrip();
+            this.txtStripMaSV = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtStripHoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sinhVienTableAdapter = new QLDSV.QLDSVDataSetKhoaTableAdapters.SinhVienTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSVDataSetKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_List_SV_DangKy_LopTCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_List_SV_DangKy_LopTCGridControl)).BeginInit();
@@ -84,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxLop)).BeginInit();
+            this.statusStripLoginInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // qLDSVDataSetKhoa
@@ -105,10 +115,10 @@
             // 
             this.sP_List_SV_DangKy_LopTCGridControl.DataSource = this.sP_List_SV_DangKy_LopTCBindingSource;
             this.sP_List_SV_DangKy_LopTCGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sP_List_SV_DangKy_LopTCGridControl.Location = new System.Drawing.Point(3, 3);
+            this.sP_List_SV_DangKy_LopTCGridControl.Location = new System.Drawing.Point(3, 23);
             this.sP_List_SV_DangKy_LopTCGridControl.MainView = this.gridViewSP_List_SV_DangKy_LopTC;
             this.sP_List_SV_DangKy_LopTCGridControl.Name = "sP_List_SV_DangKy_LopTCGridControl";
-            this.sP_List_SV_DangKy_LopTCGridControl.Size = new System.Drawing.Size(916, 222);
+            this.sP_List_SV_DangKy_LopTCGridControl.Size = new System.Drawing.Size(916, 188);
             this.sP_List_SV_DangKy_LopTCGridControl.TabIndex = 1;
             this.sP_List_SV_DangKy_LopTCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSP_List_SV_DangKy_LopTC});
@@ -250,27 +260,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel.ColumnCount = 1;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.Controls.Add(this.cTLopTCGridControl, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.dangKyGridControl, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.sP_List_SV_DangKy_LopTCGridControl, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.cTLopTCGridControl, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.dangKyGridControl, 0, 5);
+            this.tableLayoutPanel.Controls.Add(this.sP_List_SV_DangKy_LopTCGridControl, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel.Controls.Add(this.label2, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 47);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 3;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel.RowCount = 6;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(922, 572);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(922, 545);
             this.tableLayoutPanel.TabIndex = 3;
             // 
             // cTLopTCGridControl
             // 
             this.cTLopTCGridControl.DataSource = this.cTLopTCBindingSource;
             this.cTLopTCGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cTLopTCGridControl.Location = new System.Drawing.Point(3, 231);
+            this.cTLopTCGridControl.Location = new System.Drawing.Point(3, 237);
             this.cTLopTCGridControl.MainView = this.gridViewCTLopTC;
             this.cTLopTCGridControl.Name = "cTLopTCGridControl";
-            this.cTLopTCGridControl.Size = new System.Drawing.Size(916, 108);
+            this.cTLopTCGridControl.Size = new System.Drawing.Size(916, 91);
             this.cTLopTCGridControl.TabIndex = 3;
             this.cTLopTCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCTLopTC});
@@ -318,10 +333,10 @@
             // 
             this.dangKyGridControl.DataSource = this.dangKyBindingSource;
             this.dangKyGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dangKyGridControl.Location = new System.Drawing.Point(3, 345);
+            this.dangKyGridControl.Location = new System.Drawing.Point(3, 354);
             this.dangKyGridControl.MainView = this.gridView1;
             this.dangKyGridControl.Name = "dangKyGridControl";
-            this.dangKyGridControl.Size = new System.Drawing.Size(916, 224);
+            this.dangKyGridControl.Size = new System.Drawing.Size(916, 188);
             this.dangKyGridControl.TabIndex = 2;
             this.dangKyGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -445,11 +460,77 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBoxLop.Name = "repositoryItemComboBoxLop";
             // 
+            // statusStripLoginInfo
+            // 
+            this.statusStripLoginInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txtStripMaSV,
+            this.txtStripHoTen});
+            this.statusStripLoginInfo.Location = new System.Drawing.Point(0, 595);
+            this.statusStripLoginInfo.Name = "statusStripLoginInfo";
+            this.statusStripLoginInfo.Size = new System.Drawing.Size(922, 25);
+            this.statusStripLoginInfo.TabIndex = 9;
+            this.statusStripLoginInfo.Text = "statusStrip1";
+            // 
+            // txtStripMaSV
+            // 
+            this.txtStripMaSV.Margin = new System.Windows.Forms.Padding(5);
+            this.txtStripMaSV.Name = "txtStripMaSV";
+            this.txtStripMaSV.Size = new System.Drawing.Size(46, 15);
+            this.txtStripMaSV.Text = "Mã SV: ";
+            // 
+            // txtStripHoTen
+            // 
+            this.txtStripHoTen.Margin = new System.Windows.Forms.Padding(5);
+            this.txtStripHoTen.Name = "txtStripHoTen";
+            this.txtStripHoTen.Size = new System.Drawing.Size(49, 15);
+            this.txtStripHoTen.Text = "Họ tên: ";
+            // 
+            // sinhVienBindingSource
+            // 
+            this.sinhVienBindingSource.AllowNew = false;
+            this.sinhVienBindingSource.DataMember = "SinhVien";
+            this.sinhVienBindingSource.DataSource = this.qLDSVDataSetKhoa;
+            // 
+            // sinhVienTableAdapter
+            // 
+            this.sinhVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Đăng ký";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(3, 331);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Đã đăng ký";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(3, 214);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Lịch học";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormDangKyLTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 620);
+            this.Controls.Add(this.statusStripLoginInfo);
             this.Controls.Add(this.tableLayoutPanel);
             this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.barDockControlLeft);
@@ -473,6 +554,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBoxLop)).EndInit();
+            this.statusStripLoginInfo.ResumeLayout(false);
+            this.statusStripLoginInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -521,5 +605,13 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBoxLop;
+        private System.Windows.Forms.StatusStrip statusStripLoginInfo;
+        private System.Windows.Forms.ToolStripStatusLabel txtStripMaSV;
+        private System.Windows.Forms.ToolStripStatusLabel txtStripHoTen;
+        private System.Windows.Forms.BindingSource sinhVienBindingSource;
+        private QLDSVDataSetKhoaTableAdapters.SinhVienTableAdapter sinhVienTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

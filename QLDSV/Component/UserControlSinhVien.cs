@@ -25,7 +25,7 @@ namespace QLDSV
         {
             lopBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             chuyenNganhBindingSource.DataSource = Program.QLDSVDataSetKhoa;
-            comboBoxPhai.SelectedIndex = 0;
+           // comboBoxPhai.SelectedIndex = 0;
         }
         private void Layout_Setting(string status)
         {

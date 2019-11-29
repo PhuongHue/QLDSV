@@ -6172,9 +6172,6 @@ namespace QLDSV {
                 this.columnHo.MaxLength = 25;
                 this.columnTen.AllowDBNull = false;
                 this.columnTen.MaxLength = 25;
-                this.columnDiemCC.AllowDBNull = false;
-                this.columnDiemGK.AllowDBNull = false;
-                this.columnDiemCK.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9022,7 +9019,12 @@ namespace QLDSV {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double DiemCC {
                 get {
-                    return ((double)(this[this.tableV_NhapDiem.DiemCCColumn]));
+                    try {
+                        return ((double)(this[this.tableV_NhapDiem.DiemCCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiemCC\' in table \'V_NhapDiem\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_NhapDiem.DiemCCColumn] = value;
@@ -9033,7 +9035,12 @@ namespace QLDSV {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double DiemGK {
                 get {
-                    return ((double)(this[this.tableV_NhapDiem.DiemGKColumn]));
+                    try {
+                        return ((double)(this[this.tableV_NhapDiem.DiemGKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiemGK\' in table \'V_NhapDiem\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_NhapDiem.DiemGKColumn] = value;
@@ -9044,11 +9051,52 @@ namespace QLDSV {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double DiemCK {
                 get {
-                    return ((double)(this[this.tableV_NhapDiem.DiemCKColumn]));
+                    try {
+                        return ((double)(this[this.tableV_NhapDiem.DiemCKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiemCK\' in table \'V_NhapDiem\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableV_NhapDiem.DiemCKColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDiemCCNull() {
+                return this.IsNull(this.tableV_NhapDiem.DiemCCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDiemCCNull() {
+                this[this.tableV_NhapDiem.DiemCCColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDiemGKNull() {
+                return this.IsNull(this.tableV_NhapDiem.DiemGKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDiemGKNull() {
+                this[this.tableV_NhapDiem.DiemGKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDiemCKNull() {
+                return this.IsNull(this.tableV_NhapDiem.DiemCKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDiemCKNull() {
+                this[this.tableV_NhapDiem.DiemCKColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -15570,7 +15618,8 @@ SELECT MaSV, Ho, Ten, Phai, DiaChi, NgaySinh, NienKhoa, MaLop, MaCN FROM SinhVie
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MaLopTC, MaSV, Ho, Ten, DiemCC, DiemGK, DiemCK FROM dbo.V_NhapDiem";
+            this._commandCollection[0].CommandText = "SELECT        MaLopTC, MaSV, Ho, Ten, DiemCC, DiemGK, DiemCK\r\nFROM            V_N" +
+                "hapDiem";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

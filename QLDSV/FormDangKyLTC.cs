@@ -21,11 +21,23 @@ namespace QLDSV
             sP_List_SV_DangKy_LopTCBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             dangKyBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             cTLopTCBindingSource.DataSource = Program.QLDSVDataSetKhoa;
+            sinhVienBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             dangKyBindingSource.Filter = $"MaSV = '{Program.KetNoiDB.UserName}' ";
+            txtStripMaSV.Text += Program.KetNoiDB.UserName;
+            int index = sinhVienBindingSource.Find("MaSV", Program.KetNoiDB.UserName);
+            if(index != -1)
+            {
+                string ho = (string)((DataRowView)sinhVienBindingSource[index])["Ho"];
+                string ten = (string)((DataRowView)sinhVienBindingSource[index])["Ten"];
+                txtStripHoTen.Text += $"{ho} {ten}";
+            }
+
         }
 
         private void FormDangKyLTC_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qLDSVDataSetKhoa.SinhVien' table. You can move, or remove it, as needed.
+            this.sinhVienTableAdapter.Fill(this.qLDSVDataSetKhoa.SinhVien);
 
         }
 
