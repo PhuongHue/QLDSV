@@ -54,6 +54,7 @@ namespace QLDSV.Component
         private void barBtnRefresh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Program.FillAllTable();
+            barbtnLuu.Enabled = true;
         }
 
         private void searchLookUpEditMaLop_EditValueChanged(object sender, EventArgs e)
@@ -64,6 +65,7 @@ namespace QLDSV.Component
 
         private void gridViewV_NhapDiem_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
+            barbtnLuu.Enabled = false;
             var view = (GridView)sender;
             string error = "";
             switch (e.Column.FieldName)
@@ -93,6 +95,15 @@ namespace QLDSV.Component
                 MessageBox.Show(errors);
                 e.Valid = false;
             }
+            else
+            {
+                barbtnLuu.Enabled = true;
+            }
+        }
+
+        private void gridViewV_NhapDiem_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        {
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.NoAction;
         }
     }
 }

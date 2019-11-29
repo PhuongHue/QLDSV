@@ -324,6 +324,7 @@
             this.gridViewV_NhapDiem.GridControl = this.v_NhapDiemGridControl;
             this.gridViewV_NhapDiem.Name = "gridViewV_NhapDiem";
             this.gridViewV_NhapDiem.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewV_NhapDiem_CellValueChanged);
+            this.gridViewV_NhapDiem.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridViewV_NhapDiem_InvalidRowException);
             this.gridViewV_NhapDiem.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewV_NhapDiem_ValidateRow);
             // 
             // colMaLopTC1

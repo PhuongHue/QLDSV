@@ -79,5 +79,10 @@ namespace QLDSV.Component
                 MessageBox.Show(ex.Message + " Code: " + ex.Number);
             }
         }
+
+        /*private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

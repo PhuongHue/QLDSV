@@ -368,6 +368,7 @@
             this.comboBoxRole.Name = "comboBoxRole";
             this.comboBoxRole.Size = new System.Drawing.Size(150, 21);
             this.comboBoxRole.TabIndex = 20;
+            this.comboBoxRole.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
             // 
             // UserControlTaiKhoan
             // 
