@@ -185,6 +185,8 @@ namespace QLDSV
 
         private void Form_Disposed(object sender, EventArgs e)
         {
+            FormChuyenLop view = (FormChuyenLop)sender;
+            if (view.success == false) return;
             Program.UpdateAll();
             Program.FillAllTable();
         }

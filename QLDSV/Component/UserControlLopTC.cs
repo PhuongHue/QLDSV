@@ -29,6 +29,7 @@ namespace QLDSV.Component
             monHocBindingSource.DataSource = Program.QLDSVDataSetKhoa;
             comboBoxThu.SelectedItem = comboBoxThu.Items[0];
             comboBoxBuoi.SelectedItem = comboBoxBuoi.Items[0];
+            if(Program.KetNoiDB.GroupId == "Khoa") barSubItemSua.Enabled = barSubItemThem.Enabled = barSubItemXoa.Enabled = false;
         }
 
         private void Layout_Setting(string status)
@@ -242,5 +243,6 @@ namespace QLDSV.Component
 
             }
         }
+
     }
 }

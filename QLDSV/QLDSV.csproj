@@ -178,12 +178,6 @@
     <Compile Include="Reports\ReportDSThiHetMon.Designer.cs">
       <DependentUpon>ReportDSThiHetMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ReportPhieuDiem.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\ReportPhieuDiem.Designer.cs">
-      <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Component\FormChuyenLop.resx">
       <DependentUpon>FormChuyenLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,9 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReportDSThiHetMon.resx">
       <DependentUpon>ReportDSThiHetMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\ReportPhieuDiem.resx">
-      <DependentUpon>ReportPhieuDiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

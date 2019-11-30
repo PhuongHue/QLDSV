@@ -53,6 +53,7 @@
             this.barBtnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPrintBDTK = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPrintDSTHM = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPrintPhieuDiem = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -225,8 +226,9 @@
             this.barSubItemXoa,
             this.barbtnXoaLichHoc,
             this.barBtnPrintBDTK,
-            this.barBtnPrintDSTHM});
-            this.barManager.MaxItemId = 14;
+            this.barBtnPrintDSTHM,
+            this.barBtnPrintPhieuDiem});
+            this.barManager.MaxItemId = 15;
             // 
             // bar1
             // 
@@ -352,6 +354,13 @@
             this.barBtnPrintDSTHM.Name = "barBtnPrintDSTHM";
             this.barBtnPrintDSTHM.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPrintDSTHM_ItemClick);
             // 
+            // barBtnPrintPhieuDiem
+            // 
+            this.barBtnPrintPhieuDiem.Caption = "In phiếu điểm";
+            this.barBtnPrintPhieuDiem.Id = 14;
+            this.barBtnPrintPhieuDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnPrintPhieuDiem.ImageOptions.Image")));
+            this.barBtnPrintPhieuDiem.Name = "barBtnPrintPhieuDiem";
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
@@ -408,7 +417,7 @@
             this.lopTinChiGridControl.MainView = this.gridViewLopTC;
             this.lopTinChiGridControl.MenuManager = this.barManager;
             this.lopTinChiGridControl.Name = "lopTinChiGridControl";
-            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 323);
+            this.lopTinChiGridControl.Size = new System.Drawing.Size(958, 321);
             this.lopTinChiGridControl.TabIndex = 5;
             this.lopTinChiGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLopTC});
@@ -540,7 +549,7 @@
             this.groupBoxLopTC.Controls.Add(maLopTCLabel);
             this.groupBoxLopTC.Controls.Add(this.maLopTCTextEdit);
             this.groupBoxLopTC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 408);
+            this.groupBoxLopTC.Location = new System.Drawing.Point(3, 406);
             this.groupBoxLopTC.Name = "groupBoxLopTC";
             this.groupBoxLopTC.Size = new System.Drawing.Size(958, 79);
             this.groupBoxLopTC.TabIndex = 6;
@@ -773,7 +782,7 @@
             // 
             this.lichHocGridControl.DataSource = this.cTLopTCBindingSource;
             this.lichHocGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lichHocGridControl.Location = new System.Drawing.Point(3, 332);
+            this.lichHocGridControl.Location = new System.Drawing.Point(3, 330);
             this.lichHocGridControl.MainView = this.gridViewLichHoc;
             this.lichHocGridControl.MenuManager = this.barManager;
             this.lichHocGridControl.Name = "lichHocGridControl";
@@ -845,9 +854,9 @@
             this.groupBoxLichHoc.Controls.Add(this.btnOKLichHoc);
             this.groupBoxLichHoc.Controls.Add(this.btnHuyLichHoc);
             this.groupBoxLichHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 493);
+            this.groupBoxLichHoc.Location = new System.Drawing.Point(3, 491);
             this.groupBoxLichHoc.Name = "groupBoxLichHoc";
-            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 53);
+            this.groupBoxLichHoc.Size = new System.Drawing.Size(958, 55);
             this.groupBoxLichHoc.TabIndex = 8;
             this.groupBoxLichHoc.TabStop = false;
             this.groupBoxLichHoc.Visible = false;
@@ -1007,5 +1016,6 @@
         private System.Windows.Forms.ComboBox comboBoxBuoi;
         private DevExpress.XtraBars.BarButtonItem barBtnPrintBDTK;
         private DevExpress.XtraBars.BarButtonItem barBtnPrintDSTHM;
+        private DevExpress.XtraBars.BarButtonItem barBtnPrintPhieuDiem;
     }
 }

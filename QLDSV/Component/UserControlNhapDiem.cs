@@ -19,10 +19,6 @@ namespace QLDSV.Component
         public UserControlNhapDiem()
         {
             InitializeComponent();
-            if (Program.KetNoiDB.GroupId == "PGV")
-            {
-                colDiemCC.OptionsColumn.ReadOnly = colDiemGK.OptionsColumn.ReadOnly = colDiemCK.OptionsColumn.ReadOnly = true;
-            }
         }
 
         public void UserControlNhapDiem_Load()
@@ -33,10 +29,12 @@ namespace QLDSV.Component
             if(Program.KetNoiDB.GroupId == "Khoa")
             {
                 lopTinChiBindingSource.Filter = $"MaGV = '{Program.KetNoiDB.UserName}'";
-                string MaLopTC = (string)searchLookUpEditMaLop.EditValue;
-                v_NhapDiemBindingSource.Filter = $"MaLopTC = '{MaLopTC}'";
             }
-           
+            else {
+                colDiemCC.OptionsColumn.ReadOnly = colDiemGK.OptionsColumn.ReadOnly = colDiemCK.OptionsColumn.ReadOnly = true;
+            }
+            string MaLopTC = (string)searchLookUpEditMaLop.EditValue;
+            v_NhapDiemBindingSource.Filter = $"MaLopTC = '{MaLopTC}'";
         }
 
         private void barbtnLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

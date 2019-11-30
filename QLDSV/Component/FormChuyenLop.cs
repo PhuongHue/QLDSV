@@ -14,6 +14,7 @@ namespace QLDSV.Component
 {
     public partial class FormChuyenLop : DevExpress.XtraEditors.XtraForm
     {
+        public bool success = false;
         string MaSV;
         public FormChuyenLop(string Ten, string MaSV, string currentMaLop)
         {
@@ -38,6 +39,7 @@ namespace QLDSV.Component
             {
                 Program.KetNoiDB.ExcuteSP($"SP_Chuyen_SinhVien @MaSV = N'{MaSV}', @MaLop = N'{lopComboBox.SelectedValue.ToString()}'").Close();
                 MessageBox.Show("Thành công!", "Thông báo");
+                success = true;
                 Dispose();
             }
             catch (SqlException ex)

@@ -38,7 +38,7 @@ namespace QLDSV.Component
         private void UserControlTaiKhoan_Fill()
         {
                 Program.SP_List_LOGINTableAdapter.Fill(Program.QLDSVDataSetKhoa.SP_List_LOGIN);
-            }
+        }
 
         public void UserControlTaiKhoan_Load()
         {
@@ -80,9 +80,9 @@ namespace QLDSV.Component
             }
         }
 
-        /*private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }*/
+        }
     }
 }
